@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectOptions>
+    <Version Value="10"/>
+    <PathDelim Value="\"/>
+    <General>
+      <SessionStorage Value="InProjectDir"/>
+      <MainUnit Value="0"/>
+      <Title Value="KingdomGame"/>
+      <ResourceType Value="res"/>
+      <UseXPManifest Value="True"/>
+      <Icon Value="0"/>
+    </General>
+    <BuildModes Count="1">
+      <Item1 Name="Default" Default="True"/>
+    </BuildModes>
+    <PublishOptions>
+      <Version Value="2"/>
+    </PublishOptions>
+    <RunParams>
+      <local>
+        <FormatVersion Value="1"/>
+      </local>
+    </RunParams>
+    <RequiredPackages Count="1">
+      <Item1>
+        <PackageName Value="LCL"/>
+      </Item1>
+    </RequiredPackages>
+    <Units Count="23">
+      <Unit0>
+        <Filename Value="KingdomGame.lpr"/>
+        <IsPartOfProject Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="Forms\formauth.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FmAuth"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="FormAuth"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="Controllers\authcontroller.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="AuthController"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="Helpers\registrosjson.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="RegistrosJSON"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="initfile.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="InitFile"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="Helpers\formhelper.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="FormHelper"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="Helpers\formmovetor.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="FormMovetor"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="Helpers\messageshelper.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MessagesHelper"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="Models\usermodel.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="UserModel"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="Helpers\datehelper.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="DateHelper"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="Models\modelparent.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="ModelParent"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="Helpers\crypthelper.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="CryptHelper"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="Models\keymodel.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="KeyModel"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="Forms\formregister.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FmFormRegister"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="FormRegister"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="Models\nationmodel.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="NationModel"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="Forms\formmenu.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FmMenu"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="FormMenu"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="Forms\formhouse.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FmHouses"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="FormHouse"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="Models\housesmodel.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="HousesModel"/>
+      </Unit17>
+      <Unit18>
+        <Filename Value="Forms\formnewhouse.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FmNewHouse"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="FormNewHouse"/>
+      </Unit18>
+      <Unit19>
+        <Filename Value="Forms\formnation.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FmNation"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="FormNation"/>
+      </Unit19>
+      <Unit20>
+        <Filename Value="Forms\formgamemodes.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FmGameModes"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="FormGameModes"/>
+      </Unit20>
+      <Unit21>
+        <Filename Value="Forms\formngc1vs1.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FmNGC1vs1"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="FormNGC1vs1"/>
+      </Unit21>
+      <Unit22>
+        <Filename Value="Forms\formauth2.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FmAuth2"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="FormAuth2"/>
+      </Unit22>
+    </Units>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="11"/>
+    <PathDelim Value="\"/>
+    <Target>
+      <Filename Value="KingdomGame"/>
+    </Target>
+    <SearchPaths>
+      <IncludeFiles Value="$(ProjOutDir)"/>
+      <OtherUnitFiles Value="Controllers;Helpers;Forms;Models"/>
+      <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+    </SearchPaths>
+    <Linking>
+      <Options>
+        <Win32>
+          <GraphicApplication Value="True"/>
+        </Win32>
+      </Options>
+    </Linking>
+  </CompilerOptions>
+  <Debugging>
+    <Exceptions Count="3">
+      <Item1>
+        <Name Value="EAbort"/>
+      </Item1>
+      <Item2>
+        <Name Value="ECodetoolError"/>
+      </Item2>
+      <Item3>
+        <Name Value="EFOpenError"/>
+      </Item3>
+    </Exceptions>
+  </Debugging>
+</CONFIG>

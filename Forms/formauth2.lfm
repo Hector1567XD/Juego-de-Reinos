@@ -1,0 +1,142 @@
+object FmAuth2: TFmAuth2
+  Left = 203
+  Height = 300
+  Top = 639
+  Width = 400
+  Caption = 'Juego de Reinos - Autenticacion, Jugador 2'
+  ClientHeight = 300
+  ClientWidth = 400
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnPaint = FormPaint
+  LCLVersion = '1.8.4.0'
+  object LbTitle: TLabel
+    Left = 64
+    Height = 24
+    Top = 16
+    Width = 281
+    Caption = 'Autenticacion del Jugador 2'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWhite
+    Font.Height = -21
+    Font.Name = 'Droid Sans'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object pnAuth: TPanel
+    Left = 80
+    Height = 136
+    Top = 72
+    Width = 240
+    BevelColor = clBackground
+    BevelOuter = bvNone
+    ClientHeight = 136
+    ClientWidth = 240
+    Color = 2500134
+    ParentColor = False
+    TabOrder = 0
+    object txtUserName: TEdit
+      Left = 8
+      Height = 23
+      Top = 24
+      Width = 224
+      Font.CharSet = ANSI_CHARSET
+      Font.Height = -13
+      Font.Name = 'Droid Sans'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      MaxLength = 12
+      ParentBidiMode = False
+      ParentFont = False
+      TabOrder = 0
+    end
+    object txtPassword: TEdit
+      Left = 8
+      Height = 23
+      Top = 64
+      Width = 224
+      EchoMode = emPassword
+      Font.CharSet = ANSI_CHARSET
+      Font.Height = -13
+      Font.Name = 'Droid Sans'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      MaxLength = 24
+      ParentFont = False
+      PasswordChar = '*'
+      TabOrder = 1
+    end
+    object lbUsername: TLabel
+      Left = 8
+      Height = 15
+      Top = 8
+      Width = 114
+      Caption = 'Nombre de usuario'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'Droid Sans'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentColor = False
+      ParentFont = False
+    end
+    object lbPassword: TLabel
+      Left = 8
+      Height = 15
+      Top = 48
+      Width = 68
+      Caption = 'Contraseña'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'Droid Sans'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentColor = False
+      ParentFont = False
+    end
+    object btnLogin: TPanel
+      Cursor = crHandPoint
+      Left = 72
+      Height = 31
+      Top = 96
+      Width = 96
+      BevelOuter = bvNone
+      Caption = 'Entrar'
+      Color = 4210752
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'Droid Sans'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentColor = False
+      ParentFont = False
+      TabOrder = 2
+      OnClick = btnLoginClick
+      OnMouseEnter = btnMouseEnter
+      OnMouseLeave = btnMouseLeave
+    end
+  end
+  object lbError: TLabel
+    Left = 8
+    Height = 19
+    Top = 248
+    Width = 384
+    Alignment = taCenter
+    AutoSize = False
+    Caption = 'lbError'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clRed
+    Font.Height = -16
+    Font.Name = 'Droid Sans'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+end

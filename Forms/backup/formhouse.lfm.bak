@@ -1,0 +1,175 @@
+object FmHouses: TFmHouses
+  Left = 564
+  Height = 300
+  Top = 420
+  Width = 400
+  Caption = 'Juego de Reinos - Casas'
+  ClientHeight = 300
+  ClientWidth = 400
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnPaint = FormPaint
+  LCLVersion = '1.8.4.0'
+  object ListHouses: TListBox
+    Left = 8
+    Height = 232
+    Top = 56
+    Width = 169
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -13
+    Font.Name = 'Droid Sans'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ItemHeight = 0
+    OnClick = ListHousesClick
+    ParentFont = False
+    TabOrder = 0
+  end
+  object LbHomeName: TLabel
+    Left = 192
+    Height = 19
+    Top = 56
+    Width = 54
+    Caption = 'Casa X'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWhite
+    Font.Height = -16
+    Font.Name = 'Droid Sans'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object LbHomeLema: TLabel
+    Left = 192
+    Height = 18
+    Top = 80
+    Width = 80
+    Caption = 'Lema oficial'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWhite
+    Font.Height = -15
+    Font.Name = 'Droid Sans'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object LbHomeLemaNoOficial: TLabel
+    Left = 192
+    Height = 18
+    Top = 168
+    Width = 101
+    Caption = 'Lema no oficial'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWhite
+    Font.Height = -15
+    Font.Name = 'Droid Sans'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object txtLemaOficial: TMemo
+    Left = 192
+    Height = 56
+    Top = 104
+    Width = 199
+    Color = clScrollBar
+    DragCursor = crDefault
+    DragKind = dkDock
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -13
+    Font.Name = 'Droid Sans'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Lines.Strings = (
+      'txtLemaOficial'
+    )
+    ParentFont = False
+    ReadOnly = True
+    TabOrder = 1
+  end
+  object txtLemaNoOficial: TMemo
+    Left = 192
+    Height = 56
+    Top = 192
+    Width = 199
+    BorderStyle = bsNone
+    Color = clScrollBar
+    DragCursor = crDefault
+    DragKind = dkDock
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -13
+    Font.Name = 'Droid Sans'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Lines.Strings = (
+      'txtLemaOficial'
+    )
+    ParentFont = False
+    ReadOnly = True
+    TabOrder = 2
+  end
+  object LbTitle: TLabel
+    Left = 184
+    Height = 24
+    Top = 16
+    Width = 58
+    Caption = 'Casas'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWhite
+    Font.Height = -21
+    Font.Name = 'Droid Sans'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object btnCreate: TPanel
+    Cursor = crHandPoint
+    Left = 295
+    Height = 31
+    Top = 257
+    Width = 96
+    BevelOuter = bvNone
+    Caption = 'Crear'
+    Color = 4210752
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWhite
+    Font.Height = -13
+    Font.Name = 'Droid Sans'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 3
+    OnClick = btnCreateClick
+    OnMouseEnter = btnMouseEnter
+    OnMouseLeave = btnMouseLeave
+  end
+  object btnDelete: TPanel
+    Cursor = crHandPoint
+    Left = 192
+    Height = 31
+    Top = 256
+    Width = 96
+    BevelOuter = bvNone
+    Caption = 'Eliminar'
+    Color = 4210752
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWhite
+    Font.Height = -13
+    Font.Name = 'Droid Sans'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 4
+    OnClick = btnDeleteClick
+    OnMouseEnter = btnMouseEnter
+    OnMouseLeave = btnMouseLeave
+  end
+end
