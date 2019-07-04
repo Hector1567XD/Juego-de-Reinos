@@ -4,13 +4,13 @@
     <PathDelim Value="\"/>
     <Version Value="10"/>
     <BuildModes Active="Default"/>
-    <Units Count="31">
+    <Units Count="34">
       <Unit0>
         <Filename Value="KingdomGame.lpr"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="13"/>
-        <TopLine Value="7"/>
-        <CursorPos X="59" Y="16"/>
+        <EditorIndex Value="17"/>
+        <TopLine Value="26"/>
+        <CursorPos X="5" Y="37"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
       </Unit0>
@@ -21,7 +21,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormAuth"/>
-        <EditorIndex Value="10"/>
+        <EditorIndex Value="14"/>
         <TopLine Value="100"/>
         <CursorPos X="35" Y="108"/>
         <UsageCount Value="200"/>
@@ -59,20 +59,20 @@
         <Filename Value="Helpers\formhelper.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="FormHelper"/>
-        <EditorIndex Value="14"/>
+        <EditorIndex Value="18"/>
         <TopLine Value="24"/>
         <CursorPos X="77" Y="47"/>
-        <UsageCount Value="196"/>
+        <UsageCount Value="200"/>
         <Loaded Value="True"/>
       </Unit5>
       <Unit6>
         <Filename Value="Helpers\formmovetor.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="FormMovetor"/>
-        <EditorIndex Value="11"/>
+        <EditorIndex Value="15"/>
         <TopLine Value="99"/>
         <CursorPos X="18" Y="105"/>
-        <UsageCount Value="191"/>
+        <UsageCount Value="198"/>
         <Loaded Value="True"/>
       </Unit6>
       <Unit7>
@@ -81,16 +81,15 @@
         <UnitName Value="MessagesHelper"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="25" Y="22"/>
-        <UsageCount Value="189"/>
+        <UsageCount Value="196"/>
       </Unit7>
       <Unit8>
         <Filename Value="Models\usermodel.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="UserModel"/>
-        <EditorIndex Value="9"/>
-        <TopLine Value="127"/>
-        <CursorPos X="41" Y="138"/>
-        <UsageCount Value="143"/>
+        <EditorIndex Value="13"/>
+        <CursorPos X="23" Y="12"/>
+        <UsageCount Value="150"/>
         <Loaded Value="True"/>
       </Unit8>
       <Unit9>
@@ -99,14 +98,16 @@
         <UnitName Value="DateHelper"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="102" Y="17"/>
-        <UsageCount Value="143"/>
+        <UsageCount Value="150"/>
       </Unit9>
       <Unit10>
         <Filename Value="Models\modelparent.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="ModelParent"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="143"/>
+        <EditorIndex Value="6"/>
+        <CursorPos Y="4"/>
+        <UsageCount Value="150"/>
+        <Loaded Value="True"/>
       </Unit10>
       <Unit11>
         <Filename Value="Helpers\crypthelper.pas"/>
@@ -114,7 +115,7 @@
         <UnitName Value="CryptHelper"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="17" Y="10"/>
-        <UsageCount Value="96"/>
+        <UsageCount Value="103"/>
       </Unit11>
       <Unit12>
         <Filename Value="Models\keymodel.pas"/>
@@ -123,7 +124,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="185"/>
         <CursorPos X="18" Y="200"/>
-        <UsageCount Value="93"/>
+        <UsageCount Value="100"/>
       </Unit12>
       <Unit13>
         <Filename Value="Forms\formregister.pas"/>
@@ -132,10 +133,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormRegister"/>
-        <EditorIndex Value="5"/>
+        <EditorIndex Value="9"/>
         <TopLine Value="81"/>
         <CursorPos X="10" Y="113"/>
-        <UsageCount Value="91"/>
+        <UsageCount Value="98"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit13>
@@ -143,10 +144,10 @@
         <Filename Value="Models\nationmodel.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="NationModel"/>
-        <EditorIndex Value="12"/>
+        <EditorIndex Value="16"/>
         <TopLine Value="2"/>
         <CursorPos X="30" Y="13"/>
-        <UsageCount Value="89"/>
+        <UsageCount Value="96"/>
         <Loaded Value="True"/>
       </Unit14>
       <Unit15>
@@ -156,9 +157,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormMenu"/>
-        <TopLine Value="80"/>
-        <CursorPos X="3" Y="88"/>
-        <UsageCount Value="69"/>
+        <TopLine Value="83"/>
+        <CursorPos X="19" Y="85"/>
+        <UsageCount Value="76"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit15>
@@ -169,10 +170,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormHouse"/>
-        <EditorIndex Value="6"/>
-        <TopLine Value="95"/>
+        <EditorIndex Value="10"/>
+        <TopLine Value="101"/>
         <CursorPos Y="126"/>
-        <UsageCount Value="66"/>
+        <UsageCount Value="73"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit16>
@@ -180,10 +181,10 @@
         <Filename Value="Models\housesmodel.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="HousesModel"/>
-        <EditorIndex Value="8"/>
+        <EditorIndex Value="12"/>
         <TopLine Value="17"/>
         <CursorPos X="12" Y="30"/>
-        <UsageCount Value="62"/>
+        <UsageCount Value="69"/>
         <Loaded Value="True"/>
       </Unit17>
       <Unit18>
@@ -193,10 +194,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormNewHouse"/>
-        <EditorIndex Value="7"/>
+        <EditorIndex Value="11"/>
         <TopLine Value="101"/>
         <CursorPos Y="121"/>
-        <UsageCount Value="60"/>
+        <UsageCount Value="67"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit18>
@@ -207,14 +208,95 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormNation"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="8"/>
         <TopLine Value="109"/>
         <CursorPos X="18" Y="110"/>
-        <UsageCount Value="32"/>
+        <UsageCount Value="39"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit19>
       <Unit20>
+        <Filename Value="Forms\formgamemodes.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FmGameModes"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="FormGameModes"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="43"/>
+        <CursorPos X="26" Y="50"/>
+        <UsageCount Value="36"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit20>
+      <Unit21>
+        <Filename Value="Forms\formngc1vs1.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FmNGC1vs1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="FormNGC1vs1"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="64"/>
+        <CursorPos X="3" Y="76"/>
+        <UsageCount Value="35"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit21>
+      <Unit22>
+        <Filename Value="Forms\formauth2.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FmAuth2"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="FormAuth2"/>
+        <EditorIndex Value="7"/>
+        <TopLine Value="26"/>
+        <CursorPos X="15" Y="73"/>
+        <UsageCount Value="35"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit22>
+      <Unit23>
+        <Filename Value="Forms\formconfigs.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FmConfigs"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="FormConfigs"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="32"/>
+        <CursorPos X="58" Y="39"/>
+        <UsageCount Value="27"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit23>
+      <Unit24>
+        <Filename Value="Forms\formgames.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FmGames"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="FormGames"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="21"/>
+        <CursorPos X="36" Y="39"/>
+        <UsageCount Value="24"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit24>
+      <Unit25>
+        <Filename Value="Models\gamesmodel.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="GamesModel"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="5"/>
+        <TopLine Value="253"/>
+        <CursorPos X="17" Y="265"/>
+        <UsageCount Value="24"/>
+        <Loaded Value="True"/>
+      </Unit25>
+      <Unit26>
         <Filename Value="Forms\formmain.pas"/>
         <ComponentName Value="FmMain"/>
         <HasResources Value="True"/>
@@ -224,29 +306,29 @@
         <TopLine Value="136"/>
         <CursorPos X="49" Y="107"/>
         <UsageCount Value="66"/>
-      </Unit20>
-      <Unit21>
+      </Unit26>
+      <Unit27>
         <Filename Value="C:\lazarus\lcl\include\customform.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="2051"/>
         <CursorPos Y="2063"/>
         <UsageCount Value="55"/>
-      </Unit21>
-      <Unit22>
+      </Unit27>
+      <Unit28>
         <Filename Value="C:\lazarus\lcl\include\control.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="2327"/>
         <CursorPos Y="2312"/>
         <UsageCount Value="49"/>
-      </Unit22>
-      <Unit23>
+      </Unit28>
+      <Unit29>
         <Filename Value="C:\lazarus\lcl\include\wincontrol.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="7141"/>
         <CursorPos Y="7165"/>
         <UsageCount Value="51"/>
-      </Unit23>
-      <Unit24>
+      </Unit29>
+      <Unit30>
         <Filename Value="Forms\formmain.lfm"/>
         <ComponentName Value="FmMain"/>
         <HasResources Value="True"/>
@@ -255,189 +337,149 @@
         <CursorPos X="51"/>
         <UsageCount Value="17"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
-      </Unit24>
-      <Unit25>
+      </Unit30>
+      <Unit31>
         <Filename Value="Forms\formauth.lfm"/>
         <EditorIndex Value="-1"/>
         <UsageCount Value="61"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
-      </Unit25>
-      <Unit26>
+      </Unit31>
+      <Unit32>
         <Filename Value="Forms\formmain.lrs"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="223"/>
         <CursorPos Y="335"/>
         <UsageCount Value="17"/>
-      </Unit26>
-      <Unit27>
+      </Unit32>
+      <Unit33>
         <Filename Value="Forms\formmenu.lfm"/>
-        <EditorIndex Value="15"/>
+        <EditorIndex Value="19"/>
         <CursorPos X="23"/>
-        <UsageCount Value="32"/>
+        <UsageCount Value="37"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
-      </Unit27>
-      <Unit28>
-        <Filename Value="Forms\formgamemodes.pas"/>
-        <IsPartOfProject Value="True"/>
-        <ComponentName Value="FmGameModes"/>
-        <ResourceBaseClass Value="Form"/>
-        <UnitName Value="FormGameModes"/>
-        <EditorIndex Value="1"/>
-        <TopLine Value="43"/>
-        <CursorPos X="26" Y="50"/>
-        <UsageCount Value="28"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
-      </Unit28>
-      <Unit29>
-        <Filename Value="Forms\formngc1vs1.pas"/>
-        <IsPartOfProject Value="True"/>
-        <ComponentName Value="FmNGC1vs1"/>
-        <ResourceBaseClass Value="Form"/>
-        <UnitName Value="FormNGC1vs1"/>
-        <EditorIndex Value="2"/>
-        <TopLine Value="57"/>
-        <CursorPos X="3" Y="69"/>
-        <UsageCount Value="28"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
-      </Unit29>
-      <Unit30>
-        <Filename Value="Forms\formauth2.pas"/>
-        <IsPartOfProject Value="True"/>
-        <ComponentName Value="FmAuth2"/>
-        <ResourceBaseClass Value="Form"/>
-        <UnitName Value="FormAuth2"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="3"/>
-        <TopLine Value="48"/>
-        <CursorPos X="41" Y="59"/>
-        <UsageCount Value="27"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
-      </Unit30>
+      </Unit33>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="Forms\formngc1vs1.pas"/>
-        <Caret Line="34" Column="42" TopLine="11"/>
+        <Filename Value="Forms\formconfigs.pas"/>
+        <Caret Line="9" Column="33"/>
       </Position1>
       <Position2>
-        <Filename Value="Forms\formngc1vs1.pas"/>
-        <Caret Line="35" Column="42" TopLine="12"/>
+        <Filename Value="Forms\formconfigs.pas"/>
+        <Caret Line="52" Column="10" TopLine="32"/>
       </Position2>
       <Position3>
-        <Filename Value="Forms\formngc1vs1.pas"/>
-        <Caret Line="36" Column="42" TopLine="13"/>
+        <Filename Value="Forms\formconfigs.pas"/>
+        <Caret Line="36" Column="15" TopLine="28"/>
       </Position3>
       <Position4>
-        <Filename Value="Forms\formngc1vs1.pas"/>
-        <Caret Line="35" Column="42" TopLine="13"/>
+        <Filename Value="Forms\formconfigs.pas"/>
+        <Caret Line="51" Column="35" TopLine="37"/>
       </Position4>
       <Position5>
-        <Filename Value="Forms\formngc1vs1.pas"/>
-        <Caret Line="36" Column="42" TopLine="13"/>
+        <Filename Value="Forms\formconfigs.pas"/>
+        <Caret Line="52" Column="28" TopLine="41"/>
       </Position5>
       <Position6>
-        <Filename Value="Forms\formngc1vs1.pas"/>
-        <Caret Line="37" Column="42" TopLine="14"/>
+        <Filename Value="Forms\formconfigs.pas"/>
+        <Caret Line="77" Column="21" TopLine="56"/>
       </Position6>
       <Position7>
-        <Filename Value="Forms\formngc1vs1.pas"/>
-        <Caret Line="38" Column="42" TopLine="15"/>
+        <Filename Value="Forms\formconfigs.pas"/>
+        <Caret Line="47" Column="58" TopLine="36"/>
       </Position7>
       <Position8>
-        <Filename Value="Forms\formngc1vs1.pas"/>
-        <Caret Line="39" Column="42" TopLine="17"/>
+        <Filename Value="Forms\formconfigs.pas"/>
+        <Caret Line="55" Column="27" TopLine="20"/>
       </Position8>
       <Position9>
-        <Filename Value="Forms\formngc1vs1.pas"/>
-        <Caret Line="40" Column="42" TopLine="18"/>
+        <Filename Value="Forms\formconfigs.pas"/>
+        <Caret Line="54" Column="27" TopLine="22"/>
       </Position9>
       <Position10>
-        <Filename Value="Forms\formngc1vs1.pas"/>
-        <Caret Line="61" Column="38" TopLine="38"/>
+        <Filename Value="Forms\formgames.pas"/>
+        <Caret Line="6" Column="40"/>
       </Position10>
       <Position11>
-        <Filename Value="Forms\formauth2.pas"/>
-        <Caret Line="6" Column="25"/>
+        <Filename Value="Forms\formgames.pas"/>
+        <Caret Line="14" Column="62"/>
       </Position11>
       <Position12>
-        <Filename Value="Forms\formngc1vs1.pas"/>
-        <Caret Line="60" Column="66" TopLine="54"/>
+        <Filename Value="Forms\formgames.pas"/>
+        <Caret Line="36" Column="3" TopLine="15"/>
       </Position12>
       <Position13>
-        <Filename Value="Forms\formngc1vs1.pas"/>
-        <Caret Line="8" Column="37" TopLine="16"/>
+        <Filename Value="Forms\formgames.pas"/>
+        <Caret Line="42" Column="3" TopLine="22"/>
       </Position13>
       <Position14>
-        <Filename Value="Forms\formngc1vs1.pas"/>
-        <Caret Column="17" TopLine="58"/>
+        <Filename Value="Forms\formmenu.pas"/>
+        <Caret Line="90" Column="20" TopLine="88"/>
       </Position14>
       <Position15>
-        <Filename Value="Forms\formauth2.pas"/>
-        <Caret Line="42" Column="51" TopLine="26"/>
+        <Filename Value="Forms\formmenu.pas"/>
+        <Caret Line="85" Column="19" TopLine="83"/>
       </Position15>
       <Position16>
-        <Filename Value="Forms\formngc1vs1.pas"/>
-        <Caret Line="69" Column="14" TopLine="57"/>
+        <Filename Value="Models\gamesmodel.pas"/>
+        <Caret Line="42" Column="33" TopLine="54"/>
       </Position16>
       <Position17>
-        <Filename Value="Forms\formngc1vs1.pas"/>
-        <Caret Line="70" Column="15" TopLine="57"/>
+        <Filename Value="Models\gamesmodel.pas"/>
+        <Caret Line="11" Column="3"/>
       </Position17>
       <Position18>
-        <Filename Value="Forms\formngc1vs1.pas"/>
-        <Caret Line="89" Column="99" TopLine="69"/>
+        <Filename Value="Models\gamesmodel.pas"/>
+        <Caret Line="117" Column="16" TopLine="102"/>
       </Position18>
       <Position19>
-        <Filename Value="Forms\formngc1vs1.pas"/>
-        <Caret Line="81" Column="3" TopLine="78"/>
+        <Filename Value="Models\gamesmodel.pas"/>
+        <Caret Line="54" Column="43" TopLine="42"/>
       </Position19>
       <Position20>
-        <Filename Value="Forms\formauth2.pas"/>
-        <Caret Line="60" Column="19" TopLine="43"/>
+        <Filename Value="Models\gamesmodel.pas"/>
+        <Caret Line="161" Column="35" TopLine="149"/>
       </Position20>
       <Position21>
-        <Filename Value="Forms\formauth2.pas"/>
-        <Caret Line="49" Column="71" TopLine="26"/>
+        <Filename Value="Models\gamesmodel.pas"/>
+        <Caret Line="67" Column="53" TopLine="58"/>
       </Position21>
       <Position22>
-        <Filename Value="Forms\formngc1vs1.pas"/>
-        <Caret Line="96" Column="21" TopLine="79"/>
+        <Filename Value="Models\gamesmodel.pas"/>
+        <Caret Line="309" Column="24" TopLine="305"/>
       </Position22>
       <Position23>
-        <Filename Value="Forms\formngc1vs1.pas"/>
-        <Caret Line="103" Column="63" TopLine="84"/>
+        <Filename Value="Models\gamesmodel.pas"/>
+        <Caret Line="87" Column="17" TopLine="71"/>
       </Position23>
       <Position24>
-        <Filename Value="Forms\formngc1vs1.pas"/>
-        <Caret Line="45" Column="30" TopLine="33"/>
+        <Filename Value="Models\gamesmodel.pas"/>
+        <Caret Line="47" Column="24" TopLine="29"/>
       </Position24>
       <Position25>
-        <Filename Value="Forms\formngc1vs1.pas"/>
-        <Caret Line="101" Column="32" TopLine="83"/>
+        <Filename Value="KingdomGame.lpr"/>
+        <Caret Line="37" Column="5" TopLine="26"/>
       </Position25>
       <Position26>
-        <Filename Value="Forms\formauth2.pas"/>
-        <Caret Line="9" Column="23"/>
+        <Filename Value="Models\gamesmodel.pas"/>
+        <Caret Line="12" Column="24"/>
       </Position26>
       <Position27>
-        <Filename Value="Forms\formauth.pas"/>
-        <Caret Line="111" Column="11" TopLine="100"/>
+        <Filename Value="Models\gamesmodel.pas"/>
+        <Caret Line="5"/>
       </Position27>
       <Position28>
-        <Filename Value="Forms\formngc1vs1.pas"/>
-        <Caret Line="22" Column="18" TopLine="15"/>
+        <Filename Value="Models\gamesmodel.pas"/>
+        <Caret Line="13" Column="24"/>
       </Position28>
       <Position29>
-        <Filename Value="Forms\formngc1vs1.pas"/>
-        <Caret Line="11" Column="38"/>
+        <Filename Value="Models\gamesmodel.pas"/>
+        <Caret Line="265" Column="12" TopLine="252"/>
       </Position29>
       <Position30>
-        <Filename Value="Forms\formngc1vs1.pas"/>
-        <Caret Line="69" Column="3" TopLine="57"/>
+        <Filename Value="Models\gamesmodel.pas"/>
+        <Caret Line="266" Column="26" TopLine="255"/>
       </Position30>
     </JumpHistory>
   </ProjectSession>

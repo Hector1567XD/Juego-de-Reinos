@@ -25,6 +25,7 @@ type
     lbUsername: TLabel;
     pnUser: TPanel;
     pnMenu: TPanel;
+    procedure btnConfigsClick(Sender: TObject);
     procedure btnExitClick(Sender: TObject);
     procedure btnHousesClick(Sender: TObject);
     procedure btnLogoutClick(Sender: TObject);
@@ -76,6 +77,11 @@ procedure TFmMenu.btnExitClick(Sender: TObject);
 begin
   logOutUser();
   Application.terminate;
+end;
+
+procedure TFmMenu.btnConfigsClick(Sender: TObject);
+begin
+  FormOpen('Configs');
 end;
 
 procedure TFmMenu.btnNationsClick(Sender: TObject);

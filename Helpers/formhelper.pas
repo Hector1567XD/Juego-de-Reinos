@@ -72,6 +72,8 @@ begin
      'Nation'   : MOpenNation();
      'GameModes': MOpenGameModes();
      'Auth2'    : MOpenAuth2();
+     'Configs'  : MOpenConfigs();
+     'Games'    : MOpenGames();
   end;
 end;
 

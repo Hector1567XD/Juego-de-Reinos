@@ -22,6 +22,7 @@ type
     Public
 
       //Meta
+      class procedure DefaultKeys(); static;
       class procedure SetKey(KeyN : String; Val: Variant); static;
       class function FindID(KeyN : String): Word; static;
       class function Get(KeyN : String): Variant; static;
@@ -41,6 +42,14 @@ type
 
 
 implementation
+
+class procedure CKey.DefaultKeys();
+var
+   Key:  TKey;
+Begin
+   If (CKey.Get('Sound') = -1)      then CKey.SetKey('Sound',0);
+   If (CKey.Get('LastLogin') = -1)  then CKey.SetKey('LastLogin',0);
+end;
 
 class procedure CKey.SetKey(KeyN : String; Val: Variant);
 var
@@ -203,17 +212,5 @@ constructor CKey.Create();
 begin
     Self.Init(Self.fileModel,'Key.data');
 end;
-
-end.
-unit Unit1;
-
-{$mode objfpc}{$H+}
-
-interface
-
-uses
-  Classes, SysUtils;
-
-implementation
 
 end.

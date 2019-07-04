@@ -56,7 +56,7 @@ var UserLogin: UserLogg;
 begin
   UserLogin := loginUser2(txtUserName.text, txtPassword.text);
   If (UserLogin.loginIn = False) then
-    lbError.Caption := UserLogin.resText;
+    lbError.Caption := UserLogin.resText
   else begin
     //Verifico si la sala de nuevo juego para una ronda clasica 1 vs 1 esta activa.
     if Assigned(FmNGC1vs1) then begin

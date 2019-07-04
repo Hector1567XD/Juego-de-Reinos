@@ -8,7 +8,7 @@ uses
   Classes, SysUtils,
   Forms, FormAuth, FormRegister, FormMenu, FormHouse,
   FormNewHouse, FormNation, FormGameModes, FormNGC1vs1,
-  FormAuth2,
+  FormAuth2, FormConfigs, FormGames,
   InitFile;
 
 procedure MRegisterToAuth();
@@ -21,6 +21,8 @@ procedure MOpenNation();
 procedure MOpenGameModes();
 procedure MGameModesToNGC1v1();
 procedure MOpenAuth2();
+procedure MOpenConfigs();
+procedure MOpenGames();
 
 implementation
 
@@ -118,5 +120,24 @@ begin
    Application.CreateForm(TFmAuth2, FmAuth2);
    FmAuth2.Show;
 end;
+
+procedure MOpenConfigs();
+begin
+   if Assigned(FmConfigs) then
+      FmConfigs.Destroy;
+
+   Application.CreateForm(TFmConfigs, FmConfigs);
+   FmConfigs.Show;
+end;
+
+procedure MOpenGames();
+begin
+   if Assigned(FmGames) then
+      FmGames.Destroy;
+
+   Application.CreateForm(TFmGames, FmGames);
+   FmGames.Show;
+end;
+
 
 end.

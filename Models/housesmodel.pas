@@ -13,6 +13,7 @@ type
     lema:           string[64];
     lemano:         string[64];
     trash:          boolean;
+    system:         boolean;
   end;
   THouses = array[1..MAXITEMS_MODEL] of THouse;
   TDataFile = file of THouse;
@@ -121,17 +122,17 @@ end;
 class procedure CHouse.SeedHouse();
 Begin
    If (CHouse.Count() <= 0) Then Begin
-      CHouse.NewHouse('Stark',      'Lema Oficial Por definir', 'Lema No Oficial Por definir Lema No Oficial Por definir');
-      CHouse.NewHouse('Lannister',  'Lema Oficial Por definir', 'Lema No Oficial Por definir');
-      CHouse.NewHouse('Baratheon',  'Lema Oficial Por definir', 'Lema No Oficial Por definir');
-      CHouse.NewHouse('Targaryen',  'Lema Oficial Por definir', 'Lema No Oficial Por definir');
-      CHouse.NewHouse('Greyjoy',    'Lema Oficial Por definir', 'Lema No Oficial Por definir');
-      CHouse.NewHouse('Tully',      'Lema Oficial Por definir', 'Lema No Oficial Por definir');
-      CHouse.NewHouse('Tyrell',     'Lema Oficial Por definir', 'Lema No Oficial Por definir');
+      CHouse.NewHouse('Stark',      'Lema Oficial Por definir', 'Lema No Oficial Por definir Lema No Oficial Por definir', true);
+      CHouse.NewHouse('Lannister',  'Lema Oficial Por definir', 'Lema No Oficial Por definir', true);
+      CHouse.NewHouse('Baratheon',  'Lema Oficial Por definir', 'Lema No Oficial Por definir', true);
+      CHouse.NewHouse('Targaryen',  'Lema Oficial Por definir', 'Lema No Oficial Por definir', true);
+      CHouse.NewHouse('Greyjoy',    'Lema Oficial Por definir', 'Lema No Oficial Por definir', true);
+      CHouse.NewHouse('Tully',      'Lema Oficial Por definir', 'Lema No Oficial Por definir', true);
+      CHouse.NewHouse('Tyrell',     'Lema Oficial Por definir', 'Lema No Oficial Por definir', true);
    End;
 end;
 
-class procedure CHouse.NewHouse(Name, Lema, NoLema: String);
+class procedure CHouse.NewHouse(Name, Lema, NoLema: String; system: boolean);
 var
    House:  THouse;
 Begin
@@ -139,6 +140,7 @@ Begin
    House.name   := Name;
    House.lema   := Lema;
    House.lemano := NoLema;
+   House.system := system;
    CHouse.Store(House);
 end;
 
@@ -196,6 +198,7 @@ begin
       lema      := '';
       lemano    := '';
       trash     := false;
+      system    := false;
     end;
     Exit(House);
 end;

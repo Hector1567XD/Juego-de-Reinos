@@ -20,7 +20,7 @@ uses
 
   //Helpers
   FormHelper, FormMovetor, MessagesHelper, ModelParent, KeyModel, FormRegister,
-  HousesModel, FormGameModes, FormNGC1vs1
+  HousesModel, FormGameModes, FormNGC1vs1, FormAuth2, FormConfigs, GamesModel
   {</Importacion de unidades>};
 
 {$R *.res}
@@ -39,6 +39,9 @@ begin
   Application.CreateForm(TFmNation, FmNation);
   Application.CreateForm(TFmGameModes, FmGameModes);
   Application.CreateForm(TFmNGC1vs1, FmNGC1vs1);
+  Application.CreateForm(TFmAuth2, FmAuth2);
+  Application.CreateForm(TFmConfigs, FmConfigs);
+  //Application.CreateForm(TFmGames, FmGames);
   //Application.CreateForm(TFmFormRegister, FmFormRegister);
   //Application.CreateForm(TFormMenu, FmMenu);
   Application.Run;

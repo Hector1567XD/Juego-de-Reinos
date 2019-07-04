@@ -75,7 +75,7 @@ const
 
 implementation
   uses
-    AuthController, NationModel, HousesModel;
+    AuthController, NationModel, HousesModel, KeyModel, GamesModel;
 
 {* #IniciarAplicacion
  * Procedimiento que inicializa la aplicacion
@@ -88,6 +88,10 @@ Begin
   //Inicializamos que el usuario no se encuentra logueado
   CNation.SeedNation();
   CHouse.SeedHouse();
+  CKey.DefaultKeys();
+
+  CGame.SeedTest();
+
   logOutUser();
 end;
 

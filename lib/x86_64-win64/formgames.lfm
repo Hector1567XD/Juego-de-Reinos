@@ -1,0 +1,30 @@
+object FmGames: TFmGames
+  Left = 304
+  Height = 400
+  Top = 394
+  Width = 600
+  Caption = 'Juego de Reinos - Partidas'
+  ClientHeight = 400
+  ClientWidth = 600
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnPaint = FormPaint
+  LCLVersion = '1.8.4.0'
+  Visible = True
+  object LbTitle: TLabel
+    Left = 64
+    Height = 24
+    Top = 16
+    Width = 83
+    Caption = 'Partidas'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWhite
+    Font.Height = -21
+    Font.Name = 'Droid Sans'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+end

@@ -1,7 +1,7 @@
 object FmHouses: TFmHouses
-  Left = 564
+  Left = 948
   Height = 300
-  Top = 420
+  Top = 293
   Width = 400
   Caption = 'Juego de Reinos - Casas'
   ClientHeight = 300

@@ -1,12 +1,9 @@
 unit ModelParent;
 
 {$mode objfpc}{$H+}
-interface
+{$static on}
 
-{*
-  Realmente con esto queria lograr MUCHO mas pero mi limitado conocimiento
-  acerca de la POO en Pascal no me permitio hacer "tipos de datos dinamicos"
-*}
+interface
 
 uses
   Classes, SysUtils, InitFile;
@@ -15,7 +12,7 @@ const MAXITEMS_MODEL = 255;
 
 type
 
-  Objects = Array[1..MAXITEMS_MODEL] of TObject;
+  GenObjects = Array[1..MAXITEMS_MODEL] of TObject;
 
   TModelParent = class
   protected
@@ -23,7 +20,7 @@ type
     fullRoute:  String;
     itemsCount: Word;
     procedure   Init(var fileModel: file;fileNameParam: String);
-    function    GetItems(): Objects;
+    function    GetItems(): GenObjects; virtual; abstract;//
   end;
 
 implementation
@@ -31,9 +28,12 @@ implementation
 procedure TModelParent.Init(var fileModel: file;fileNameParam: String);
 begin
 
+  //IDEA: Esto podria hacerse solo al principio del archivo pero... noc aqui queda mejor ubicado
+  If (Not DirectoryExists('data')) then CreateDir('data');
+
   Self.itemsCount := 0;
   Self.fileName := fileNameParam;
-  Self.fullRoute := aPPPath + Self.fileName;
+  Self.fullRoute := aPPPath + '/data/' + Self.fileName;
 
   Assign(fileModel, Self.fullRoute);
 

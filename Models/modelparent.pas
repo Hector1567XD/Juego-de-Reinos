@@ -18,9 +18,9 @@ type
   protected
     fileName:   String;
     fullRoute:  String;
-    itemsCount: Word;
+    itemsCount: QWord;
     procedure   Init(var fileModel: file;fileNameParam: String);
-    function    GetItems(): GenObjects; virtual; abstract;
+    //function    GetItems(): GenObjects; virtual; abstract;//
   end;
 
 implementation

@@ -27,7 +27,7 @@
         <PackageName Value="LCL"/>
       </Item1>
     </RequiredPackages>
-    <Units Count="23">
+    <Units Count="26">
       <Unit0>
         <Filename Value="KingdomGame.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -149,6 +149,7 @@
         <Filename Value="Forms\formgamemodes.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="FmGameModes"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormGameModes"/>
       </Unit20>
@@ -156,6 +157,7 @@
         <Filename Value="Forms\formngc1vs1.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="FmNGC1vs1"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormNGC1vs1"/>
       </Unit21>
@@ -163,9 +165,31 @@
         <Filename Value="Forms\formauth2.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="FmAuth2"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormAuth2"/>
       </Unit22>
+      <Unit23>
+        <Filename Value="Forms\formconfigs.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FmConfigs"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="FormConfigs"/>
+      </Unit23>
+      <Unit24>
+        <Filename Value="Forms\formgames.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FmGames"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="FormGames"/>
+      </Unit24>
+      <Unit25>
+        <Filename Value="Models\gamesmodel.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="GamesModel"/>
+      </Unit25>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
