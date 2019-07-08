@@ -5,15 +5,21 @@ unit LogModel;
 interface
 
 uses
-  Classes, SysUtils, InitFile, ModelParent;
+  Classes, SysUtils, InitFile;
 
 type
 
   TLogs = Array of String;
 
-  CLog = class(TModelParent)
+  CLog = class
     Private
-      fileModel: TextFile;
+      fileModel:  TextFile;
+      fileName:   String;
+      fullRoute:  String;
+      itemsCount: QWord;
+
+      procedure   Init(fileNameParam: String);
+
     Public
 
       //Meta
@@ -21,16 +27,18 @@ type
 
       class function  Count(): Word; static;
       class function  GetAll(): TLogs; static; //Get --> GetAll
-      class procedure Store(Data: TLog); static;
+      class procedure Store(Data: String); static;
       function        GetItems(): TLogs;
       Function        GetItemsR(LStart, LEnd: QWord): TLogs;
-      procedure       StoreItem(Data: TLog);
+      procedure       StoreItem(Data: String);
       Constructor     Create;
 
   end;
 
 
 implementation
+
+uses Dialogs;
 
 class function CLog.Get(LStart, LEnd: QWord): TLogs;
 var Ins: CLog;
@@ -42,8 +50,10 @@ class function CLog.Count(): Word;
 var Ins:   CLog;
     Items: TLogs;
 begin
+  //ShowMessage('Begin Count');
   Ins   := CLog.Create();
   Items := Ins.GetItems();
+  //ShowMessage('END OF COUNT' + IntToStr(Ins.itemsCount));
   Exit(Ins.itemsCount);
 end;
 
@@ -53,7 +63,7 @@ begin
   Ins := CLog.Create();Exit(Ins.GetItems());
 end;
 
-class procedure CLog.Store(Data: TLog);
+class procedure CLog.Store(Data: String);
 var Ins: CLog;
 begin
   Ins := CLog.Create();Ins.StoreItem(Data);
@@ -68,8 +78,8 @@ begin
   I := 1;
   Reset(Self.fileModel);
     while not EOF(Self.fileModel) do begin
-      Item := '';
-      Read(Self.fileModel, Item);
+      ReadLn(Self.fileModel, Item);
+      setLength(Items, I + 1);
       Items[I] := Item;
       Inc(I);
       Inc(Self.itemsCount);
@@ -86,36 +96,50 @@ Begin
   Self.itemsCount := 0;
   I := 1;
   Reset(Self.fileModel);
-    while ((not EOF(Self.fileModel)) && (not (Self.itemsCount = LEnd))) do begin
-
-      Item := '';
-      Read(Self.fileModel, Item);
-
+    while ((not EOF(Self.fileModel)) and (not (Self.itemsCount >= LEnd - 1))) do begin
+      ReadLn(Self.fileModel, Item);
       Inc(Self.itemsCount);
-
       If (Self.itemsCount >= LStart) Then Begin
+        setLength(Items, I + 1);
         Items[I] := Item;
         Inc(I);
       End;
-
     end;
   Close(Self.fileModel);
+  //ShowMessage('End Of Read TXT FIle R');
   Exit(Items);
 END;
 
 
-procedure CLog.StoreItem(Data: TLog);
-var Items:  TLogs;
-begin
-  Items := Self.GetItems();
-  Data.Id := Self.ItemsCount + 1;
-  Items[Self.itemsCount + 1]  := Data;
-  Self.StoreItems(Items, Self.itemsCount + 1);
-end;
+Procedure CLog.StoreItem(Data: String);
+Begin
+  Append(Self.fileModel);
+    Writeln(Self.fileModel, Data);
+  CloseFile(Self.fileModel);
+End;
 
 constructor CLog.Create();
 begin
-    Self.Init(Self.fileModel,'Log.txt');
+    Self.Init('Log.txt');
+end;
+
+procedure CLog.Init(fileNameParam: String);
+begin
+
+  If (Not DirectoryExists('data')) then CreateDir('data');
+
+  Self.itemsCount := 0;
+  Self.fileName := fileNameParam;
+  Self.fullRoute := aPPPath + '/data/' + Self.fileName;
+
+  Assign(Self.fileModel, Self.fullRoute);
+
+  if not(FileExists(Self.fullRoute)) then
+  begin
+    Rewrite(Self.fileModel);
+    Close(Self.fileModel);
+  end;
+
 end;
 
 end.

@@ -1,0 +1,36 @@
+object MenuJuego: TMenuJuego
+  Left = 358
+  Height = 406
+  Top = 161
+  Width = 725
+  BorderStyle = bsDialog
+  Caption = 'Menu'
+  ClientHeight = 406
+  ClientWidth = 725
+  OnClose = FormClose
+  OnCreate = FormCreate
+  LCLVersion = '2.0.2.0'
+  object NuevaPartida: TSpeedButton
+    Left = 32
+    Height = 48
+    Top = 144
+    Width = 111
+    Caption = 'Nueva Partida'
+    OnClick = NuevaPartidaClick
+  end
+  object Estadisticas: TSpeedButton
+    Left = 32
+    Height = 48
+    Top = 272
+    Width = 111
+    Caption = 'Estadisticas'
+  end
+  object Configurar: TSpeedButton
+    Left = 32
+    Height = 52
+    Top = 208
+    Width = 112
+    Caption = 'Configurar'
+    OnClick = ConfigurarClick
+  end
+end

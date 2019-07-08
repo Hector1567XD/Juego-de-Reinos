@@ -26,6 +26,28 @@ type
             *}
   	end;
 
+    TPlayerInGame = Record
+      Id:         Word;
+      Username:   String; //Irrelevante pero facilita el acceso
+      House:      Word;
+      HouseName:  String; //Irrelevante pero facilita el acceso
+      HousePhoto: String; //Irrelevante pero facilita el acceso
+      Lifes:      Byte;
+      Soliders:   Word;
+    End;
+
+    TActualGame = Record
+            Size:       Byte;
+            Turn:       Word;
+            PTurn:      Byte;
+            Players:    Array[1..2] of TPlayerInGame;
+            Lifes:      Byte;
+            Soliders:   Word;
+            Clock:      Boolean;
+            Difficulty: Byte;
+            Id:         Word;
+    End;
+
 procedure IniciarAplicacion();
 
 var
@@ -38,6 +60,10 @@ var
    * Variable de global que almacena los datos del usuario actual
    *}
   AppUser: UserLogg;
+  {* #ActualGame
+   * Variable global con ajustes del juego actual
+   *}
+   ActualGame: TActualGame;
 const
   {* #AppInProduction
    * Constante booleana, diferencia cuando la app este en

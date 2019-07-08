@@ -17,6 +17,7 @@ type
   TFmNGC1vs1 = class(TForm)
     btnNewGame: TPanel;
     btnPlayer2: TPanel;
+    btnCards: TPanel;
     ImgTablePlayer: TImage;
     ImgTablePlayer1: TImage;
     LbPlayerName2: TLabel;
@@ -38,6 +39,7 @@ type
     SelectHouse1: TComboBox;
     SelectSize1: TComboBox;
     SelectDificulty: TComboBox;
+    procedure btnNewGameClick(Sender: TObject);
     procedure btnPlayer2Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
@@ -55,7 +57,7 @@ var
   FmNGC1vs1: TFmNGC1vs1;
 
 implementation
-uses HousesModel;
+uses HousesModel, GamesModel;
 
 var Player2: UserLogg;
 {$R *.lfm}
@@ -99,6 +101,74 @@ procedure TFmNGC1vs1.btnPlayer2Click(Sender: TObject);
 begin
   FormOpen('Auth2');
 end;
+
+Procedure TFmNGC1vs1.btnNewGameClick(Sender: TObject);
+Var Soldados: Word;
+    Lifes, Size1, Size2, Size, House1, House2, Hard:    Byte;
+    HouseName1, HouseName2, Difficulty, Sentido, SizeStr: String;
+    Clock: Boolean;
+Begin
+
+  Soldados := StrToInt(SelectSoliders.Items[SelectSoliders.ItemIndex]);
+
+  If ((SelectHouse1.ItemIndex = -1) Or (SelectHouse2.ItemIndex = -1))
+  Then Begin
+    MessageWarning('No puede dejar casas en blanco!'); Exit;
+  End;
+
+  HouseName1 := SelectHouse1.Items[SelectHouse1.ItemIndex];
+  HouseName2 := SelectHouse2.Items[SelectHouse2.ItemIndex];
+
+  House1 := CHouse.FindName(HouseName1).Id;
+  House2 := CHouse.FindName(HouseName2).Id;
+
+  SizeStr := SelectSize1.Items[SelectSize1.ItemIndex];
+  Case (SizeStr) Of
+    '5x5':   Size1 := 5;
+    '6x6':   Size1 := 6;
+    '7x7':   Size1 := 7;
+    '8x8':   Size1 := 8;
+    '9x9':   Size1 := 9;
+    '10x10': Size1 := 10;
+  End;
+
+  SizeStr := SelectSize2.Items[SelectSize2.ItemIndex];
+  Case (SizeStr) Of
+    '5x5':   Size2 := 5;
+    '6x6':   Size2 := 6;
+    '7x7':   Size2 := 7;
+    '8x8':   Size2 := 8;
+    '9x9':   Size2 := 9;
+    '10x10': Size2 := 10;
+  End;
+
+  {}
+  //Escoje al mayor
+  Size := Size1;
+  If (Size1 < Size2) Then Size := Size2;
+  {}
+
+  Lifes := StrToInt(SelectLifes.Items[SelectLifes.ItemIndex]);
+
+  Hard := 2;
+  Difficulty := SelectDificulty.Items[SelectDificulty.ItemIndex];
+  Case (Difficulty) Of
+    'Facil':        Hard := 1;
+    'Normal':       Hard := 2;
+    'Dificil':      Hard := 3;
+  End;
+
+  Clock := True;
+  Sentido := SelectSentido.Items[SelectSentido.ItemIndex];
+  Case (Sentido) Of
+    'Horario':        Clock := True;
+    'Antihorario':    Clock := False;//
+  End;
+
+  CGame.NewGame(AppUser.Id,Player2.Id,House1,House2, Size, Lifes, Hard, Soldados, Clock);
+  FormOpen('Game');
+
+End;
 
 procedure TFmNGC1vs1.FormDestroy(Sender: TObject); begin backgroundImage.Free; end;
 

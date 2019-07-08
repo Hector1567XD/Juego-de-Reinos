@@ -30,7 +30,7 @@ type
       class procedure List(var ListHouse: TListBox);
       class procedure Combo(var ComboHouse: TComboBox);
       class procedure SeedHouse();
-      class procedure NewHouse(Name, Lema, NoLema: String); static;
+      class procedure NewHouse(Name, Lema, NoLema: String; system: boolean); static;
       class function FindName(Name: String): THouse; static;
 
       //Adicionales

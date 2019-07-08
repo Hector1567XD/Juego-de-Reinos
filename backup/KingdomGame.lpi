@@ -27,7 +27,7 @@
         <PackageName Value="LCL"/>
       </Item1>
     </RequiredPackages>
-    <Units Count="26">
+    <Units Count="30">
       <Unit0>
         <Filename Value="KingdomGame.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -190,6 +190,29 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="GamesModel"/>
       </Unit25>
+      <Unit26>
+        <Filename Value="Models\logmodel.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="LogModel"/>
+      </Unit26>
+      <Unit27>
+        <Filename Value="Forms\formgame.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FmGame"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="FormGame"/>
+      </Unit27>
+      <Unit28>
+        <Filename Value="Controllers\gamecontroller.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="GameController"/>
+      </Unit28>
+      <Unit29>
+        <Filename Value="Helpers\espiralmove.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="EspiralMove"/>
+      </Unit29>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

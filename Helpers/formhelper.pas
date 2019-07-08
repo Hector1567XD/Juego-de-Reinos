@@ -74,6 +74,7 @@ begin
      'Auth2'    : MOpenAuth2();
      'Configs'  : MOpenConfigs();
      'Games'    : MOpenGames();
+     'Game'     : MOpenGame();
   end;
 end;
 

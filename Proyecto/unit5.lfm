@@ -1,0 +1,486 @@
+object ParametrosPartida: TParametrosPartida
+  Left = 310
+  Height = 368
+  Top = 194
+  Width = 805
+  BorderStyle = bsDialog
+  Caption = 'Seleccion de partida'
+  ClientHeight = 368
+  ClientWidth = 805
+  OnActivate = FormActivate
+  OnClose = FormClose
+  LCLVersion = '2.0.2.0'
+  object CheckGroup1: TCheckGroup
+    Left = 8
+    Height = 296
+    Top = 16
+    Width = 224
+    AutoFill = True
+    Caption = 'Chance positivos'
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.TopBottomSpacing = 6
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 1
+    ClientHeight = 276
+    ClientWidth = 220
+    OnClick = CheckGroup1Click
+    TabOrder = 0
+    object CheckBox1: TCheckBox
+      Left = 6
+      Height = 38
+      Top = 6
+      Width = 208
+      Caption = 'Avanzar dos espacios'
+      Checked = True
+      Enabled = False
+      OnChange = CheckBox1Change
+      State = cbChecked
+      TabOrder = 0
+    end
+    object CheckBox2: TCheckBox
+      Left = 6
+      Height = 38
+      Top = 44
+      Width = 208
+      Caption = 'Avanzar el doble espacios'
+      Checked = True
+      OnChange = CheckBox2Change
+      State = cbChecked
+      TabOrder = 1
+    end
+    object CheckBox3: TCheckBox
+      Left = 6
+      Height = 38
+      Top = 82
+      Width = 208
+      Caption = 'Colocarse adelante del otro jugador'
+      Checked = True
+      State = cbChecked
+      TabOrder = 2
+    end
+    object CheckBox4: TCheckBox
+      Left = 6
+      Height = 38
+      Top = 120
+      Width = 208
+      Caption = 'Avanzar por la diagonal principal'
+      Checked = True
+      State = cbChecked
+      TabOrder = 3
+    end
+    object CheckBox5: TCheckBox
+      Left = 6
+      Height = 38
+      Top = 158
+      Width = 208
+      Caption = 'Avanzar por la diagonal secundaria'
+      Checked = True
+      State = cbChecked
+      TabOrder = 4
+    end
+    object CheckBox6: TCheckBox
+      Left = 6
+      Height = 38
+      Top = 196
+      Width = 208
+      Caption = 'Turno extra'
+      Checked = True
+      State = cbChecked
+      TabOrder = 5
+    end
+    object CheckBox7: TCheckBox
+      Left = 6
+      Height = 36
+      Top = 234
+      Width = 208
+      Caption = 'Extra 50% de tropas'
+      Checked = True
+      State = cbChecked
+      TabOrder = 6
+    end
+  end
+  object CheckGroup2: TCheckGroup
+    Left = 240
+    Height = 296
+    Top = 16
+    Width = 234
+    AutoFill = True
+    Caption = 'Chance negativos'
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.TopBottomSpacing = 6
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 1
+    ClientHeight = 276
+    ClientWidth = 230
+    OnClick = CheckGroup1Click
+    TabOrder = 1
+    object CheckBox9: TCheckBox
+      Left = 6
+      Height = 38
+      Top = 6
+      Width = 218
+      Caption = 'Retroceder un espacio'
+      Checked = True
+      Enabled = False
+      OnChange = CheckBox1Change
+      State = cbChecked
+      TabOrder = 0
+    end
+    object CheckBox10: TCheckBox
+      Left = 6
+      Height = 38
+      Top = 44
+      Width = 218
+      Caption = 'Volver al punto de partida'
+      Checked = True
+      State = cbChecked
+      TabOrder = 1
+    end
+    object CheckBox11: TCheckBox
+      Left = 6
+      Height = 38
+      Top = 82
+      Width = 218
+      Caption = 'Retroceder atras del otro jugador'
+      Checked = True
+      State = cbChecked
+      TabOrder = 2
+    end
+    object CheckBox12: TCheckBox
+      Left = 6
+      Height = 38
+      Top = 120
+      Width = 218
+      Caption = 'Retroceder por la diagonal principal'
+      Checked = True
+      State = cbChecked
+      TabOrder = 3
+    end
+    object CheckBox13: TCheckBox
+      Left = 6
+      Height = 38
+      Top = 158
+      Width = 218
+      Caption = 'Retroceder por la diagonal secundaria'
+      Checked = True
+      State = cbChecked
+      TabOrder = 4
+    end
+    object CheckBox14: TCheckBox
+      Left = 6
+      Height = 38
+      Top = 196
+      Width = 218
+      Caption = 'Pierde turno'
+      Checked = True
+      OnChange = CheckBox14Change
+      State = cbChecked
+      TabOrder = 5
+    end
+    object CheckBox15: TCheckBox
+      Left = 6
+      Height = 36
+      Top = 234
+      Width = 218
+      Caption = 'Menos 35% de tropas'
+      Checked = True
+      State = cbChecked
+      TabOrder = 6
+    end
+  end
+  object CheckGroup3: TCheckGroup
+    Left = 480
+    Height = 161
+    Top = 56
+    Width = 136
+    AutoFill = True
+    Caption = 'Tamaño tablero'
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.TopBottomSpacing = 6
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 1
+    ClientHeight = 141
+    ClientWidth = 132
+    OnClick = CheckGroup3Click
+    TabOrder = 2
+    object RadioButton1: TRadioButton
+      Left = 6
+      Height = 22
+      Top = 6
+      Width = 120
+      Caption = '5 X 5'
+      Checked = True
+      OnChange = RadioButton1Change
+      TabOrder = 0
+      TabStop = True
+    end
+    object RadioButton2: TRadioButton
+      Left = 6
+      Height = 22
+      Top = 28
+      Width = 120
+      Caption = '6 X 6'
+      OnChange = RadioButton1Change
+      TabOrder = 1
+    end
+    object RadioButton3: TRadioButton
+      Left = 6
+      Height = 22
+      Top = 50
+      Width = 120
+      Caption = '7 X 7'
+      OnChange = RadioButton1Change
+      TabOrder = 2
+    end
+    object RadioButton4: TRadioButton
+      Left = 6
+      Height = 22
+      Top = 72
+      Width = 120
+      Caption = '8 X 8'
+      OnChange = RadioButton1Change
+      TabOrder = 3
+    end
+    object RadioButton5: TRadioButton
+      Left = 6
+      Height = 22
+      Top = 94
+      Width = 120
+      Caption = '9 X 9'
+      OnChange = RadioButton1Change
+      TabOrder = 4
+    end
+    object RadioButton8: TRadioButton
+      Left = 6
+      Height = 19
+      Top = 116
+      Width = 120
+      Caption = '10 X 10'
+      TabOrder = 5
+    end
+  end
+  object RadioGroup1: TRadioGroup
+    Left = 480
+    Height = 71
+    Top = 224
+    Width = 136
+    AutoFill = True
+    Caption = 'Sentido'
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 1
+    ClientHeight = 51
+    ClientWidth = 132
+    TabOrder = 3
+    object RadioButton6: TRadioButton
+      Left = 6
+      Height = 26
+      Top = 0
+      Width = 120
+      Caption = 'Horario'
+      Checked = True
+      OnChange = RadioButton6Change
+      TabOrder = 0
+      TabStop = True
+    end
+    object RadioButton7: TRadioButton
+      Left = 6
+      Height = 25
+      Top = 26
+      Width = 120
+      Caption = 'Antihorario'
+      OnChange = RadioButton6Change
+      TabOrder = 1
+    end
+  end
+  object ComboCasas: TComboBox
+    Left = 480
+    Height = 35
+    Top = 16
+    Width = 305
+    CharCase = ecUppercase
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -24
+    Font.Name = 'Arial Narrow'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ItemHeight = 27
+    OnChange = ComboCasasChange
+    ParentFont = False
+    Style = csDropDownList
+    TabOrder = 4
+  end
+  object Label1: TLabel
+    Left = 632
+    Height = 15
+    Top = 160
+    Width = 92
+    Caption = 'Segundo Jugador'
+    ParentColor = False
+  end
+  object SpeedButton1: TSpeedButton
+    Left = 632
+    Height = 26
+    Top = 180
+    Width = 96
+    Caption = 'Agregar Nuevo'
+    OnClick = SpeedButton1Click
+  end
+  object Label2: TLabel
+    Left = 632
+    Height = 15
+    Top = 208
+    Width = 71
+    Caption = 'Jugando con:'
+    ParentColor = False
+    OnClick = Label2Click
+  end
+  object SpeedButton2: TSpeedButton
+    Left = 8
+    Height = 36
+    Top = 320
+    Width = 77
+    Caption = 'Atras'
+    Visible = False
+    OnClick = SpeedButton2Click
+  end
+  object SpeedButton3: TSpeedButton
+    Left = 672
+    Height = 36
+    Top = 320
+    Width = 109
+    Caption = 'Empezar Partida'
+    OnClick = SpeedButton3Click
+  end
+  object Label6: TLabel
+    Left = 632
+    Height = 16
+    Top = 224
+    Width = 50
+    Caption = 'ERROR'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clRed
+    Font.Height = -14
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+    Visible = False
+  end
+  object RadioGroup2: TRadioGroup
+    Left = 632
+    Height = 96
+    Top = 56
+    Width = 153
+    AutoFill = True
+    Caption = 'Dificultad'
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 1
+    ClientHeight = 76
+    ClientWidth = 149
+    TabOrder = 5
+    object RadioButton9: TRadioButton
+      Left = 6
+      Height = 26
+      Top = 0
+      Width = 137
+      Caption = 'Facil'
+      Checked = True
+      TabOrder = 0
+      TabStop = True
+    end
+    object RadioButton10: TRadioButton
+      Left = 6
+      Height = 26
+      Top = 26
+      Width = 137
+      Caption = 'Medio'
+      TabOrder = 1
+    end
+    object RadioButton11: TRadioButton
+      Left = 6
+      Height = 24
+      Top = 52
+      Width = 137
+      Caption = 'Dificil'
+      TabOrder = 2
+    end
+  end
+  object Label3: TLabel
+    Left = 632
+    Height = 15
+    Top = 248
+    Width = 28
+    Caption = 'Vidas'
+    ParentColor = False
+  end
+  object TrackBar1: TTrackBar
+    Left = 640
+    Height = 23
+    Top = 264
+    Width = 145
+    LineSize = 5
+    Max = 6
+    Min = 2
+    PageSize = 20
+    Position = 2
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clRed
+    Font.Height = -16
+    Font.Name = 'Arial Narrow'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 6
+  end
+  object Label4: TLabel
+    Left = 648
+    Height = 15
+    Top = 288
+    Width = 6
+    Caption = '2'
+    ParentColor = False
+    OnClick = Label4Click
+  end
+  object Label5: TLabel
+    Left = 770
+    Height = 15
+    Top = 288
+    Width = 6
+    Caption = '6'
+    ParentColor = False
+  end
+  object Label7: TLabel
+    Left = 710
+    Height = 15
+    Top = 288
+    Width = 6
+    Caption = '4'
+    ParentColor = False
+    OnClick = Label4Click
+  end
+end

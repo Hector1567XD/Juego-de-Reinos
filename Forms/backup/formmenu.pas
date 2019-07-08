@@ -27,6 +27,7 @@ type
     pnMenu: TPanel;
     procedure btnConfigsClick(Sender: TObject);
     procedure btnExitClick(Sender: TObject);
+    procedure btnGamesClick(Sender: TObject);
     procedure btnHousesClick(Sender: TObject);
     procedure btnLogoutClick(Sender: TObject);
     procedure btnNationsClick(Sender: TObject);
@@ -77,6 +78,11 @@ procedure TFmMenu.btnExitClick(Sender: TObject);
 begin
   logOutUser();
   Application.terminate;
+end;
+
+procedure TFmMenu.btnGamesClick(Sender: TObject);
+begin
+   FormOpen('Games');
 end;
 
 procedure TFmMenu.btnConfigsClick(Sender: TObject);

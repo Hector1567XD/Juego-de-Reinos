@@ -1,10 +1,10 @@
 object FmNGC1vs1: TFmNGC1vs1
-  Left = 848
-  Height = 400
-  Top = 332
+  Left = 1001
+  Height = 404
+  Top = 522
   Width = 760
   Caption = 'Juego de Reinos - Nuevo Juego, Clasico 1 vs 1'
-  ClientHeight = 400
+  ClientHeight = 404
   ClientWidth = 760
   OnCreate = FormCreate
   OnDestroy = FormDestroy
@@ -942,11 +942,6 @@ object FmNGC1vs1: TFmNGC1vs1
       '3'
       '4'
       '5'
-      '6'
-      '7'
-      '8'
-      '9'
-      '10'
     )
     MaxLength = 20
     OnChange = ComboOnlySelect
@@ -1017,6 +1012,7 @@ object FmNGC1vs1: TFmNGC1vs1
     ParentColor = False
     ParentFont = False
     TabOrder = 6
+    OnClick = btnNewGameClick
     OnMouseEnter = btnMouseEnter
     OnMouseLeave = btnMouseLeave
   end

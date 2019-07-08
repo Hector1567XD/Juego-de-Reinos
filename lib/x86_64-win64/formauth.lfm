@@ -1,12 +1,12 @@
 object FmAuth: TFmAuth
   Left = 783
-  Height = 596
-  Top = 386
+  Height = 603
+  Top = 379
   Width = 1054
   BorderStyle = bsDialog
   Caption = 'Juego de Reinos - Autenticacion'
-  ClientHeight = 596
-  ClientWidth = 1054
+  ClientHeight = 0
+  ClientWidth = 0
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   OnPaint = FormPaint

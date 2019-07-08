@@ -20,7 +20,8 @@ uses
 
   //Helpers
   FormHelper, FormMovetor, MessagesHelper, ModelParent, KeyModel, FormRegister,
-  HousesModel, FormGameModes, FormNGC1vs1, FormAuth2, FormConfigs, GamesModel
+  HousesModel, FormGameModes, FormNGC1vs1, FormAuth2, FormConfigs, GamesModel,
+  LogModel, FormGame, GameController, EspiralMove
   {</Importacion de unidades>};
 
 {$R *.res}
@@ -34,6 +35,7 @@ begin
   Application.Initialize;
   //Se crea el primer FORM que se mostrara, el de LOGUEO.
   Application.CreateForm(TFmAuth, FmAuth);
+  Application.CreateForm(TFmGame, FmGame);
   //Application.CreateForm(TFmHouses, FmHouses);
   //Application.CreateForm(TFmNewHouse, FmNewHouse);
   //Application.CreateForm(TFmNation, FmNation);

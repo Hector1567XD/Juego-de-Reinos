@@ -13,11 +13,38 @@ type
       *}
   	UserLogg = record
   	        username: string[12];
-            fullname: string[24];
+            fullname: string[41]; //name + lastname
             resText:  string[255];
-            id:       integer;
+            id:       word;       //no, no habra ID = -1 >-<
             loginIn:  boolean;
+            {*
+              No hace falta tener en runtime datos como:
+              -password
+              -email
+              -birthdate
+              -countryID
+            *}
   	end;
+
+    TPlayerInGame = Record
+      Id:         Word;
+      Username:   String; //Irrelevante pero facilita el acceso
+      House:      Word;
+      HouseName:  String; //Irrelevante pero facilita el acceso
+      HousePhoto: String; //Irrelevante pero facilita el acceso
+      Lifes:      Bytes;
+      Soliders:   Word;
+    End;
+
+    TActualGame = Record
+            Size:     Byte;
+            Turn:     Word;
+            PTurn:    Byte;
+            Players:  Array[1..2] of TPlayerInGame;
+            Lifes:    Byte;
+            Soliders: Word;
+            Clock:    Boolean;
+    End;
 
 procedure IniciarAplicacion();
 
@@ -31,6 +58,10 @@ var
    * Variable de global que almacena los datos del usuario actual
    *}
   AppUser: UserLogg;
+  {* #ActualGame
+   * Variable global con ajustes del juego actual
+   *}
+   ActualGame: TActualGame;
 const
   {* #AppInProduction
    * Constante booleana, diferencia cuando la app este en
@@ -47,6 +78,11 @@ const
    * 'Felicitaciones' en la App.
    *}
   AppShowMessage_S = true;
+  {* #AppShowMessage_W
+   * Constante booleana, habilita/deshabilita los "ShowMessage" de tipo
+   * 'Warning' en la App.
+   *}
+  AppShowMessage_W = true;
   {* #AppShowMessage_E
    * Constante booleana, habilita/deshabilita los "ShowMessage" de tipo
    * 'Error' en la App.
@@ -56,14 +92,14 @@ const
    * Constante entera, pixeles de la altura por defecto de los formularios
    *}
   AppForm_Height_Default = 591;
-  {* #AppForm_Height_Default
+  {* #AppForm_Hfault
    * Constante entera, pixeles del ancho por defecto de los formularios
    *}
   AppForm_Width_Default = 1063;
 
 implementation
   uses
-    AuthController, UserModel, Dialogs;
+    AuthController, NationModel, HousesModel, KeyModel, GamesModel;
 
 {* #IniciarAplicacion
  * Procedimiento que inicializa la aplicacion
@@ -71,22 +107,16 @@ implementation
  *}
 
 procedure IniciarAplicacion();
-var UserL : TUser;
-    UserR : TUsers;
 Begin
   aPPPath := ExtractFilePath(Application.ExeName);
-
-  //IDEA: si no esta creada la carpeta '/data' crearla.
-
-  UserL := CUser.newItem();
-  UserL.name := 'Ola2xx';
-  CUser.Store(UserL);
-  UserR := CUser.Get();
-  ShowMessage(UserR[3].name);
-
-  ShowMessage('Ola');
   //Inicializamos que el usuario no se encuentra logueado
-  //logOutUser();
+  CNation.SeedNation();
+  CHouse.SeedHouse();
+  CKey.DefaultKeys();
+
+  CGame.SeedTest();
+
+  logOutUser();
 end;
 
 

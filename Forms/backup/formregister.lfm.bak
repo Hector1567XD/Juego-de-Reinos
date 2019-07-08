@@ -1,7 +1,7 @@
 object FmFormRegister: TFmFormRegister
-  Left = 887
+  Left = 967
   Height = 604
-  Top = 292
+  Top = 348
   Width = 1019
   Caption = 'Juego de Reinos - Registro'
   ClientHeight = 604
