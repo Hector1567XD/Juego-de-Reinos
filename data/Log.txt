@@ -232,3 +232,371 @@ HectorXD saco un 6
 Es el turno de HectorXD2, Turno 30
 HectorXD2 saco un 3
 Ha ganado HectorXD2.
+Es el turno de , Turno 1
+Ha comenzado una nueva partida!
+Es el turno de HectorXD2, Turno 1
+HectorXD2 saco un 4
+Es el turno de HectorXD, Turno 2
+HectorXD saco un 4
+HectorXD ha tomado por sorpresa a HectorXD2!
+HectorXD2 ha muerto.
+Es el turno de HectorXD2, Turno 3
+HectorXD2 saco un 5
+Es el turno de HectorXD, Turno 4
+HectorXD saco un 5
+Es el turno de HectorXD2, Turno 5
+HectorXD2 saco un 6
+Es el turno de HectorXD, Turno 6
+HectorXD saco un 1
+Es el turno de HectorXD2, Turno 7
+HectorXD2 saco un 5
+Es el turno de HectorXD, Turno 8
+HectorXD saco un 1
+Es el turno de HectorXD2, Turno 9
+HectorXD2 saco un 6
+Es el turno de HectorXD, Turno 10
+HectorXD saco un 1
+Es el turno de HectorXD2, Turno 11
+HectorXD2 saco un 3
+Es el turno de HectorXD, Turno 12
+HectorXD saco un 4
+Es el turno de HectorXD2, Turno 13
+HectorXD2 saco un 2
+Es el turno de HectorXD, Turno 14
+HectorXD saco un 4
+Es el turno de HectorXD2, Turno 15
+HectorXD2 saco un 6
+Es el turno de HectorXD, Turno 16
+HectorXD saco un 2
+Es el turno de HectorXD2, Turno 17
+HectorXD2 saco un 3
+HectorXD2 ha tomado por sorpresa a HectorXD!
+HectorXD ha muerto.
+Es el turno de HectorXD, Turno 18
+HectorXD saco un 6
+Es el turno de HectorXD2, Turno 19
+HectorXD2 saco un 4
+Es el turno de HectorXD, Turno 20
+HectorXD saco un 1
+Es el turno de HectorXD2, Turno 21
+HectorXD2 saco un 1
+Es el turno de HectorXD, Turno 22
+HectorXD saco un 4
+Es el turno de HectorXD2, Turno 23
+HectorXD2 saco un 4
+Es el turno de HectorXD, Turno 24
+HectorXD saco un 2
+Es el turno de HectorXD2, Turno 25
+HectorXD2 saco un 5
+Es el turno de HectorXD, Turno 26
+HectorXD saco un 2
+Es el turno de HectorXD2, Turno 27
+HectorXD2 saco un 1
+Es el turno de HectorXD, Turno 28
+HectorXD saco un 5
+Es el turno de HectorXD2, Turno 29
+HectorXD2 saco un 2
+Es el turno de HectorXD, Turno 30
+HectorXD saco un 6
+Es el turno de HectorXD2, Turno 31
+HectorXD2 saco un 4
+Es el turno de HectorXD, Turno 32
+HectorXD saco un 3
+Es el turno de HectorXD2, Turno 33
+HectorXD2 saco un 1
+Es el turno de HectorXD, Turno 34
+HectorXD saco un 4
+Es el turno de HectorXD2, Turno 35
+HectorXD2 saco un 4
+Es el turno de HectorXD, Turno 36
+HectorXD saco un 3
+Ha ganado HectorXD.
+Es el turno de , Turno 1
+Es el turno de , Turno 1
+Ha comenzado una nueva partida!
+Es el turno de HectorXD2, Turno 1
+HectorXD2 saco un 3
+Es el turno de HectorXD, Turno 2
+HectorXD saco un 2
+Es el turno de HectorXD2, Turno 3
+HectorXD2 saco un 2
+Es el turno de HectorXD, Turno 4
+HectorXD saco un 5
+Es el turno de HectorXD2, Turno 5
+HectorXD2 saco un 3
+Es el turno de HectorXD, Turno 6
+HectorXD saco un 1
+HectorXD ha tomado por sorpresa a HectorXD2!
+HectorXD2 ha muerto.
+HectorXD2 se ha quedado sin vidas!.
+Ha ganado HectorXD.
+Ha comenzado una nueva partida!
+Es el turno de HectorXD, Turno 1
+HectorXD saco un 3
+Es el turno de HectorXD2, Turno 2
+HectorXD2 saco un 2
+Es el turno de HectorXD, Turno 3
+HectorXD saco un 3
+Es el turno de HectorXD2, Turno 4
+HectorXD2 saco un 6
+Es el turno de HectorXD, Turno 5
+HectorXD saco un 6
+Es el turno de HectorXD2, Turno 6
+HectorXD2 saco un 5
+Es el turno de HectorXD, Turno 7
+HectorXD saco un 3
+Es el turno de HectorXD2, Turno 8
+HectorXD2 saco un 4
+Es el turno de HectorXD, Turno 9
+HectorXD saco un 6
+Es el turno de HectorXD2, Turno 10
+HectorXD2 saco un 4
+HectorXD2 ha tomado por sorpresa a HectorXD!
+HectorXD ha muerto.
+Es el turno de HectorXD, Turno 11
+HectorXD saco un 5
+Es el turno de HectorXD2, Turno 12
+HectorXD2 saco un 1
+Es el turno de HectorXD, Turno 13
+HectorXD saco un 6
+Es el turno de HectorXD2, Turno 14
+HectorXD2 saco un 4
+Es el turno de HectorXD, Turno 15
+HectorXD saco un 5
+Es el turno de HectorXD2, Turno 16
+HectorXD2 saco un 4
+Es el turno de HectorXD, Turno 17
+HectorXD saco un 4
+Es el turno de HectorXD2, Turno 18
+HectorXD2 saco un 2
+Es el turno de HectorXD, Turno 19
+HectorXD saco un 3
+Es el turno de HectorXD2, Turno 20
+HectorXD2 saco un 5
+Es el turno de HectorXD, Turno 21
+HectorXD saco un 1
+Es el turno de HectorXD2, Turno 22
+HectorXD2 saco un 6
+Es el turno de HectorXD, Turno 23
+HectorXD saco un 2
+Es el turno de HectorXD2, Turno 24
+HectorXD2 saco un 6
+Es el turno de HectorXD, Turno 25
+HectorXD saco un 4
+Es el turno de HectorXD2, Turno 26
+HectorXD2 saco un 1
+Es el turno de HectorXD, Turno 27
+HectorXD saco un 6
+HectorXD ha tomado por sorpresa a HectorXD2!
+HectorXD2 ha muerto.
+Es el turno de HectorXD2, Turno 28
+HectorXD2 saco un 1
+Es el turno de HectorXD, Turno 29
+HectorXD saco un 3
+Es el turno de HectorXD2, Turno 30
+HectorXD2 saco un 3
+Es el turno de HectorXD, Turno 31
+HectorXD saco un 4
+Es el turno de HectorXD2, Turno 32
+HectorXD2 saco un 4
+Es el turno de HectorXD, Turno 33
+HectorXD saco un 6
+Es el turno de HectorXD2, Turno 34
+HectorXD2 saco un 3
+Es el turno de HectorXD, Turno 35
+HectorXD saco un 3
+Es el turno de HectorXD2, Turno 36
+HectorXD2 saco un 1
+Es el turno de HectorXD, Turno 37
+HectorXD saco un 4
+Es el turno de HectorXD2, Turno 38
+HectorXD2 saco un 5
+Es el turno de HectorXD, Turno 39
+HectorXD saco un 5
+Es el turno de HectorXD2, Turno 40
+HectorXD2 saco un 3
+Es el turno de HectorXD, Turno 41
+HectorXD saco un 5
+Es el turno de HectorXD2, Turno 42
+HectorXD2 saco un 5
+Es el turno de HectorXD, Turno 43
+HectorXD saco un 1
+Es el turno de HectorXD2, Turno 44
+HectorXD2 saco un 4
+Es el turno de HectorXD, Turno 45
+HectorXD saco un 5
+Es el turno de HectorXD2, Turno 46
+HectorXD2 saco un 2
+Es el turno de HectorXD, Turno 47
+HectorXD saco un 4
+Es el turno de HectorXD2, Turno 48
+HectorXD2 saco un 6
+Es el turno de HectorXD, Turno 49
+HectorXD saco un 4
+Es el turno de HectorXD2, Turno 50
+HectorXD2 saco un 1
+Es el turno de HectorXD, Turno 51
+HectorXD saco un 2
+HectorXD ha tomado por sorpresa a HectorXD2!
+HectorXD2 ha muerto.
+Es el turno de HectorXD2, Turno 52
+HectorXD2 saco un 2
+Es el turno de HectorXD, Turno 53
+HectorXD saco un 5
+Es el turno de HectorXD2, Turno 54
+HectorXD2 saco un 4
+Es el turno de HectorXD, Turno 55
+HectorXD saco un 3
+Es el turno de HectorXD2, Turno 56
+HectorXD2 saco un 6
+Es el turno de HectorXD, Turno 57
+HectorXD saco un 3
+Es el turno de HectorXD2, Turno 58
+HectorXD2 saco un 2
+Es el turno de HectorXD, Turno 59
+HectorXD saco un 4
+Es el turno de HectorXD2, Turno 60
+HectorXD2 saco un 3
+Es el turno de HectorXD, Turno 61
+HectorXD saco un 6
+Es el turno de HectorXD2, Turno 62
+HectorXD2 saco un 4
+Es el turno de HectorXD, Turno 63
+HectorXD saco un 3
+Es el turno de HectorXD2, Turno 64
+HectorXD2 saco un 6
+Es el turno de HectorXD, Turno 65
+HectorXD saco un 6
+Es el turno de HectorXD2, Turno 66
+HectorXD2 saco un 4
+Es el turno de HectorXD, Turno 67
+HectorXD saco un 2
+Es el turno de HectorXD2, Turno 68
+HectorXD2 saco un 1
+HectorXD2 ha tomado por sorpresa a HectorXD!
+HectorXD ha muerto.
+Es el turno de HectorXD, Turno 69
+HectorXD saco un 4
+Es el turno de HectorXD2, Turno 70
+HectorXD2 saco un 6
+Es el turno de HectorXD, Turno 71
+HectorXD saco un 2
+Es el turno de HectorXD2, Turno 72
+HectorXD2 saco un 2
+Es el turno de HectorXD, Turno 73
+HectorXD saco un 6
+Es el turno de HectorXD2, Turno 74
+HectorXD2 saco un 1
+Ha ganado HectorXD2.
+Es el turno de , Turno 1
+Ha comenzado una nueva partida!
+Es el turno de HectorXD2, Turno 1
+HectorXD2 saco un 4
+Es el turno de HectorXD, Turno 2
+HectorXD saco un 3
+Es el turno de HectorXD2, Turno 3
+HectorXD2 saco un 1
+Es el turno de HectorXD, Turno 4
+HectorXD saco un 1
+Es el turno de HectorXD2, Turno 5
+HectorXD2 saco un 1
+Es el turno de HectorXD, Turno 6
+HectorXD saco un 1
+Es el turno de HectorXD2, Turno 7
+HectorXD2 saco un 2
+Es el turno de HectorXD, Turno 8
+HectorXD saco un 4
+Es el turno de HectorXD2, Turno 9
+HectorXD2 saco un 6
+Es el turno de HectorXD, Turno 10
+HectorXD saco un 6
+Es el turno de HectorXD2, Turno 11
+HectorXD2 saco un 1
+HectorXD2 ha tomado por sorpresa a HectorXD!
+HectorXD ha muerto.
+Es el turno de HectorXD, Turno 12
+HectorXD saco un 3
+Es el turno de HectorXD2, Turno 13
+HectorXD2 saco un 5
+Es el turno de HectorXD, Turno 14
+HectorXD saco un 1
+Es el turno de HectorXD2, Turno 15
+HectorXD2 saco un 1
+Es el turno de HectorXD, Turno 16
+HectorXD saco un 4
+Es el turno de HectorXD2, Turno 17
+HectorXD2 saco un 2
+Es el turno de HectorXD, Turno 18
+HectorXD saco un 3
+Es el turno de HectorXD2, Turno 19
+HectorXD2 saco un 3
+Es el turno de HectorXD, Turno 20
+HectorXD saco un 1
+Es el turno de HectorXD2, Turno 21
+HectorXD2 saco un 3
+Es el turno de HectorXD, Turno 22
+HectorXD saco un 4
+Es el turno de HectorXD2, Turno 23
+HectorXD2 saco un 4
+Es el turno de HectorXD, Turno 24
+HectorXD saco un 1
+Es el turno de HectorXD2, Turno 25
+HectorXD2 saco un 6
+Es el turno de HectorXD, Turno 26
+HectorXD saco un 6
+Es el turno de HectorXD2, Turno 27
+HectorXD2 saco un 5
+Es el turno de HectorXD, Turno 28
+HectorXD saco un 3
+HectorXD ha tomado por sorpresa a HectorXD2!
+HectorXD2 ha muerto.
+Es el turno de HectorXD2, Turno 29
+HectorXD2 saco un 3
+Es el turno de HectorXD, Turno 30
+HectorXD saco un 2
+Ha ganado HectorXD.
+Es el turno de , Turno 1
+Ha comenzado una nueva partida!
+Es el turno de HectorXD2, Turno 1
+Es el turno de , Turno 1
+Ha comenzado una nueva partida!
+Es el turno de HectorXD2, Turno 1
+Es el turno de , Turno 1
+Ha comenzado una nueva partida!
+Es el turno de HectorXD2, Turno 1
+HectorXD2 saco un 6
+Es el turno de HectorXD, Turno 2
+HectorXD saco un 6
+HectorXD ha tomado por sorpresa a HectorXD2!
+HectorXD2 ha muerto.
+Es el turno de HectorXD2, Turno 3
+HectorXD2 saco un 4
+Es el turno de HectorXD, Turno 4
+HectorXD saco un 2
+Es el turno de HectorXD2, Turno 5
+HectorXD2 saco un 6
+Es el turno de HectorXD, Turno 6
+HectorXD saco un 1
+Es el turno de HectorXD2, Turno 7
+HectorXD2 saco un 2
+Es el turno de HectorXD, Turno 8
+HectorXD saco un 1
+Es el turno de HectorXD2, Turno 9
+HectorXD2 saco un 3
+Es el turno de HectorXD, Turno 10
+HectorXD saco un 4
+Es el turno de HectorXD2, Turno 11
+HectorXD2 saco un 5
+Es el turno de HectorXD, Turno 12
+HectorXD saco un 3
+Es el turno de HectorXD2, Turno 13
+HectorXD2 saco un 5
+Es el turno de HectorXD, Turno 14
+HectorXD saco un 4
+Es el turno de HectorXD2, Turno 15
+HectorXD2 saco un 3
+Es el turno de HectorXD, Turno 16
+HectorXD saco un 2
+Es el turno de HectorXD2, Turno 17
+HectorXD2 saco un 2
+Ha ganado HectorXD2.

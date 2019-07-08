@@ -5,13 +5,21 @@ unit GameController;
 interface
 
 uses
-  Classes, SysUtils, StdCtrls, ExtCtrls, Math, Crt;
+  Classes, SysUtils, StdCtrls, ExtCtrls, Math, Crt, MessagesHelper, Forms, Controls, Graphics;
 
 const
   MaxW = 10;
   MaxH = 10;
 
 type
+
+  TSpecial  = Record
+    Image:    TImage;
+    X,Y,Pos:  Byte;
+  End;
+
+  TSpecials = Array[1..30] of TSpecial;
+
   TSection = Record
     Image: TImage;
     Block: Byte;
@@ -64,6 +72,10 @@ Procedure RenderPlayers();
 Procedure RenderUI();
 Procedure TurnEvents();
 Procedure KillPlayer(OtherPlayer: Byte);
+Procedure FirstTurnLogic();
+Procedure TestDead();
+Procedure WinPlayer(Player:Byte);
+Procedure EntradaLog(Texto:String);
 
 var
   PlayerTurn:       Byte;
@@ -71,6 +83,7 @@ var
   Pos_IX,Pos_IY,Pos_LX,Pos_LY: Byte;
   GPlayers: TGPlayers;
   Castle:   TCastle;
+
 
 implementation
 
@@ -116,6 +129,37 @@ Begin
 
 End;
 
+Procedure EntradaLog(Texto:String);
+Begin
+  LogList.Items.Add(Texto);
+  //LogList.perform( TScrollingWinControl.WM_VSCROLL, SB_BOTTOM, 0 );
+  //LogList.perform( TScrollingWinControl.WM_VSCROLL, SB_ENDSCROLL, 0 );
+  If (LogList.Items.Count > 1) Then
+     LogList.ItemIndex := LogList.Items.Count;
+
+  CGame.PushLog(Texto);
+End;
+
+Procedure TestDead();
+Var I: Byte;
+Begin
+
+  For I := 1 To 2 Do Begin
+
+    If (ActualGame.Players[I].Soliders <= 0) Then Begin
+      EntradaLog(ActualGame.Players[I].Username + ' se ha quedado sin soldados.');
+      KillPlayer(I);
+    End;
+
+    If (ActualGame.Players[I].Lifes <= 0) Then Begin
+      EntradaLog(ActualGame.Players[I].Username + ' se ha quedado sin vidas!.');
+      If (I = 2) Then WinPlayer(1) Else WinPlayer(2);
+    End;
+
+  End;
+
+End;
+
 Procedure PlaceCastle();
 Var CastleX,CastleY: Byte;
 Begin
@@ -155,7 +199,7 @@ Var Turn: String;
 Begin
   Inc(ActualGame.Turn);
   Turn := IntToStr(ActualGame.Turn);
-  CGame.PushLog('[Turno ' + Turn + '] ' + 'El turno de ' + ActualGame.Players[ActualGame.PTurn].Username + ' acaba de empezar.');
+  EntradaLog('Es el turno de ' + ActualGame.Players[ActualGame.PTurn].Username + ', Turno ' + Turn);
 End;
 
 Procedure MovePlayer(var GPlayer:TGPlayer; Moves: Byte);
@@ -194,28 +238,36 @@ Begin
   ActualGame.Players[OtherPlayer].Soliders  := ActualGame.Soliders;
   RenderPlayers();
   RenderUI();
+  EntradaLog(ActualGame.Players[OtherPlayer].Username + ' ha muerto.');
   If (Assigned(FmGame)) Then FmGame.Refresh();
+End;
+
+Procedure WinPlayer(Player:Byte);
+Var Game: TGame;
+Begin
+  MessageSuccess('Enahorabuena! ' + ActualGame.Players[ActualGame.PTurn].Username + ' ha ganado.');
+  Game        := CGame.Find(ActualGame.Id);
+  Game.Winner := ActualGame.PTurn;
+  CGame.Put(Game, Game.Id);
+  EntradaLog('Ha ganado ' + ActualGame.Players[ActualGame.PTurn].Username + '.');
+  ActualGame.Winner := ActualGame.PTurn;
+  If (Assigned(FmGame)) Then FmGame.Hide;
 End;
 
 Procedure TurnEvents();
 Var OtherPlayer:Byte;
-    Game: TGame;
 Begin
 
   OtherPlayer := 2;
   If (ActualGame.PTurn = 2) Then OtherPlayer := 1;
 
   If (GPlayers[ActualGame.PTurn].Pos = GPlayers[OtherPlayer].Pos) Then Begin
+    EntradaLog(ActualGame.Players[ActualGame.PTurn].Username + ' ha tomado por sorpresa a ' + ActualGame.Players[OtherPlayer].Username + '!');
     KillPlayer(OtherPlayer);
   End;
 
   If (GPlayers[ActualGame.PTurn].Pos = ActualGame.Size*ActualGame.Size) Then Begin
-    MessageSuccess('Enahorabuena! ' + ActualGame.Players[ActualGame.PTurn].Username + ' ha ganado.');
-    Game        := CGame.Find(ActualGame.Id);
-    Game.Winner := ActualGame.PTurn;
-    CGame.Put(Game, Game.Id);
-    CGame.PushLog('Ha ganado ' + ActualGame.Players[ActualGame.PTurn].Username + '.');
-    If (Assigned(FmGame)) Then FmGame.Hide;
+    WinPlayer(ActualGame.PTurn);
   End;
 
 End;
@@ -228,13 +280,14 @@ Begin
     MovePlayer(GPlayers[ActualGame.PTurn], Dices[ActualGame.PTurn].Number);
 
     TurnEvents();
-
     RenderUI();
     //ShowMessage(IntToStr(GPlayers[ActualGame.PTurn].Pos));
     RenderPlayers();
-
-    If (ActualGame.PTurn = 1) Then DarTurno(2) Else DarTurno(1);
-    NuevoTurno();
+    TestDead();
+    If (ActualGame.Winner = 0) Then Begin
+      If (ActualGame.PTurn = 1) Then DarTurno(2) Else DarTurno(1);
+        NuevoTurno();
+    End;
 
   End Else Begin
 
@@ -253,6 +306,27 @@ Begin
     End;
 
   End;
+End;
+
+Procedure FirstTurnLogic();
+Begin
+    //Desactivo los dados a ambos jugadores
+    DesactiveDice(1);
+    DesactiveDice(2);
+
+    If (((ActualGame.Size1 + ActualGame.Size2) mod 2) = 0) then Begin
+
+      If (ActualGame.Players[2].Username > ActualGame.Players[1].Username) Then
+      DarTurno(2) Else DarTurno(1);
+
+    End Else Begin
+
+      If (ActualGame.Players[2].Username < ActualGame.Players[1].Username) Then
+      DarTurno(2) Else DarTurno(1);
+
+    End;
+
+    NuevoTurno();
 End;
 
 Function DadoValue(): Byte;
@@ -274,7 +348,7 @@ Begin
     If (Assigned(FmGame)) Then FmGame.Refresh();
   END;
 
-  CGame.PushLog(ActualGame.Players[Player].Username + ' saco un ' + IntToStr(Dices[Player].Number));
+  EntradaLog(ActualGame.Players[Player].Username + ' saco un ' + IntToStr(Dices[Player].Number));
   //Esto se hace cuando se da el turno.
   //If (Player <> 1) Then ActiveDice(1);
   //Else ActiveDice(2);
@@ -327,6 +401,10 @@ Begin
   RenderUI();
   RenderPlayers();
   Randomize();
+
+  //Si no se pone esta opcion, hay otra manera de determinar el primer turno, podriamos hacer luego un condicional con esto
+  //Un checkbox que diga "Elegir turno 1 por maquina"
+  FirstTurnLogic();
 
 End;
 
@@ -395,7 +473,7 @@ Begin
   X := GPlayers[I].Image.Left;
   Y := GPlayers[I].Image.Top;
 
-  While (((X < XF-3) or (Y < YF-3) or (X > XF+3) or (Y > YF+3)) and (J < 64)) Do Begin
+  While (((X < XF-3) or (Y < YF-3) or (X > XF+3) or (Y > YF+3)) and (J < 96)) Do Begin
     Delay(1);
     If (X < XF-2) Then X := X + 2;
     If (X > XF+2) Then X := X - 2;

@@ -1,10 +1,10 @@
 object FmGame: TFmGame
-  Left = 436
-  Height = 693
-  Top = 159
+  Left = 785
+  Height = 675
+  Top = 161
   Width = 1000
   Caption = 'Juego de Reinos - Juego'
-  ClientHeight = 693
+  ClientHeight = 675
   ClientWidth = 1000
   OnCreate = FormCreate
   OnDestroy = FormDestroy
@@ -26864,8 +26864,8 @@ object FmGame: TFmGame
   end
   object EventLog: TListBox
     Left = 248
-    Height = 136
-    Top = 552
+    Height = 128
+    Top = 544
     Width = 733
     ItemHeight = 0
     TabOrder = 3

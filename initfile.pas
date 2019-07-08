@@ -37,7 +37,7 @@ type
     End;
 
     TActualGame = Record
-            Size:       Byte;
+            Size,Size1,Size2:       Byte;
             Turn:       Word;
             PTurn:      Byte;
             Players:    Array[1..2] of TPlayerInGame;

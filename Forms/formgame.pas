@@ -291,6 +291,7 @@ var
   Sections: TSections;
   Dices:    TDices;
   Specials: TSpecials;
+  LogList:  TListBox;
 
 implementation
 uses InitFile;
@@ -360,6 +361,8 @@ begin
      End;
 
      Castle.Image := ImCastle;
+     LogList      := EventLog;
+
      newGame();
 end;
 
