@@ -12,6 +12,14 @@ const
   MaxH = 10;
 
 type
+
+  TSpecial  = Record
+    Image:    TImage;
+    X,Y,Pos:  Byte;
+  End;
+
+  TSpecials = Array[1..30] of TSpecial;
+
   TSection = Record
     Image: TImage;
     Block: Byte;
@@ -399,7 +407,7 @@ Begin
   X := GPlayers[I].Image.Left;
   Y := GPlayers[I].Image.Top;
 
-  While (((X < XF-3) or (Y < YF-3) or (X > XF+3) or (Y > YF+3)) and (J < 64)) Do Begin
+  While (((X < XF-3) or (Y < YF-3) or (X > XF+3) or (Y > YF+3)) and (J < 96)) Do Begin
     Delay(1);
     If (X < XF-2) Then X := X + 2;
     If (X > XF+2) Then X := X - 2;

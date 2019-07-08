@@ -162,3 +162,73 @@ HectorXD2 saco un 5
 Es el turno de HectorXD, Turno 22
 HectorXD saco un 2
 Ha ganado HectorXD.
+Ha comenzado una nueva partida!
+HectorXD saco un 6
+HectorXD2 saco un 6
+Es el turno de HectorXD, Turno 1
+HectorXD saco un 3
+Es el turno de HectorXD2, Turno 2
+HectorXD2 saco un 3
+HectorXD2 ha tomado por sorpresa a HectorXD!
+HectorXD ha muerto.
+Es el turno de HectorXD, Turno 3
+HectorXD saco un 2
+Es el turno de HectorXD2, Turno 4
+HectorXD2 saco un 6
+Es el turno de HectorXD, Turno 5
+HectorXD saco un 3
+Es el turno de HectorXD2, Turno 6
+HectorXD2 saco un 3
+Es el turno de HectorXD, Turno 7
+HectorXD saco un 2
+Es el turno de HectorXD2, Turno 8
+HectorXD2 saco un 3
+Es el turno de HectorXD, Turno 9
+HectorXD saco un 5
+Es el turno de HectorXD2, Turno 10
+HectorXD2 saco un 3
+Es el turno de HectorXD, Turno 11
+HectorXD saco un 6
+HectorXD ha tomado por sorpresa a HectorXD2!
+HectorXD2 ha muerto.
+Es el turno de HectorXD2, Turno 12
+HectorXD2 saco un 1
+Es el turno de HectorXD, Turno 13
+HectorXD saco un 4
+Es el turno de HectorXD2, Turno 14
+HectorXD2 saco un 4
+Es el turno de HectorXD, Turno 15
+HectorXD saco un 5
+Es el turno de HectorXD2, Turno 16
+HectorXD2 saco un 2
+Es el turno de HectorXD, Turno 17
+HectorXD saco un 5
+Es el turno de HectorXD2, Turno 18
+HectorXD2 saco un 5
+Es el turno de HectorXD, Turno 19
+HectorXD saco un 1
+Es el turno de HectorXD2, Turno 20
+HectorXD2 saco un 6
+Es el turno de HectorXD, Turno 21
+HectorXD saco un 5
+Es el turno de HectorXD2, Turno 22
+HectorXD2 saco un 1
+Es el turno de HectorXD, Turno 23
+HectorXD saco un 3
+Es el turno de HectorXD2, Turno 24
+HectorXD2 saco un 6
+HectorXD2 ha tomado por sorpresa a HectorXD!
+HectorXD ha muerto.
+Es el turno de HectorXD, Turno 25
+HectorXD saco un 1
+Es el turno de HectorXD2, Turno 26
+HectorXD2 saco un 2
+Es el turno de HectorXD, Turno 27
+HectorXD saco un 6
+Es el turno de HectorXD2, Turno 28
+HectorXD2 saco un 4
+Es el turno de HectorXD, Turno 29
+HectorXD saco un 6
+Es el turno de HectorXD2, Turno 30
+HectorXD2 saco un 3
+Ha ganado HectorXD2.

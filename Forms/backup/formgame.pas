@@ -29,6 +29,7 @@ type
     Image1: TImage;
     Heart1_1: TImage;
     Image2: TImage;
+    TSpecial1: TImage;
     ImCastle: TImage;
     ImPlayer1: TImage;
     ImPlayer2: TImage;
@@ -140,6 +141,7 @@ type
     LbText: TLabel;
     LbSoliders1: TLabel;
     LbText1: TLabel;
+    EventLog: TListBox;
     PnLife1: TPanel;
     PnLife2: TPanel;
     Section_10_10: TImage;
@@ -243,6 +245,35 @@ type
     Section_9_7: TImage;
     Section_9_8: TImage;
     Section_9_9: TImage;
+    TSpecial10: TImage;
+    TSpecial11: TImage;
+    TSpecial12: TImage;
+    TSpecial13: TImage;
+    TSpecial14: TImage;
+    TSpecial15: TImage;
+    TSpecial16: TImage;
+    TSpecial17: TImage;
+    TSpecial18: TImage;
+    TSpecial19: TImage;
+    TSpecial2: TImage;
+    TSpecial20: TImage;
+    TSpecial21: TImage;
+    TSpecial22: TImage;
+    TSpecial23: TImage;
+    TSpecial24: TImage;
+    TSpecial25: TImage;
+    TSpecial26: TImage;
+    TSpecial27: TImage;
+    TSpecial28: TImage;
+    TSpecial29: TImage;
+    TSpecial3: TImage;
+    TSpecial30: TImage;
+    TSpecial4: TImage;
+    TSpecial5: TImage;
+    TSpecial6: TImage;
+    TSpecial7: TImage;
+    TSpecial8: TImage;
+    TSpecial9: TImage;
     procedure BtnDice1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
@@ -259,6 +290,7 @@ var
   FmGame: TFmGame;
   Sections: TSections;
   Dices:    TDices;
+  Specials: TSpecials;
 
 implementation
 uses InitFile;
@@ -319,6 +351,14 @@ begin
      For I := 1 To 5 Do
       GPlayers[2].Hearts[I].Image := TImage(FindComponent('Heart2_' + IntToStr(I)));
 
+     For I := 1 To 30 Do Begin
+      Specials[I].Image := TImage(FindComponent('TSpecial' + IntToStr(I)));
+      Specials[I].Image.Visible := False;
+      Specials[I].X       := 1;
+      Specials[I].Y       := 1;
+      Specials[I].Pos     := 1;
+     End;
+
      Castle.Image := ImCastle;
      newGame();
 end;
@@ -362,5 +402,6 @@ begin
     TImage(Sender).Picture.LoadFromFile(aPPPath + '/images/buttons/dice_'+IntToStr(DiceIndex)+'.png');
 
 end;
+
 
 end.

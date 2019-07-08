@@ -8,7 +8,6 @@
       <Unit0>
         <Filename Value="KingdomGame.lpr"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="7"/>
         <TopLine Value="9"/>
         <CursorPos Y="51"/>
@@ -307,6 +306,7 @@
         <Filename Value="Controllers\gamecontroller.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="GameController"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="6"/>
         <CursorPos X="38" Y="10"/>
         <UsageCount Value="75"/>
