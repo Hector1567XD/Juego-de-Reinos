@@ -62,6 +62,8 @@ Procedure Render();
 
 Procedure RenderPlayers();
 Procedure RenderUI();
+Procedure TurnEvents();
+Procedure KillPlayer(OtherPlayer: Byte);
 
 var
   PlayerTurn:       Byte;
@@ -157,15 +159,65 @@ Begin
 End;
 
 Procedure MovePlayer(var GPlayer:TGPlayer; Moves: Byte);
-Var I: Byte;
+Var I:    Byte;
+    Next: Boolean;
 Begin
+
+  Next := True;
+
   For I := 1 To Moves Do Begin
+
     Delay(20);{}
-    GPlayer.Pos := MoveEspiralToPos(GPlayer.X, GPlayer.Y, not ActualGame.Clock, ActualGame.Size, 2);
-    //ShowMessage(IntToStr(MoveEspiralToPos(GPlayer.X, GPlayer.Y, not ActualGame.Clock, ActualGame.Size, 2)));
+
+    If (GPlayer.Pos >= ActualGame.Size*ActualGame.Size) Then Next := False;
+
+    If (Next = True) Then Begin
+      GPlayer.Pos := MoveEspiralToPos(GPlayer.X, GPlayer.Y, ActualGame.Clock, ActualGame.Size, 1);
+    End Else Begin
+      GPlayer.Pos := GPlayer.Pos - 1;
+      PosToCoor(GPlayer.Pos, ActualGame.Clock, ActualGame.Size, GPlayer.X, GPlayer.Y);
+    End;
+
     RenderPlayers();
     If (Assigned(FmGame)) Then FmGame.Refresh();
+
   End;
+
+End;
+
+Procedure KillPlayer(OtherPlayer: Byte);
+Begin
+  GPlayers[OtherPlayer].Pos                 := 1;
+  GPlayers[OtherPlayer].X                   := 1;
+  GPlayers[OtherPlayer].Y                   := 1;
+  ActualGame.Players[OtherPlayer].Lifes     := ActualGame.Players[OtherPlayer].Lifes - 1;
+  ActualGame.Players[OtherPlayer].Soliders  := ActualGame.Soliders;
+  RenderPlayers();
+  RenderUI();
+  If (Assigned(FmGame)) Then FmGame.Refresh();
+End;
+
+Procedure TurnEvents();
+Var OtherPlayer:Byte;
+    Game: TGame;
+Begin
+
+  OtherPlayer := 2;
+  If (ActualGame.PTurn = 2) Then OtherPlayer := 1;
+
+  If (GPlayers[ActualGame.PTurn].Pos = GPlayers[OtherPlayer].Pos) Then Begin
+    KillPlayer(OtherPlayer);
+  End;
+
+  If (GPlayers[ActualGame.PTurn].Pos = ActualGame.Size*ActualGame.Size) Then Begin
+    MessageSuccess('Enahorabuena! ' + ActualGame.Players[ActualGame.PTurn].Username + ' ha ganado.');
+    Game        := CGame.Find(ActualGame.Id);
+    Game.Winner := ActualGame.PTurn;
+    CGame.Put(Game, Game.Id);
+    CGame.PushLog('Ha ganado ' + ActualGame.Players[ActualGame.PTurn].Username + '.');
+    If (Assigned(FmGame)) Then FmGame.Hide;
+  End;
+
 End;
 
 Procedure TurnProcess();
@@ -174,10 +226,15 @@ Begin
   If (ActualGame.Turn <> 0) Then Begin
 
     MovePlayer(GPlayers[ActualGame.PTurn], Dices[ActualGame.PTurn].Number);
+
+    TurnEvents();
+
     RenderUI();
-    ShowMessage(IntToStr(GPlayers[ActualGame.PTurn].X));
+    //ShowMessage(IntToStr(GPlayers[ActualGame.PTurn].Pos));
     RenderPlayers();
+
     If (ActualGame.PTurn = 1) Then DarTurno(2) Else DarTurno(1);
+    NuevoTurno();
 
   End Else Begin
 
@@ -201,7 +258,7 @@ End;
 Function DadoValue(): Byte;
 Begin
  Delay(80);
- Exit(Random(5) + 1);
+ Exit(Random(6) + 1);
 End;
 
 Function DadoGatch(Player: Byte): Byte;
@@ -330,14 +387,47 @@ Begin
 
 End;
 
+Procedure GoToXY(I:Byte;XF,YF:Word);
+Var X,Y:Word;
+    J: Byte;
+Begin
+
+  X := GPlayers[I].Image.Left;
+  Y := GPlayers[I].Image.Top;
+
+  While (((X < XF-3) or (Y < YF-3) or (X > XF+3) or (Y > YF+3)) and (J < 64)) Do Begin
+    Delay(1);
+    If (X < XF-2) Then X := X + 2;
+    If (X > XF+2) Then X := X - 2;
+    If (Y < YF-2) Then Y := Y + 2;
+    If (Y > YF+2) Then Y := Y - 2;
+
+    GPlayers[I].Image.Left  := X;
+    GPlayers[I].Image.Top   := Y;
+
+    If (Assigned(FmGame)) Then FmGame.Refresh();
+
+    J := J + 1;
+  End;
+End;
 
 Procedure RenderPlayers();
-Var I: Byte;
+Var XF,YF: Word;
+    I:Byte;
 Begin
 
   For I := 1 To 2 Do Begin
-    GPlayers[I].Image.Left := Sections[Pos_IX + GPlayers[I].Y - 1,Pos_IX + GPlayers[I].X - 1].Image.Left;
-    GPlayers[I].Image.Top  := Sections[Pos_IY + GPlayers[I].Y - 1,Pos_IY + GPlayers[I].X - 1].Image.Top;
+
+    XF := Sections[Pos_IX + GPlayers[I].Y - 1,Pos_IX + GPlayers[I].X - 1].Image.Left;
+    YF := Sections[Pos_IY + GPlayers[I].Y - 1,Pos_IY + GPlayers[I].X - 1].Image.Top;
+
+    GoToXY(I,XF,YF);
+
+    GPlayers[I].Image.Left  := XF;
+    GPlayers[I].Image.Top   := YF;
+
+    If (Assigned(FmGame)) Then FmGame.Refresh();
+
   End;
 
 End;

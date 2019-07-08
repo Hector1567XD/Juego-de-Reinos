@@ -98,6 +98,11 @@ begin
   House := CHouse.FindName(HouseName);
   if (House.id = 0) then Exit();
 
+  if (House.system = True) then Begin
+    MessageWarning('No puedes borrar casas del sistema.');
+    Exit();
+  End;
+
   CHouse.Delete(House.Id);
 
   ReloadListOfHouses();

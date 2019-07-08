@@ -71,6 +71,9 @@ Var GameCode: String;
     Players:  Array[1..2] of TUser;
     House:    THouse;
 begin
+
+  If (ListGames.ItemIndex = -1) Then Exit();
+
   GameCode := ListGames.Items[ListGames.ItemIndex];
   CGame.ListLog(ListLog, GameCode);
   Game := CGame.FindCode(GameCode);

@@ -46,6 +46,7 @@ type
             Clock:      Boolean;
             Difficulty: Byte;
             Id:         Word;
+            Winner:     Byte;
     End;
 
 procedure IniciarAplicacion();

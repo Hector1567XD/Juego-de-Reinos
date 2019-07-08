@@ -5,7 +5,7 @@ unit GameController;
 interface
 
 uses
-  Classes, SysUtils, StdCtrls, ExtCtrls, Math, Crt;
+  Classes, SysUtils, StdCtrls, ExtCtrls, Math, Crt, MessagesHelper;
 
 const
   MaxW = 10;
@@ -210,10 +210,13 @@ Begin
   End;
 
   If (GPlayers[ActualGame.PTurn].Pos = ActualGame.Size*ActualGame.Size) Then Begin
+    MessageSuccess('Enahorabuena! ' + ActualGame.Players[ActualGame.PTurn].Username + ' ha ganado.');
     Game        := CGame.Find(ActualGame.Id);
     Game.Winner := ActualGame.PTurn;
-    CGame.PushLog('Ha ganado ' + ActualGame.Players[ActualGame.PTurn].Username);
     CGame.Put(Game, Game.Id);
+    CGame.PushLog('Ha ganado ' + ActualGame.Players[ActualGame.PTurn].Username + '.');
+    ActualGame.Winner := ActualGame.PTurn;
+    If (Assigned(FmGame)) Then FmGame.Hide;
   End;
 
 End;
@@ -226,13 +229,14 @@ Begin
     MovePlayer(GPlayers[ActualGame.PTurn], Dices[ActualGame.PTurn].Number);
 
     TurnEvents();
-
     RenderUI();
     //ShowMessage(IntToStr(GPlayers[ActualGame.PTurn].Pos));
     RenderPlayers();
 
-    If (ActualGame.PTurn = 1) Then DarTurno(2) Else DarTurno(1);
-    NuevoTurno();
+    If (ActualGame.Winner = 0) Then Begin
+      If (ActualGame.PTurn = 1) Then DarTurno(2) Else DarTurno(1);
+        NuevoTurno();
+    End;
 
   End Else Begin
 

@@ -167,6 +167,7 @@ Begin
 
   CGame.NewGame(AppUser.Id,Player2.Id,House1,House2, Size, Lifes, Hard, Soldados, Clock);
   FormOpen('Game');
+  If (Assigned(FmNGC1vs1)) Then FmNGC1vs1.Hide;
 
 End;
 
