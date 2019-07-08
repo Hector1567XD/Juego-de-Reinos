@@ -155,7 +155,7 @@ Var Turn: String;
 Begin
   Inc(ActualGame.Turn);
   Turn := IntToStr(ActualGame.Turn);
-  CGame.PushLog('[Turno ' + Turn + '] ' + 'El turno de ' + ActualGame.Players[ActualGame.PTurn].Username + ' acaba de empezar.');
+  CGame.PushLog('Es el turno de ' + ActualGame.Players[ActualGame.PTurn].Username + ', Turno ' + Turn);
 End;
 
 Procedure MovePlayer(var GPlayer:TGPlayer; Moves: Byte);
@@ -194,6 +194,7 @@ Begin
   ActualGame.Players[OtherPlayer].Soliders  := ActualGame.Soliders;
   RenderPlayers();
   RenderUI();
+  CGame.PushLog(ActualGame.Players[OtherPlayer].Username + ' ha muerto.');
   If (Assigned(FmGame)) Then FmGame.Refresh();
 End;
 
@@ -206,6 +207,7 @@ Begin
   If (ActualGame.PTurn = 2) Then OtherPlayer := 1;
 
   If (GPlayers[ActualGame.PTurn].Pos = GPlayers[OtherPlayer].Pos) Then Begin
+    CGame.PushLog(ActualGame.Players[ActualGame.PTurn].Username + ' ha tomado por sorpresa a ' + ActualGame.Players[OtherPlayer].Username + '!');
     KillPlayer(OtherPlayer);
   End;
 

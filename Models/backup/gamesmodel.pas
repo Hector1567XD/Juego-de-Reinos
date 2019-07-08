@@ -108,7 +108,7 @@ Class procedure CGame.PushLog(Move: String);
 Var Game: TGame;
     TStr: String;
 Begin
-
+  //ShowMessage('Begin Push Log');
   Game            := CGame.FindLast();
   ShowMessage('Game ' + IntToStr(Game.Id));
   CLog.Store(Move);
@@ -120,24 +120,26 @@ Begin
   Game.Logs.Fin   := Game.Logs.Fin + 1;
   ShowMessage('New End ' + IntToStr(Game.Logs.Fin));
   CGame.Put(Game, Game.Id);
-
+  //ShowMessage('End Push Log');
 End;
 
 class function CGame.FindLast(): TGame;
 var Items : TGames;
-    LastID,I: Word;
+    LastID,I,CountGame: Word;
     LastCode: String[10];
+    LastWrited:   Boolean;
 begin
 
   I := 1;
   Items := CGame.Get();
+  CountGame := CGame.Count();
 
   Repeat
-    //ShowMessage(Items[I].Code + ' - ' + IntToStr(Items[I].Id));
     LastID := Items[I].Id;
     LastCode := Items[I].Code;
+    LastWrited  := Items[I].Writed;
     Inc(I);
-  Until ((LastID <= 0) or (LastID > MAXITEMS_MODEL) or (LastCode = ''));
+  Until ((LastID <= 0) or (LastID > MAXITEMS_MODEL) or (LastWrited = False) or (LastCode = '') or (LastCode = 'JUEGO') or (I >= CountGame));
 
   If (I = 2) Then I := 3;
 
@@ -169,7 +171,7 @@ Begin
    ListGame.Clear;
    //Solo la agregara al TListBox si la casa no se encuentra eliminada (trash = true)
    For I := 1 To CGame.Count() Do Begin
-    If (Games[I].Trash <> True) Then
+    If ((Games[I].Trash <> True) and (Games[I].Writed = True)) Then
       ListGame.Items.Add(Games[I].Code);
    End;
 end;
@@ -206,7 +208,7 @@ end;
 
 class procedure CGame.SeedTest();//
 Begin
-   If ((CGame.Count() <= 0) and False) Then Begin
+   If ((CGame.Count() <= 0) and True) Then Begin
       CGame.NewGame(1, 2, 1 , 2, 5, 3, 2, 1000, False);
       CGame.PushLog('Movimiento 1');
       CGame.PushLog('Movimiento X');
@@ -239,6 +241,27 @@ Begin
       CGame.PushLog('Movimiento X');
       CGame.PushLog('Movimiento X');
       CGame.PushLog('Movimiento X');
+      CGame.PushLog('Movimiento X');
+      CGame.PushLog('Movimiento X');
+      CGame.PushLog('Movimiento X');
+      CGame.PushLog('Movimiento X');
+      CGame.PushLog('Movimiento X');
+      CGame.PushLog('Movimiento X');
+      CGame.PushLog('Movimiento X');
+      CGame.PushLog('Movimiento X');
+      CGame.PushLog('Movimiento X');
+      CGame.PushLog('Movimiento X');
+      CGame.PushLog('Movimiento X');
+      CGame.PushLog('Movimiento X');
+      CGame.PushLog('Movimiento X');
+      CGame.PushLog('Movimiento X');
+      CGame.PushLog('Movimiento X');
+      CGame.PushLog('Movimiento X');
+      CGame.PushLog('Movimiento X');
+      CGame.PushLog('Movimiento X');
+      CGame.PushLog('Movimiento X');
+      CGame.PushLog('Movimiento X');
+      CGame.PushLog('Movimiento R');
       CGame.PushLog('Movimiento FINAL');
       CGame.NewGame(2, 1, 2 , 1, 7, 3, 2, 1000, False);
       CGame.PushLog('Movimiento J2 1');
@@ -482,7 +505,9 @@ begin
 
       Logs.Start      := 0;
       Logs.Fin        := 0;
+
       Code            := 'JUEGO';
+
     end;
     Exit(Game);
 end;
@@ -504,6 +529,8 @@ begin
       Inc(Self.itemsCount); //K
     end;
   Close(Self.fileModel);
+
+  //If (Self.itemsCount > 1) Then Self.itemsCount := Self.itemsCount - 1;
   //ShowMessage(IntToStr(Self.itemsCount));
   Exit(Items);
 end;
@@ -526,6 +553,7 @@ begin
   Data.Id   := Self.ItemsCount + 1;
   Data.Code := 'JUEGO'+IntToStr(Data.Id);
   Items[Self.itemsCount + 1]  := Data;
+  //Items[Self.itemsCount + 2]  := CGame.New();
   Self.StoreItems(Items, Self.itemsCount + 1);
 end;
 
