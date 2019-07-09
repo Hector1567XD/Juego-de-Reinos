@@ -2294,3 +2294,478 @@ HectorXD2 Tomo un atajo favorable en direccion a la diagional secundaria.
 Es el turno de HectorXD, Turno 13
 HectorXD saco un 3
 HectorXD Cayó en una casilla de chance que le permitio volver a jugar.
+Es el turno de , Turno 1
+Ha comenzado una nueva partida!
+Es el turno de HectorXD, Turno 1
+HectorXD saco un 5
+HectorXD Cayó en una casilla que resto 125 soldados a sus tropas.
+Es el turno de HectorXD2, Turno 2
+HectorXD2 saco un 2
+Es el turno de HectorXD, Turno 3
+HectorXD saco un 1
+HectorXD Cayó en una casilla de chance que le penitensio a colocarse detras de HectorXD2.
+Los soldados de HectorXD se redujeron a 275
+HectorXD cayó en una casilla de chance que le permitio avanzar dos espacios mas.
+Es el turno de HectorXD2, Turno 4
+HectorXD2 saco un 4
+HectorXD2 Cayó en una casilla de chance que le penitensio a colocarse detras de HectorXD.
+Los soldados de HectorXD2 se redujeron a 400
+Es el turno de HectorXD, Turno 5
+HectorXD saco un 6
+Es el turno de HectorXD2, Turno 6
+HectorXD2 saco un 6
+Es el turno de HectorXD, Turno 7
+HectorXD saco un 2
+HectorXD Cayó en una casilla de chance en donde retrocedio un espacio.
+Los soldados de HectorXD se redujeron a 225
+Es el turno de HectorXD2, Turno 8
+HectorXD2 saco un 1
+Es el turno de HectorXD, Turno 9
+HectorXD saco un 2
+HectorXD Cayó en una casilla que restauro al maximo sus soldados y le añadio una vida.
+Es el turno de HectorXD2, Turno 10
+HectorXD2 saco un 5
+Es el turno de HectorXD, Turno 11
+HectorXD saco un 4
+Es el turno de HectorXD2, Turno 12
+HectorXD2 saco un 4
+HectorXD2 Cayó en una casilla de chance en donde retrocedio un espacio.
+Los soldados de HectorXD2 se redujeron a 350
+HectorXD2 Cayó en una casilla de chance que le permitio volver a jugar.
+HectorXD2 saco un 2
+Es el turno de HectorXD, Turno 13
+HectorXD saco un 5
+HectorXD Cayó en una casilla que le hizo perder un turno.
+Es el turno de HectorXD2, Turno 14
+HectorXD2 saco un 2
+HectorXD2 Cayó en una casilla de chance que le permitio doblar sus dados y avanzo 2 espacios mas.
+HectorXD2 Cayó en una casilla que le hizo perder un turno.
+Es el turno de HectorXD, Turno 15
+HectorXD saco un 2
+HectorXD Cayó en una casilla de chance que le permitio doblar sus dados y avanzo 2 espacios mas.
+Es el turno de HectorXD, Turno 16
+HectorXD saco un 6
+HectorXD Cayo en una casilla de chance en donde tuvo que volver al punto de partida.
+Los soldados de HectorXD se redujeron a 350
+Es el turno de HectorXD2, Turno 17
+HectorXD2 saco un 5
+Es el turno de HectorXD, Turno 18
+HectorXD saco un 1
+HectorXD Cayó en una casilla de chance que le permitio doblar sus dados y avanzo 1 espacios mas.
+Es el turno de HectorXD2, Turno 19
+HectorXD2 saco un 1
+Es el turno de HectorXD, Turno 20
+HectorXD saco un 6
+Es el turno de HectorXD2, Turno 21
+HectorXD2 saco un 4
+HectorXD2 Cayó en una casilla de chance que le permitio doblar sus dados y avanzo 4 espacios mas.
+Es el turno de HectorXD, Turno 22
+HectorXD saco un 1
+Es el turno de HectorXD2, Turno 23
+HectorXD2 saco un 2
+Es el turno de HectorXD, Turno 24
+HectorXD saco un 6
+HectorXD Cayó en una casilla que resto 125 soldados a sus tropas.
+Es el turno de HectorXD2, Turno 25
+HectorXD2 saco un 1
+Es el turno de HectorXD, Turno 26
+HectorXD saco un 1
+Es el turno de HectorXD2, Turno 27
+HectorXD2 saco un 1
+Es el turno de HectorXD, Turno 28
+HectorXD saco un 6
+HectorXD Tomo un atajo favorable en direccion a la diagional secundaria.
+HectorXD Tomo un atajo favorable en direccion a la diagional secundaria.
+Es el turno de HectorXD2, Turno 29
+HectorXD2 saco un 3
+Es el turno de HectorXD, Turno 30
+HectorXD saco un 4
+HectorXD Cayó en una casilla que restauro al maximo sus soldados y le añadio una vida.
+Es el turno de HectorXD2, Turno 31
+HectorXD2 saco un 2
+Es el turno de HectorXD, Turno 32
+HectorXD saco un 2
+HectorXD Cayó en una casilla de chance que le permitio doblar sus dados y avanzo 2 espacios mas.
+Es el turno de HectorXD2, Turno 33
+HectorXD2 saco un 2
+HectorXD2 Cayó en una casilla que resto 125 soldados a sus tropas.
+Es el turno de HectorXD, Turno 34
+HectorXD saco un 6
+Es el turno de HectorXD2, Turno 35
+HectorXD2 saco un 6
+Es el turno de HectorXD, Turno 36
+HectorXD saco un 5
+HectorXD Tomo un atajo favorable en direccion a la diagional principal.
+Es el turno de HectorXD2, Turno 37
+Es el turno de , Turno 1
+Ha comenzado una nueva partida!
+Es el turno de HectorXD2, Turno 1
+HectorXD2 saco un 4
+Es el turno de HectorXD, Turno 2
+HectorXD saco un 2
+Es el turno de HectorXD2, Turno 3
+HectorXD2 saco un 3
+Es el turno de HectorXD, Turno 4
+HectorXD saco un 6
+Es el turno de HectorXD2, Turno 5
+HectorXD2 saco un 5
+Es el turno de , Turno 1
+Ha comenzado una nueva partida!
+Es el turno de HectorXD2, Turno 1
+HectorXD2 saco un 4
+Es el turno de HectorXD, Turno 2
+HectorXD saco un 1
+Es el turno de HectorXD2, Turno 3
+HectorXD2 saco un 6
+Es el turno de HectorXD, Turno 4
+HectorXD saco un 4
+Es el turno de HectorXD2, Turno 5
+HectorXD2 saco un 2
+Es el turno de HectorXD, Turno 6
+HectorXD saco un 5
+Es el turno de HectorXD2, Turno 7
+HectorXD2 saco un 3
+Es el turno de HectorXD, Turno 8
+HectorXD saco un 5
+HectorXD ha tomado por sorpresa a HectorXD2!
+HectorXD2 ha muerto.
+Es el turno de HectorXD2, Turno 9
+HectorXD2 saco un 4
+Es el turno de HectorXD, Turno 10
+HectorXD saco un 2
+HectorXD cayó en una casilla de chance que le permitio avanzar dos espacios mas.
+HectorXD Cayó en una casilla que resto 5 soldados a sus tropas.
+Es el turno de HectorXD2, Turno 11
+Es el turno de , Turno 1
+Ha comenzado una nueva partida!
+Es el turno de HectorXD2, Turno 1
+HectorXD2 saco un 2
+Es el turno de HectorXD, Turno 2
+HectorXD saco un 2
+HectorXD ha tomado por sorpresa a HectorXD2!
+HectorXD2 ha muerto.
+Es el turno de HectorXD2, Turno 3
+HectorXD2 saco un 2
+HectorXD2 ha tomado por sorpresa a HectorXD!
+HectorXD ha muerto.
+Es el turno de HectorXD, Turno 4
+HectorXD saco un 6
+HectorXD Cayó en una casilla de chance que le penitensio a colocarse detras de HectorXD2.
+Los soldados de HectorXD se redujeron a 16
+Es el turno de HectorXD2, Turno 5
+HectorXD2 saco un 1
+Es el turno de HectorXD, Turno 6
+HectorXD saco un 4
+HectorXD Cayó en una casilla que restauro al maximo sus soldados y le añadio una vida.
+Es el turno de HectorXD2, Turno 7
+Es el turno de , Turno 1
+Ha comenzado una nueva partida!
+Es el turno de HectorXD2, Turno 1
+HectorXD2 saco un 3
+Es el turno de HectorXD, Turno 2
+HectorXD saco un 2
+HectorXD Cayó en una casilla de chance que le permitio volver a jugar.
+HectorXD saco un 2
+Es el turno de HectorXD2, Turno 3
+HectorXD2 saco un 4
+Los soldados de HectorXD2 se redujeron a 17
+HectorXD2 Fue forzado a tomar un atajo desfavorable en direccion a la diagional principal.
+Es el turno de HectorXD, Turno 4
+HectorXD saco un 5
+HectorXD Cayó en una casilla que restauro al maximo sus soldados y le añadio una vida.
+Es el turno de HectorXD2, Turno 5
+HectorXD2 saco un 5
+Es el turno de HectorXD, Turno 6
+HectorXD saco un 3
+HectorXD ha tomado por sorpresa a HectorXD2!
+HectorXD2 ha muerto.
+Es el turno de HectorXD2, Turno 7
+HectorXD2 saco un 6
+Es el turno de HectorXD, Turno 8
+HectorXD saco un 1
+HectorXD Tomo un atajo favorable en direccion a la diagional secundaria.
+HectorXD Cayó en una casilla de chance que le permitio volver a jugar.
+HectorXD saco un 3
+Es el turno de HectorXD2, Turno 9
+HectorXD2 saco un 5
+HectorXD2 Cayó en una casilla que resto 5 soldados a sus tropas.
+Es el turno de HectorXD, Turno 10
+HectorXD saco un 2
+Los soldados de HectorXD se redujeron a 17
+HectorXD Fue forzado a tomar un atajo desfavorable en direccion a la diagional principal.
+Es el turno de HectorXD2, Turno 11
+HectorXD2 saco un 4
+HectorXD2 Cayó en una casilla que le hizo perder un turno.
+Es el turno de HectorXD, Turno 12
+HectorXD saco un 1
+Es el turno de HectorXD, Turno 13
+HectorXD saco un 6
+HectorXD Cayó en una casilla que restauro al maximo sus soldados y le añadio una vida.
+Es el turno de HectorXD2, Turno 14
+HectorXD2 saco un 5
+Es el turno de HectorXD, Turno 15
+HectorXD saco un 1
+Es el turno de HectorXD2, Turno 16
+HectorXD2 saco un 2
+Es el turno de HectorXD, Turno 17
+HectorXD saco un 5
+HectorXD Cayo en una casilla de chance en donde tuvo que volver al punto de partida.
+Los soldados de HectorXD se redujeron a 14
+Es el turno de HectorXD2, Turno 18
+Es el turno de , Turno 1
+Es el turno de , Turno 1
+Ha comenzado una nueva partida!
+Es el turno de HectorXD2, Turno 1
+HectorXD2 saco un 2
+Es el turno de HectorXD, Turno 2
+HectorXD saco un 3
+Es el turno de HectorXD2, Turno 3
+HectorXD2 saco un 2
+Es el turno de , Turno 1
+Ha comenzado una nueva partida!
+Es el turno de HectorXD2, Turno 1
+HectorXD2 saco un 3
+HectorXD2 Cayó en una casilla de chance en donde retrocedio un espacio.
+Los soldados de HectorXD2 se redujeron a 900
+HectorXD2 Cayó en una casilla que le hizo perder un turno.
+Es el turno de HectorXD, Turno 2
+HectorXD saco un 6
+Es el turno de HectorXD, Turno 3
+HectorXD saco un 1
+Es el turno de HectorXD2, Turno 4
+HectorXD2 saco un 6
+Es el turno de HectorXD, Turno 5
+HectorXD saco un 4
+HectorXD Cayó en una casilla de chance que le permitio volver a jugar.
+HectorXD saco un 4
+Es el turno de HectorXD2, Turno 6
+HectorXD2 saco un 2
+Los soldados de HectorXD2 se redujeron a 750
+HectorXD2 Fue forzado a tomar un atajo desfavorable en direccion a la diagional secundaria.
+Es el turno de HectorXD, Turno 7
+HectorXD saco un 5
+Es el turno de HectorXD2, Turno 8
+HectorXD2 saco un 3
+Es el turno de HectorXD, Turno 9
+HectorXD saco un 5
+HectorXD Cayó en una casilla de chance que le permitio colocarse al frente de HectorXD2.
+Pero como HectorXD2 esta detras de HectorXD este se queda en el mismo sitio.
+Es el turno de HectorXD2, Turno 10
+HectorXD2 saco un 6
+HectorXD2 Cayó en una casilla de chance que le permitio colocarse al frente de HectorXD.
+HectorXD2 cayó en una casilla de chance que le permitio avanzar dos espacios mas.
+Es el turno de HectorXD, Turno 11
+HectorXD saco un 3
+HectorXD ha tomado por sorpresa a HectorXD2!
+HectorXD2 ha muerto.
+Es el turno de HectorXD2, Turno 12
+HectorXD2 saco un 3
+HectorXD2 cayó en una casilla de chance que le permitio avanzar dos espacios mas.
+HectorXD2 Cayo en una casilla de chance en donde tuvo que volver al punto de partida.
+Los soldados de HectorXD2 se redujeron a 700
+Es el turno de HectorXD, Turno 13
+HectorXD saco un 6
+HectorXD Cayó en una casilla de chance que le penitensio a colocarse detras de HectorXD2.
+Los soldados de HectorXD se redujeron a 800
+HectorXD ha tomado por sorpresa a HectorXD2!
+HectorXD2 ha muerto.
+Es el turno de HectorXD2, Turno 14
+HectorXD2 saco un 2
+HectorXD2 Cayó en una casilla que le hizo perder un turno.
+Es el turno de HectorXD, Turno 15
+HectorXD saco un 4
+Es el turno de HectorXD, Turno 16
+HectorXD saco un 1
+HectorXD Cayó en una casilla de chance que le permitio colocarse al frente de HectorXD2.
+Pero como HectorXD2 esta detras de HectorXD este se queda en el mismo sitio.
+Es el turno de HectorXD2, Turno 17
+HectorXD2 saco un 4
+Es el turno de HectorXD, Turno 18
+HectorXD saco un 5
+HectorXD Cayó en una casilla que resto 250 soldados a sus tropas.
+Es el turno de HectorXD2, Turno 19
+HectorXD2 saco un 5
+HectorXD2 Tomo un atajo favorable en direccion a la diagional principal.
+HectorXD2 Tomo un atajo favorable en direccion a la diagional secundaria.
+HectorXD2 Cayó en una casilla de chance que le permitio doblar sus dados y avanzo 5 espacios mas.
+Los soldados de HectorXD2 se redujeron a 850
+HectorXD2 Fue forzado a tomar un atajo desfavorable en direccion a la diagional principal.
+HectorXD2 Cayó en una casilla de chance en donde retrocedio un espacio.
+Los soldados de HectorXD2 se redujeron a 750
+Es el turno de HectorXD, Turno 20
+HectorXD saco un 5
+Es el turno de HectorXD2, Turno 21
+HectorXD2 saco un 1
+Los soldados de HectorXD2 se redujeron a 600
+HectorXD2 Fue forzado a tomar un atajo desfavorable en direccion a la diagional principal.
+HectorXD2 Cayo en una casilla de chance en donde tuvo que volver al punto de partida.
+Los soldados de HectorXD2 se redujeron a 300
+Es el turno de HectorXD, Turno 22
+HectorXD saco un 5
+Es el turno de HectorXD2, Turno 23
+HectorXD2 saco un 1
+HectorXD2 cayó en una casilla de chance que le permitio avanzar dos espacios mas.
+HectorXD2 Cayó en una casilla de chance que le permitio doblar sus dados y avanzo 1 espacios mas.
+Es el turno de HectorXD, Turno 24
+HectorXD saco un 3
+HectorXD Tomo un atajo favorable en direccion a la diagional secundaria.
+HectorXD Tomo un atajo favorable en direccion a la diagional secundaria.
+Es el turno de HectorXD2, Turno 25
+HectorXD2 saco un 4
+Es el turno de HectorXD, Turno 26
+HectorXD saco un 4
+HectorXD Cayó en una casilla de chance que le permitio colocarse al frente de HectorXD2.
+Pero como HectorXD2 esta detras de HectorXD este se queda en el mismo sitio.
+Es el turno de HectorXD2, Turno 27
+HectorXD2 saco un 6
+Es el turno de HectorXD, Turno 28
+HectorXD saco un 2
+HectorXD Cayó en una casilla que restauro al maximo sus soldados y le añadio una vida.
+Es el turno de HectorXD2, Turno 29
+HectorXD2 saco un 5
+Los soldados de HectorXD2 se redujeron a 150
+HectorXD2 Fue forzado a tomar un atajo desfavorable en direccion a la diagional principal.
+Es el turno de HectorXD, Turno 30
+HectorXD saco un 4
+HectorXD Cayó en una casilla que restauro al maximo sus soldados y le añadio una vida.
+Es el turno de HectorXD2, Turno 31
+HectorXD2 saco un 6
+Los soldados de HectorXD2 se redujeron a 0
+HectorXD2 Fue forzado a tomar un atajo desfavorable en direccion a la diagional secundaria.
+HectorXD2 se ha quedado sin soldados.
+HectorXD2 ha muerto.
+HectorXD2 se ha quedado sin vidas!.
+Ha ganado HectorXD2.
+Ha comenzado una nueva partida!
+Es el turno de HectorXD, Turno 1
+HectorXD saco un 2
+Es el turno de HectorXD2, Turno 2
+HectorXD2 saco un 3
+Es el turno de HectorXD, Turno 3
+HectorXD saco un 5
+Es el turno de HectorXD2, Turno 4
+Ha comenzado una nueva partida!
+Es el turno de HectorXD2, Turno 1
+HectorXD2 saco un 2
+Es el turno de HectorXD, Turno 2
+HectorXD saco un 4
+Es el turno de HectorXD2, Turno 3
+HectorXD2 saco un 6
+Es el turno de HectorXD, Turno 4
+HectorXD saco un 6
+Es el turno de HectorXD2, Turno 5
+HectorXD2 saco un 6
+Es el turno de HectorXD, Turno 6
+HectorXD saco un 3
+Es el turno de HectorXD2, Turno 7
+HectorXD2 saco un 2
+Es el turno de HectorXD, Turno 8
+HectorXD saco un 3
+HectorXD ha tomado por sorpresa a HectorXD2!
+HectorXD2 ha muerto.
+Es el turno de HectorXD2, Turno 9
+HectorXD2 saco un 1
+Es el turno de HectorXD, Turno 10
+HectorXD saco un 2
+Es el turno de HectorXD2, Turno 11
+HectorXD2 saco un 1
+Es el turno de HectorXD, Turno 12
+HectorXD saco un 3
+Es el turno de HectorXD2, Turno 13
+HectorXD2 saco un 5
+Es el turno de HectorXD, Turno 14
+HectorXD saco un 1
+Es el turno de HectorXD2, Turno 15
+HectorXD2 saco un 1
+Es el turno de HectorXD, Turno 16
+HectorXD saco un 3
+Es el turno de HectorXD2, Turno 17
+HectorXD2 saco un 1
+Es el turno de HectorXD, Turno 18
+HectorXD saco un 4
+Es el turno de HectorXD2, Turno 19
+HectorXD2 saco un 3
+Es el turno de HectorXD, Turno 20
+HectorXD saco un 5
+Es el turno de HectorXD2, Turno 21
+HectorXD2 saco un 2
+Es el turno de HectorXD, Turno 22
+HectorXD saco un 2
+Es el turno de HectorXD2, Turno 23
+HectorXD2 saco un 3
+Es el turno de HectorXD, Turno 24
+HectorXD saco un 4
+Es el turno de HectorXD2, Turno 25
+HectorXD2 saco un 5
+Es el turno de HectorXD, Turno 26
+HectorXD saco un 1
+Es el turno de HectorXD2, Turno 27
+HectorXD2 saco un 1
+Es el turno de HectorXD, Turno 28
+HectorXD saco un 5
+Es el turno de HectorXD2, Turno 29
+HectorXD2 saco un 4
+Es el turno de HectorXD, Turno 30
+HectorXD saco un 6
+Es el turno de HectorXD2, Turno 31
+HectorXD2 saco un 3
+Es el turno de HectorXD, Turno 32
+HectorXD saco un 3
+Es el turno de HectorXD2, Turno 33
+HectorXD2 saco un 6
+Es el turno de HectorXD, Turno 34
+HectorXD saco un 5
+Es el turno de HectorXD2, Turno 35
+HectorXD2 saco un 3
+Es el turno de HectorXD, Turno 36
+HectorXD saco un 2
+Es el turno de HectorXD2, Turno 37
+HectorXD2 saco un 4
+Es el turno de HectorXD, Turno 38
+HectorXD saco un 3
+Es el turno de HectorXD2, Turno 39
+HectorXD2 saco un 1
+Es el turno de HectorXD, Turno 40
+HectorXD saco un 4
+Es el turno de HectorXD2, Turno 41
+HectorXD2 saco un 4
+Es el turno de HectorXD, Turno 42
+HectorXD saco un 6
+Es el turno de HectorXD2, Turno 43
+HectorXD2 saco un 1
+Es el turno de HectorXD, Turno 44
+HectorXD saco un 4
+Es el turno de HectorXD2, Turno 45
+HectorXD2 saco un 3
+Es el turno de HectorXD, Turno 46
+HectorXD saco un 2
+Es el turno de HectorXD2, Turno 47
+HectorXD2 saco un 6
+Es el turno de HectorXD, Turno 48
+HectorXD saco un 3
+Es el turno de HectorXD2, Turno 49
+HectorXD2 saco un 3
+Es el turno de HectorXD, Turno 50
+HectorXD saco un 5
+Es el turno de HectorXD2, Turno 51
+HectorXD2 saco un 4
+Es el turno de HectorXD, Turno 52
+HectorXD saco un 1
+Es el turno de HectorXD2, Turno 53
+HectorXD2 saco un 6
+Es el turno de HectorXD, Turno 54
+HectorXD saco un 2
+Es el turno de HectorXD2, Turno 55
+HectorXD2 saco un 5
+HectorXD2 Tomo un atajo favorable en direccion a la diagional secundaria.
+Es el turno de HectorXD, Turno 56
+HectorXD saco un 6
+HectorXD Cayó en una casilla de chance en donde retrocedio un espacio.
+Los soldados de HectorXD se redujeron a 18
+Es el turno de HectorXD2, Turno 57
+HectorXD2 saco un 4
+Es el turno de HectorXD, Turno 58
+HectorXD saco un 4
+Es el turno de HectorXD2, Turno 59
+HectorXD2 saco un 5
+Ha ganado HectorXD2.

@@ -1,0 +1,8 @@
+object FmCartas: TFmCartas
+  Left = 610
+  Height = 294
+  Top = 260
+  Width = 383
+  Caption = 'Juego de Reinos - Seleccionar cartas'
+  LCLVersion = '1.8.4.0'
+end

@@ -97,7 +97,10 @@ Procedure EspecialLogicTo(Player: Byte;PorcentajeBuenas: Byte);
 Procedure ProcessEffect(Casualidad: Byte); //PendingEffect
 
 Procedure HideDialog();
-Procedure OpenDialog(Name, Text: String);
+Procedure OpenDialog(Name, Text: String;Image: String);
+Procedure Anuncio(Tipo: Byte;Text: String);
+Procedure EffectDialog(Casualidad: Byte);
+Function NumeroAleatorio(min: integer; max: integer): integer;
 
 var
   PlayerTurn:       Byte;
@@ -316,9 +319,12 @@ Begin
 
       EspecialLogicTo(ActualGame.PTurn, PorBuenas);
 
-      OpenDialog('Explorador','Señor fuentes me tofician que acabamos de caer en una casilla especial.');
+      //OpenDialog('Explorador','Señor fuentes me notifican que acabamos' + #13#10 + ' de caer en una casilla especial.');
 
-      PausedController := True; while PausedController do begin sleep(100); Application.ProcessMessages; end;
+      //Anuncio(1,'Señor, fuentes me notifican que acabamos de caer' + #13#10 + 'en una casilla especial');
+
+      EffectDialog(PendingEffect);
+      PausedController := True; while PausedController do begin sleep(1); Application.ProcessMessages; end;
 
       ProcessEffect(PendingEffect);
 
@@ -330,11 +336,24 @@ Begin
   End Else AuxBackPos := 0;
 
   If (GPlayers[ActualGame.PTurn].Pos = GPlayers[OtherPlayer].Pos) Then Begin
+
+    Anuncio(3,'Mi señor, hemos tomado por sorpresa a un peloton del enemigo' + #13#10+ 'lo asesinaremos aqui y ahora!.');
+    PausedController := True; while PausedController do begin sleep(1); Application.ProcessMessages; end;
+
     EntradaLog(ActualGame.Players[ActualGame.PTurn].Username + ' ha tomado por sorpresa a ' + ActualGame.Players[OtherPlayer].Username + '!');
     KillPlayer(OtherPlayer);
   End;
 
   If (GPlayers[ActualGame.PTurn].Pos = ActualGame.Size*ActualGame.Size) Then Begin
+
+    Case (NumeroAleatorio(1,4)) Of
+     1: Anuncio(1,'Señor, hemos logrado llegar a nuestro destino.' + #13#10+ 'lo asesinaremos aqui y ahora!.');
+     2: Anuncio(2,'Señor!, digo rey!, las tropas han tomado el castillo' + #13#10 + 'nosotros ganamos!.');
+     3: Anuncio(3,'Mi Señor, ya hemos tomado el castillo, salve al' + #13#10+ 'nuevo rey ' + ActualGame.Players[OtherPlayer].Username + '.');
+     4: Anuncio(4,'Bueno, aqui estamos, al parecer lo hemos logrado.');
+    End;
+    PausedController := True; while PausedController do begin sleep(1); Application.ProcessMessages; end;
+
     WinPlayer(ActualGame.PTurn);
   End;
 
@@ -666,16 +685,15 @@ Begin
    TotalSpecials:= 0;
    While  TotalSpecials < (trunc(TamTablero * TamTablero * PorcentajeChance)) Do
    Begin
-
-          //El ultimo 1 que se le suma es para que no haya especial en la casilla 1,1
-          I := Random(TamTablero - 1) + 1 + 1;
-          J := Random(TamTablero - 1) + 1 + 1;
+          I := Random(TamTablero) + 1;
+          J := Random(TamTablero) + 1;
 
           //Se valida que
           //-La casilla especial este libre
           //-La casilla candidata no sea la casilla donde se encuentra el trono de hierro
+          //- Que no sea la casilla 1,1
 
-          If  ((Sections[Pos_IY + J - 1, Pos_IX + I - 1].Special = 0) And (CoorToPos(I,J,ActualGame.Clock,TamTablero) <> TamTablero*TamTablero)) Then
+          If  ((Sections[Pos_IY + J - 1, Pos_IX + I - 1].Special = 0) And (CoorToPos(I,J,ActualGame.Clock,TamTablero) <> TamTablero*TamTablero) And not ((I = 1) And (J = 1))) Then
           Begin
                Sections[Pos_IY + J - 1, Pos_IX + I - 1].Special := TotalSpecials + 1;
                Specials[TotalSpecials + 1].X := Pos_IX + I - 1;
@@ -825,6 +843,39 @@ Begin
       RenderSection(Sections[I,J]);
 End;
 
+Procedure EffectDialog(Casualidad: Byte); //PendingEffect
+Var Aux: Integer;
+    OtherPlayer: Byte;
+Begin
+
+  OtherPlayer := 1;
+  If (ActualGame.PTurn = 1) Then OtherPlayer := 2;
+
+  case Casualidad of
+    1: Anuncio(1,'Señor, es terreno llano, vamos a movernos dos pasos mas.');//#13#10
+    2: Anuncio(1,'Señor, vamos a movernos el doble de lo planeado.');//#13#10
+    3: Anuncio(1,'Señor, tenemos la opcion de tomar un atajo secreto' + #13#10 + 'para llegar justo alfrente de nuestros enemigos!,' + #13#10 + 'lo haremos en caso de convenir.');//#13#10
+    4: Anuncio(4,'He descubierto un atajo secreto que permitira movernos ' + #13#10 + 'en direccion a la diagonal principal, vamos a tomarlo.');
+    5: Anuncio(4,'He descubierto un atajo secreto que permitira movernos ' + #13#10 + 'en direccion a la diagonal secundaria, vamos a tomarlo.');
+    6: Anuncio(2,'Señor, las condiciones son favorables para seguir nuestro' + #13#10 + 'camino, vuelva a tirar los dados.');
+    7: Anuncio(3,'Mi señor, '+IntToStr(Trunc(ActualGame.Soliders * 0.25))+' soldados soldados quieren unirse a nuestra' + #13#10 + 'causa, vamos a permitirselo, sin embargo solo podemos' + #13#10 + 'llevar ' + IntToStr(ActualGame.Soliders) + ' en total.');
+    8: Anuncio(3,'Mi señor, barbaros de salvajes nos han emboscado tenemos' + #13#10 + 'que retroceder un paso.');
+    9: Anuncio(2,'Tengo reportes sobre el asesinado de los guardias de' + #13#10+ 'vuestra familia!, tenemos que volver a casa rapido.');
+    10: Begin
+        Aux := (GPlayers[OtherPlayer].Pos - GPlayers[ActualGame.PTurn].Pos) - 1;
+        If (Aux < 0) Then
+          Anuncio(2,'Señor, nos han amenazado!, tenemos que volver justo'+ #13#10 +'un paso atras de nuestros enemigos.')
+        Else
+          Anuncio(2,'Los enemigos nos han intentado amenzar para ir justo'+ #13#10 +'un paso atras de ellos, pero fuimos mas' + #13#10 + 'inteligentes y nos quedamos aqui.');
+        End;
+    11: Anuncio(3,'Mi señor, nos han emboscado!, tenemos que regresar' + #13#10 + 'por el atajo de la diagonal principal!.');
+    12: Anuncio(3,'Mi señor, nos han emboscado!, tenemos que regresar' + #13#10 + 'por el atajo de la diagonal secundaria!.');
+    13: Anuncio(2,'Señor, han envenenado nuestra comida, los soldados' + #13#10 + 'se encuetran muy cansados y sin animos de continuar' + #13#10 'por el dia de hoy.');
+    14: Anuncio(3,'Mi señor, hemos perdido '+IntToStr(Trunc(ActualGame.Soliders * 0.25))+' soldados en una batalla con' + #13#10 + 'mercenarios contratados por el enemigo.');
+  End;
+
+End;
+
 
 Procedure ProcessEffect(Casualidad: Byte); //PendingEffect
 Var OtherPlayer: Byte;
@@ -956,6 +1007,19 @@ case Casualidad of
 
 End;
 
+Procedure Anuncio(Tipo: Byte;Text: String);
+Var NameImage, NamePerson: String;
+Begin
+  NameImage := 'explorer';
+  NamePerson := 'Explorador';
+  Case (Tipo) Of
+    2: Begin NameImage := 'advister';NamePerson := 'Consejero'; End;
+    3: Begin NameImage := 'solider';NamePerson := 'Jefe de armas'; End;
+    4: Begin NameImage := 'mercenary';NamePerson := 'Espia'; End;
+  End;
+  OpenDialog(NamePerson,Text,NameImage);
+End;
+
 Procedure HideDialog();
 Begin
   PausedController := False;
@@ -967,16 +1031,17 @@ Begin
   //Dialog.PanelText.Visible := False;
 End;
 
-Procedure OpenDialog(Name, Text: String);
+Procedure OpenDialog(Name, Text: String;Image: String);
 Begin
   Dialog.Image  .Visible := True;
+  Dialog.Image.Picture.LoadFromFile(aPPPath + 'images/dialogs/'+Image+'.png');
   Dialog.Name   .Visible := True;
   Dialog.Text   .Visible := True;
   Dialog.Btn    .Visible := True;
   //Dialog.BtnText.Visible := True;
   //Dialog.PanelText.Visible := True;
   Dialog.Text.ControlStyle   := Dialog.Text.ControlStyle - [csOpaque] + [csParentBackground];
-  Dialog.PanelText.ControlStyle   := Dialog.PanelText.ControlStyle - [csOpaque] + [csParentBackground];
+  //Dialog.PanelText.ControlStyle   := Dialog.PanelText.ControlStyle - [csOpaque] + [csParentBackground];
   Dialog.Name   .Caption := Name;
   Dialog.Text   .Caption := Text;
   PausedController := True;
