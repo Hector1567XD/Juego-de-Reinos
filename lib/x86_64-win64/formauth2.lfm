@@ -1,7 +1,7 @@
 object FmAuth2: TFmAuth2
-  Left = 203
+  Left = 543
   Height = 300
-  Top = 639
+  Top = 628
   Width = 400
   Caption = 'Juego de Reinos - Autenticacion, Jugador 2'
   ClientHeight = 300

@@ -63,7 +63,7 @@ type
       class procedure List(var ListGame: TListBox);
       class procedure Combo(var ComboGame: TComboBox);
       class procedure SeedTest();
-      class procedure NewGame(P1,P2,H1,H2,Size,Lifes,Difficulty: Byte;Soliders:Word;Clock:Boolean;Size1,Size2:Byte); static;
+      class procedure NewGame(P1,P2,H1,H2,Size,Lifes,Difficulty: Byte;Soliders:Word;Clock:Boolean;Size1,Size2,Porcentaje:Byte); static;
       class function FindCode(Code : String): TGame; static;
 
       //Adicionales
@@ -211,32 +211,32 @@ end;
 class procedure CGame.SeedTest();//
 Begin
    If ((CGame.Count() <= 0) and False) Then Begin
-      CGame.NewGame(1, 2, 1 , 2, 5, 3, 2, 1000, False, 5, 5);
+      CGame.NewGame(1, 2, 1 , 2, 5, 3, 2, 1000, False, 5, 5, 30);
       CGame.PushLog('Movimiento 1');
       CGame.PushLog('Movimiento X');
       CGame.PushLog('Movimiento FINAL');
-      CGame.NewGame(2, 1, 2 , 1, 7, 3, 2, 1000, False, 5, 5);
+      CGame.NewGame(2, 1, 2 , 1, 7, 3, 2, 1000, False, 5, 5, 30);
       CGame.PushLog('Movimiento J2 1');
       CGame.PushLog('Movimiento X');
       CGame.PushLog('Movimiento J2 FINAL');
-      CGame.NewGame(2, 1, 3 , 4, 7, 3, 2, 1000, False, 5, 5);
+      CGame.NewGame(2, 1, 3 , 4, 7, 3, 2, 1000, False, 5, 5, 30);
       CGame.PushLog('Movimiento J3 1');
       CGame.PushLog('Movimiento X');
       CGame.PushLog('Movimiento X');
       CGame.PushLog('Movimiento J3 FINAL');
-      CGame.NewGame(2, 1, 4 , 5, 7, 3, 2, 1000, False, 5, 5);
+      CGame.NewGame(2, 1, 4 , 5, 7, 3, 2, 1000, False, 5, 5, 30);
       CGame.PushLog('Movimiento J4 1');
       CGame.PushLog('Movimiento J4 2');
       CGame.PushLog('Movimiento J4 FINAL');
-      CGame.NewGame(2, 1, 4 , 5, 7, 3, 2, 1000, False, 5, 5);
+      CGame.NewGame(2, 1, 4 , 5, 7, 3, 2, 1000, False, 5, 5, 30);
       CGame.PushLog('Movimiento J5 1');
       CGame.PushLog('Movimiento J5 2');
       CGame.PushLog('Movimiento J5 FINAL');
-      CGame.NewGame(2, 1, 4 , 5, 7, 3, 2, 1000, False, 5, 5);
+      CGame.NewGame(2, 1, 4 , 5, 7, 3, 2, 1000, False, 5, 5, 30);
       CGame.PushLog('Movimiento J6 1');
       CGame.PushLog('Movimiento J6 2');
       CGame.PushLog('Movimiento J6 FINAL');
-      CGame.NewGame(2, 1, 4 , 5, 7, 3, 2, 1000, False, 5, 5);
+      CGame.NewGame(2, 1, 4 , 5, 7, 3, 2, 1000, False, 5, 5, 30);
       CGame.PushLog('Movimiento J7 1');
       CGame.PushLog('Movimiento X');
       CGame.PushLog('Movimiento J7 2');
@@ -244,7 +244,7 @@ Begin
    End;
 end;
 
-class procedure CGame.NewGame(P1,P2,H1,H2,Size,Lifes,Difficulty: Byte;Soliders:Word;Clock:Boolean;Size1,Size2:Byte);
+class procedure CGame.NewGame(P1,P2,H1,H2,Size,Lifes,Difficulty: Byte;Soliders:Word;Clock:Boolean;Size1,Size2,Porcentaje:Byte);
 var
    Game:  TGame;
 Begin
@@ -296,6 +296,8 @@ Begin
    ActualGame.Players[2].HouseName  := CHouse.Find(H2).Name;
    ActualGame.Players[2].Soliders   := Soliders;
    ActualGame.Players[2].Lifes      := Lifes;
+
+   ActualGame.Specials := Porcentaje;
 
 end;
 

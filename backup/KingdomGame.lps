@@ -9,7 +9,7 @@
         <Filename Value="KingdomGame.lpr"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="8"/>
-        <TopLine Value="9"/>
+        <TopLine Value="24"/>
         <CursorPos Y="51"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
@@ -131,6 +131,7 @@
         <CursorPos X="51" Y="24"/>
         <UsageCount Value="246"/>
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit13>
       <Unit14>
         <Filename Value="Models\nationmodel.pas"/>
@@ -148,7 +149,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormMenu"/>
-        <CursorPos X="52" Y="13"/>
+        <CursorPos X="14" Y="6"/>
         <UsageCount Value="224"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -222,8 +223,8 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormNGC1vs1"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="114"/>
-        <CursorPos X="24" Y="116"/>
+        <TopLine Value="50"/>
+        <CursorPos X="29" Y="60"/>
         <UsageCount Value="211"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -296,9 +297,9 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormGame"/>
         <EditorIndex Value="5"/>
-        <TopLine Value="312"/>
-        <CursorPos X="14" Y="325"/>
-        <UsageCount Value="135"/>
+        <TopLine Value="417"/>
+        <CursorPos X="8" Y="425"/>
+        <UsageCount Value="144"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit27>
@@ -308,9 +309,9 @@
         <UnitName Value="GameController"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="6"/>
-        <TopLine Value="227"/>
-        <CursorPos X="49" Y="245"/>
-        <UsageCount Value="79"/>
+        <TopLine Value="959"/>
+        <CursorPos X="3" Y="978"/>
+        <UsageCount Value="88"/>
         <Loaded Value="True"/>
       </Unit28>
       <Unit29>
@@ -320,7 +321,7 @@
         <EditorIndex Value="10"/>
         <TopLine Value="139"/>
         <CursorPos X="16" Y="152"/>
-        <UsageCount Value="40"/>
+        <UsageCount Value="49"/>
         <Loaded Value="True"/>
       </Unit29>
       <Unit30>
@@ -339,7 +340,7 @@
         <EditorIndex Value="13"/>
         <TopLine Value="2296"/>
         <CursorPos Y="2317"/>
-        <UsageCount Value="52"/>
+        <UsageCount Value="56"/>
         <Loaded Value="True"/>
       </Unit31>
       <Unit32>
@@ -347,7 +348,7 @@
         <EditorIndex Value="11"/>
         <TopLine Value="3480"/>
         <CursorPos Y="3501"/>
-        <UsageCount Value="38"/>
+        <UsageCount Value="42"/>
         <Loaded Value="True"/>
       </Unit32>
       <Unit33>
@@ -391,130 +392,130 @@
         <EditorIndex Value="7"/>
         <TopLine Value="161"/>
         <CursorPos X="56" Y="161"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="15"/>
         <Loaded Value="True"/>
       </Unit38>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="Forms\formgame.pas"/>
-        <Caret Line="399" Column="3" TopLine="361"/>
+        <Caret Line="437" Column="46" TopLine="432"/>
       </Position1>
       <Position2>
-        <Filename Value="Controllers\gamecontroller.pas"/>
-        <Caret Line="20" Column="8"/>
+        <Filename Value="Forms\formgame.pas"/>
+        <Caret Line="444" Column="46" TopLine="439"/>
       </Position2>
       <Position3>
-        <Filename Value="Models\gamesmodel.pas"/>
-        <Caret Line="214" Column="64" TopLine="193"/>
+        <Filename Value="Forms\formgame.pas"/>
+        <Caret Line="318" Column="51" TopLine="311"/>
       </Position3>
       <Position4>
-        <Filename Value="Controllers\gamecontroller.pas"/>
-        <Caret Line="12" Column="44"/>
+        <Filename Value="Forms\formgame.pas"/>
+        <Caret Line="317" Column="51" TopLine="310"/>
       </Position4>
       <Position5>
         <Filename Value="Controllers\gamecontroller.pas"/>
-        <Caret Line="135" Column="41" TopLine="114"/>
+        <Caret Line="736" Column="86" TopLine="723"/>
       </Position5>
       <Position6>
-        <Filename Value="Controllers\gamecontroller.pas"/>
-        <Caret Line="137" Column="43" TopLine="116"/>
+        <Filename Value="Forms\formgame.pas"/>
+        <Caret Line="417" Column="36" TopLine="404"/>
       </Position6>
       <Position7>
-        <Filename Value="Controllers\gamecontroller.pas"/>
-        <Caret Line="139" Column="3" TopLine="116"/>
+        <Filename Value="Forms\formgame.pas"/>
+        <Caret Line="418" Column="36" TopLine="405"/>
       </Position7>
       <Position8>
-        <Filename Value="Controllers\gamecontroller.pas"/>
-        <Caret Line="138" Column="46" TopLine="116"/>
+        <Filename Value="Forms\formgame.pas"/>
+        <Caret Line="417" Column="36" TopLine="404"/>
       </Position8>
       <Position9>
         <Filename Value="Controllers\gamecontroller.pas"/>
-        <Caret Line="151" Column="28" TopLine="130"/>
+        <Caret Line="311" Column="22" TopLine="304"/>
       </Position9>
       <Position10>
         <Filename Value="Forms\formgame.pas"/>
-        <Caret Line="325" Column="35" TopLine="312"/>
+        <Caret Line="420" Column="53" TopLine="412"/>
       </Position10>
       <Position11>
         <Filename Value="Controllers\gamecontroller.pas"/>
-        <Caret Line="419" Column="16" TopLine="405"/>
+        <Caret Line="964" TopLine="950"/>
       </Position11>
       <Position12>
         <Filename Value="Controllers\gamecontroller.pas"/>
-        <Caret Line="423" Column="48" TopLine="412"/>
+        <Caret Line="975" Column="3" TopLine="956"/>
       </Position12>
       <Position13>
-        <Filename Value="Controllers\gamecontroller.pas"/>
-        <Caret Line="279" Column="39" TopLine="266"/>
+        <Filename Value="Forms\formgame.pas"/>
+        <Caret Line="478" Column="3" TopLine="455"/>
       </Position13>
       <Position14>
-        <Filename Value="Controllers\gamecontroller.pas"/>
-        <Caret Line="447" Column="74" TopLine="435"/>
+        <Filename Value="Forms\formgame.pas"/>
+        <Caret Line="479" Column="3" TopLine="456"/>
       </Position14>
       <Position15>
-        <Filename Value="Controllers\gamecontroller.pas"/>
-        <Caret Line="297" Column="97" TopLine="284"/>
+        <Filename Value="Forms\formgame.pas"/>
+        <Caret Line="478" Column="3" TopLine="455"/>
       </Position15>
       <Position16>
-        <Filename Value="Controllers\gamecontroller.pas"/>
-        <Caret Line="460" Column="34" TopLine="447"/>
+        <Filename Value="Forms\formgame.pas"/>
+        <Caret Line="479" Column="3" TopLine="456"/>
       </Position16>
       <Position17>
-        <Filename Value="Controllers\gamecontroller.pas"/>
-        <Caret Line="463" Column="19" TopLine="449"/>
+        <Filename Value="Forms\formgame.pas"/>
+        <Caret Line="478" Column="3" TopLine="455"/>
       </Position17>
       <Position18>
-        <Filename Value="Controllers\gamecontroller.pas"/>
-        <Caret Line="493" Column="59" TopLine="481"/>
+        <Filename Value="Forms\formgame.pas"/>
+        <Caret Line="466" Column="31" TopLine="455"/>
       </Position18>
       <Position19>
-        <Filename Value="Controllers\gamecontroller.pas"/>
-        <Caret Line="521" Column="149" TopLine="508"/>
+        <Filename Value="Forms\formgame.pas"/>
+        <Caret Line="426" Column="37" TopLine="418"/>
       </Position19>
       <Position20>
-        <Filename Value="Controllers\gamecontroller.pas"/>
-        <Caret Line="561" Column="22" TopLine="548"/>
+        <Filename Value="Forms\formgame.pas"/>
+        <Caret Line="457" Column="3" TopLine="455"/>
       </Position20>
       <Position21>
-        <Filename Value="Controllers\gamecontroller.pas"/>
-        <Caret Line="566" TopLine="549"/>
+        <Filename Value="Forms\formgame.pas"/>
+        <Caret Line="462" Column="77" TopLine="446"/>
       </Position21>
       <Position22>
-        <Filename Value="Controllers\gamecontroller.pas"/>
-        <Caret Line="562" Column="59" TopLine="549"/>
+        <Filename Value="Forms\formgame.pas"/>
+        <Caret Line="461" Column="77" TopLine="445"/>
       </Position22>
       <Position23>
-        <Filename Value="Controllers\gamecontroller.pas"/>
-        <Caret Line="570" Column="14" TopLine="557"/>
+        <Filename Value="Forms\formgame.pas"/>
+        <Caret Line="460" Column="77" TopLine="444"/>
       </Position23>
       <Position24>
-        <Filename Value="Controllers\gamecontroller.pas"/>
-        <Caret Line="590" Column="84" TopLine="577"/>
+        <Filename Value="Forms\formgame.pas"/>
+        <Caret Line="459" Column="77" TopLine="443"/>
       </Position24>
       <Position25>
-        <Filename Value="Controllers\gamecontroller.pas"/>
-        <Caret Line="606" Column="149" TopLine="593"/>
+        <Filename Value="Forms\formgame.pas"/>
+        <Caret Line="423" Column="36" TopLine="406"/>
       </Position25>
       <Position26>
-        <Filename Value="Controllers\gamecontroller.pas"/>
-        <Caret Line="609" Column="9" TopLine="594"/>
+        <Filename Value="Forms\formgame.pas"/>
+        <Caret Line="422" Column="36" TopLine="405"/>
       </Position26>
       <Position27>
-        <Filename Value="Controllers\gamecontroller.pas"/>
-        <Caret Line="629" Column="21" TopLine="616"/>
+        <Filename Value="Forms\formgame.pas"/>
+        <Caret Line="423" Column="36" TopLine="406"/>
       </Position27>
       <Position28>
-        <Filename Value="Controllers\gamecontroller.pas"/>
-        <Caret Line="640" Column="28" TopLine="619"/>
+        <Filename Value="Forms\formgame.pas"/>
+        <Caret Line="422" Column="36" TopLine="405"/>
       </Position28>
       <Position29>
-        <Filename Value="Controllers\gamecontroller.pas"/>
-        <Caret Line="635" Column="3" TopLine="618"/>
+        <Filename Value="Forms\formgame.pas"/>
+        <Caret Line="409" Column="29" TopLine="405"/>
       </Position29>
       <Position30>
         <Filename Value="Controllers\gamecontroller.pas"/>
-        <Caret Line="63" Column="59" TopLine="63"/>
+        <Caret Line="738" TopLine="724"/>
       </Position30>
     </JumpHistory>
   </ProjectSession>

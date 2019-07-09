@@ -1,7 +1,7 @@
 object FmNGC1vs1: TFmNGC1vs1
-  Left = 1001
+  Left = 613
   Height = 404
-  Top = 522
+  Top = 24
   Width = 760
   Caption = 'Juego de Reinos - Nuevo Juego, Clasico 1 vs 1'
   ClientHeight = 404
@@ -1797,5 +1797,74 @@ object FmNGC1vs1: TFmNGC1vs1
     OnClick = btnPlayer2Click
     OnMouseEnter = btnMouseEnter
     OnMouseLeave = btnMouseLeave
+  end
+  object SpecialsBar: TTrackBar
+    Left = 536
+    Height = 26
+    Top = 272
+    Width = 207
+    Position = 5
+    TabOrder = 11
+  end
+  object LbSubTitle7: TLabel
+    Left = 536
+    Height = 19
+    Top = 240
+    Width = 202
+    Caption = 'Porcentaje de especiales'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWhite
+    Font.Height = -16
+    Font.Name = 'Droid Sans'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object LbPorSp3: TLabel
+    Left = 716
+    Height = 13
+    Top = 285
+    Width = 21
+    Caption = '60%'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWhite
+    Font.Height = -11
+    Font.Name = 'Droid Sans'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object LbPorSp1: TLabel
+    Left = 544
+    Height = 13
+    Top = 285
+    Width = 15
+    Caption = '6%'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWhite
+    Font.Height = -11
+    Font.Name = 'Droid Sans'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object LbPorSp2: TLabel
+    Left = 632
+    Height = 13
+    Top = 288
+    Width = 21
+    Caption = '30%'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWhite
+    Font.Height = -11
+    Font.Name = 'Droid Sans'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
   end
 end

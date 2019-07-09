@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls,
-  StdCtrls, FormHelper, MessagesHelper, AuthController, InitFile;
+  StdCtrls, ComCtrls, FormHelper, MessagesHelper, AuthController, InitFile;
 
 procedure FNGC1v1_setPlayer2(Player: UserLogg);
 
@@ -20,6 +20,9 @@ type
     btnCards: TPanel;
     ImgTablePlayer: TImage;
     ImgTablePlayer1: TImage;
+    LbPorSp3: TLabel;
+    LbPorSp1: TLabel;
+    LbPorSp2: TLabel;
     LbPlayerName2: TLabel;
     LbSubTitle1: TLabel;
     LbSubTitle2: TLabel;
@@ -28,6 +31,7 @@ type
     LbSubTitle4: TLabel;
     LbSubTitle5: TLabel;
     LbSubTitle6: TLabel;
+    LbSubTitle7: TLabel;
     LbTitle: TLabel;
     LbSubTitle: TLabel;
     LbTitle1: TLabel;
@@ -39,6 +43,7 @@ type
     SelectHouse1: TComboBox;
     SelectSize1: TComboBox;
     SelectDificulty: TComboBox;
+    SpecialsBar: TTrackBar;
     procedure btnNewGameClick(Sender: TObject);
     procedure btnPlayer2Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -165,7 +170,7 @@ Begin
     'Antihorario':    Clock := False;//
   End;
 
-  CGame.NewGame(AppUser.Id,Player2.Id,House1,House2, Size, Lifes, Hard, Soldados, Clock, Size1, Size2);
+  CGame.NewGame(AppUser.Id,Player2.Id,House1,House2, Size, Lifes, Hard, Soldados, Clock, Size1, Size2, Trunc((SpecialsBar.position / 10) * 60) );
   FormOpen('Game');
   If (Assigned(FmNGC1vs1)) Then FmNGC1vs1.Hide;
 

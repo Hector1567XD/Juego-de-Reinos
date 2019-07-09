@@ -47,6 +47,7 @@ type
             Difficulty: Byte;
             Id:         Word;
             Winner:     Byte;
+            Specials:   Byte;
     End;
 
 procedure IniciarAplicacion();

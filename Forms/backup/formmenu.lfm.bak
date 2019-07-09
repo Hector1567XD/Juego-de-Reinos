@@ -1,7 +1,7 @@
 object FmMenu: TFmMenu
-  Left = 387
+  Left = 414
   Height = 579
-  Top = 138
+  Top = 317
   Width = 1061
   Caption = 'Juego de Reinos - Menu'
   ClientHeight = 579

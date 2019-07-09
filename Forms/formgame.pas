@@ -29,6 +29,14 @@ type
     Image1: TImage;
     Heart1_1: TImage;
     Image2: TImage;
+    BtnNextButton: TImage;
+    ImDialog: TImage;
+    ImBar1: TImage;
+    ImBar2: TImage;
+    ImBarGreen1: TImage;
+    ImBarGreen2: TImage;
+    LbDialogName: TLabel;
+    LbDialogText: TLabel;
     TSpecial1: TImage;
     ImCastle: TImage;
     ImPlayer1: TImage;
@@ -268,18 +276,52 @@ type
     TSpecial29: TImage;
     TSpecial3: TImage;
     TSpecial30: TImage;
+    TSpecial31: TImage;
+    TSpecial32: TImage;
+    TSpecial33: TImage;
+    TSpecial34: TImage;
+    TSpecial35: TImage;
+    TSpecial36: TImage;
+    TSpecial37: TImage;
+    TSpecial38: TImage;
+    TSpecial39: TImage;
     TSpecial4: TImage;
+    TSpecial40: TImage;
+    TSpecial41: TImage;
+    TSpecial42: TImage;
+    TSpecial43: TImage;
+    TSpecial44: TImage;
+    TSpecial45: TImage;
+    TSpecial46: TImage;
+    TSpecial47: TImage;
+    TSpecial48: TImage;
+    TSpecial49: TImage;
     TSpecial5: TImage;
+    TSpecial50: TImage;
+    TSpecial51: TImage;
+    TSpecial52: TImage;
+    TSpecial53: TImage;
+    TSpecial54: TImage;
+    TSpecial55: TImage;
+    TSpecial56: TImage;
+    TSpecial57: TImage;
+    TSpecial58: TImage;
+    TSpecial59: TImage;
     TSpecial6: TImage;
+    TSpecial60: TImage;
     TSpecial7: TImage;
     TSpecial8: TImage;
     TSpecial9: TImage;
     procedure BtnDice1Click(Sender: TObject);
+    procedure BtnNextButtonClick(Sender: TObject);
+    procedure BtnNextButtonMouseEnter(Sender: TObject);
+    procedure BtnNextButtonMouseLeave(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure FormPaint(Sender: TObject);
     procedure btnDiceMouseEnter(Sender: TObject);
     procedure btnDiceMouseLeave(Sender: TObject);
+    procedure LbNextButtonClick(Sender: TObject);
   private
 
   public
@@ -292,6 +334,8 @@ var
   Dices:    TDices;
   Specials: TSpecials;
   LogList:  TListBox;
+  SoliderBar: Array[1..2] Of TImage;
+  Dialog: TDialog;
 
 implementation
 uses InitFile;
@@ -312,6 +356,8 @@ begin
      Panel1.ControlStyle    := Panel1.ControlStyle - [csOpaque] + [csParentBackground];
      PnLife1.ControlStyle   := PnLife1.ControlStyle - [csOpaque] + [csParentBackground];
      PnLife2.ControlStyle   := PnLife2.ControlStyle - [csOpaque] + [csParentBackground];
+     //LbDialogText.ControlStyle   := LbDialogText.ControlStyle - [csOpaque] + [csParentBackground];
+     //PnDialogText.ControlStyle   := PnDialogText.ControlStyle - [csOpaque] + [csParentBackground];
 
      For I := 1 To 10 Do
          For J := 1 To 10 Do Begin
@@ -354,7 +400,7 @@ begin
      For I := 1 To 5 Do
       GPlayers[2].Hearts[I].Image := TImage(FindComponent('Heart2_' + IntToStr(I)));
 
-     For I := 1 To 30 Do Begin
+     For I := 1 To 60 Do Begin
       Specials[I].Image := TImage(FindComponent('TSpecial' + IntToStr(I)));
       Specials[I].Image.Visible := False;
       Specials[I].X       := 0;
@@ -364,6 +410,21 @@ begin
 
      Castle.Image := ImCastle;
      LogList      := EventLog;
+
+     SoliderBar[1] := ImBarGreen1;
+     SoliderBar[2] := ImBarGreen2;
+
+     SoliderBar[1].Width := 1;
+     SoliderBar[2].Width := 1;
+
+     Dialog.Image   := ImDialog;
+     Dialog.Name    := LbDialogName;
+     Dialog.Text    := LbDialogText;
+     Dialog.Btn     := BtnNextButton;
+     //Dialog.BtnText := LbNextButton;
+     //Dialog.PanelText := PnDialogText;
+
+     HideDialog();
 
      newGame();
 end;
@@ -380,6 +441,22 @@ begin
     TurnProcess();
    End;
 
+end;
+
+procedure TFmGame.BtnNextButtonClick(Sender: TObject);
+begin
+  PausedController := False;
+  HideDialog();
+end;
+
+procedure TFmGame.BtnNextButtonMouseEnter(Sender: TObject);
+begin
+   TImage(Sender).Picture.LoadFromFile(aPPPath + '/images/buttons/nextButton_hover.png');
+end;
+
+procedure TFmGame.BtnNextButtonMouseLeave(Sender: TObject);
+begin
+   TImage(Sender).Picture.LoadFromFile(aPPPath + '/images/buttons/nextButton.png');
 end;
 
 {=[Btns]=====================================================================}
@@ -405,6 +482,11 @@ begin
 
    If (Dices[DiceIndex].Active) Then
     TImage(Sender).Picture.LoadFromFile(aPPPath + '/images/buttons/dice_'+IntToStr(DiceIndex)+'.png');
+
+end;
+
+procedure TFmGame.LbNextButtonClick(Sender: TObject);
+begin
 
 end;
 
