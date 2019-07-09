@@ -1,7 +1,7 @@
 object FmNewHouse: TFmNewHouse
-  Left = 1189
+  Left = 1395
   Height = 299
-  Top = 418
+  Top = 186
   Width = 400
   Caption = 'Juego de Reinos - Crear casa'
   ClientHeight = 299

@@ -105,6 +105,7 @@ Begin
 
   XI := 1;
   YI := 1;
+  I  := 1;
   Encounter := False;
 
   FlagMove := 1;

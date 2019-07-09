@@ -291,6 +291,7 @@ var
   Sections: TSections;
   Dices:    TDices;
   Specials: TSpecials;
+  LogList:  TListBox;
 
 implementation
 uses InitFile;
@@ -321,6 +322,7 @@ begin
              Sections[I,J].LLabel.Top   := Sections[I,J].LLabel.Top + 4;
              Sections[I,J].LLabel.Left  := Sections[I,J].LLabel.Left + 4;
              //Sections[I,J].LLabel.Font.Color := clWhite;
+             Sections[I,J].Special := 0;
          End;
 
      Dices[1].Image   := Dice1;
@@ -360,6 +362,8 @@ begin
      End;
 
      Castle.Image := ImCastle;
+     LogList      := EventLog;
+
      newGame();
 end;
 

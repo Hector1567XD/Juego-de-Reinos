@@ -10,6 +10,8 @@ uses
 const
   MaxW = 10;
   MaxH = 10;
+  MaxVentajas     = 7;
+  MaxDesventajas  = 7;
 
 type
 
@@ -24,6 +26,7 @@ type
     Image: TImage;
     Block: Byte;
     LLabel: TLabel;
+    Special:   Word;
   End;
   TDice = Record
     Image:  TImage;
@@ -57,7 +60,7 @@ type
   End;
 
 Procedure TurnProcess();
-Procedure MovePlayer(var GPlayer:TGPlayer; Moves: Byte);
+Procedure MovePlayer(var GPlayer:TGPlayer; Moves: Smallint);
 Function DadoValue(): Byte;
 Function DadoGatch(Player: Byte): Byte;
 Procedure DesactiveDice(Player: Byte);
@@ -77,13 +80,18 @@ Procedure TestDead();
 Procedure WinPlayer(Player:Byte);
 Procedure EntradaLog(Texto:String);
 
+Procedure GenerarSpecials(TamTablero: Word;PorcentajeChance: Real{0.30});
+Procedure RenderSpecial(var Special:TSpecial);
+Procedure RenderSpecials();
+Procedure EspecialLogicTo(Player: Byte;PorcentajeBuenas: Byte);
+
 var
   PlayerTurn:       Byte;
   DadosLastResult:  Byte;
   Pos_IX,Pos_IY,Pos_LX,Pos_LY: Byte;
   GPlayers: TGPlayers;
   Castle:   TCastle;
-
+  NextTurnLose: Byte; //Siguiente Turno perdido para... (0: Nadie, 1: Jugador 1, 2: Jugador 2)
 
 implementation
 
@@ -135,7 +143,7 @@ Begin
   //LogList.perform( TScrollingWinControl.WM_VSCROLL, SB_BOTTOM, 0 );
   //LogList.perform( TScrollingWinControl.WM_VSCROLL, SB_ENDSCROLL, 0 );
   If (LogList.Items.Count > 1) Then
-     LogList.ItemIndex := LogList.Items.Count;
+     LogList.ItemIndex := LogList.Items.Count - 1;
 
   CGame.PushLog(Texto);
 End;
@@ -164,23 +172,23 @@ Procedure PlaceCastle();
 Var CastleX,CastleY: Byte;
 Begin
   //Castle
-  PosToCoor(ActualGame.Size*ActualGame.Size,not ActualGame.Clock,ActualGame.Size,CastleX,CastleY);
+  PosToCoor(ActualGame.Size*ActualGame.Size,ActualGame.Clock,ActualGame.Size,CastleX,CastleY);
   Castle.X := CastleX;
   Castle.Y := CastleY;
   //Poner imagen
   Castle.Image.Picture.LoadFromFile(aPPPath + '/images/map/castle.png');
   //Pocisionar imagen
-  Castle.Image.Left := Sections[Pos_IX + Castle.X - 1, Pos_IY + Castle.Y - 1].Image.Left;
-  Castle.Image.Top  := Sections[Pos_IX + Castle.X - 1, Pos_IY + Castle.Y - 1].Image.Top;
+  Castle.Image.Left := Sections[Pos_IY + Castle.Y - 1, Pos_IX + Castle.X - 1].Image.Left;
+  Castle.Image.Top  := Sections[Pos_IY + Castle.Y - 1, Pos_IX + Castle.X - 1].Image.Top;
 End;
 
 Procedure PlaceLabels();
 Var X,Y,I: Byte;
 Begin
   For I := 1 To ActualGame.Size*ActualGame.Size Do Begin
-    PosToCoor(I,not ActualGame.Clock,ActualGame.Size,X,Y);
-    Sections[Pos_IX + X - 1, Pos_IY + Y - 1].LLabel.Visible := True;
-    Sections[Pos_IX + X - 1, Pos_IY + Y - 1].LLabel.Caption := IntToStr(I);
+    PosToCoor(I,ActualGame.Clock,ActualGame.Size,X,Y);
+    Sections[Pos_IY + Y - 1, Pos_IX + X - 1].LLabel.Visible := True;
+    Sections[Pos_IY + Y - 1, Pos_IX + X - 1].LLabel.Caption := IntToStr(I);
   End;
 End;
 
@@ -202,29 +210,45 @@ Begin
   EntradaLog('Es el turno de ' + ActualGame.Players[ActualGame.PTurn].Username + ', Turno ' + Turn);
 End;
 
-Procedure MovePlayer(var GPlayer:TGPlayer; Moves: Byte);
+Procedure MovePlayer(var GPlayer:TGPlayer; Moves: SmallInt);
 Var I:    Byte;
     Next: Boolean;
 Begin
 
   Next := True;
+  If (Moves > 0) Then
+    For I := 1 To Moves Do Begin
 
-  For I := 1 To Moves Do Begin
+      If (Moves <= 6) Then Delay(20) Else Delay(4);
 
-    Delay(20);{}
+      If (GPlayer.Pos >= ActualGame.Size*ActualGame.Size) Then Next := False;
 
-    If (GPlayer.Pos >= ActualGame.Size*ActualGame.Size) Then Next := False;
+      If (Next = True) Then Begin
+        GPlayer.Pos := MoveEspiralToPos(GPlayer.X, GPlayer.Y, ActualGame.Clock, ActualGame.Size, 1);
+      End Else Begin
+        GPlayer.Pos := GPlayer.Pos - 1;
+        PosToCoor(GPlayer.Pos, ActualGame.Clock, ActualGame.Size, GPlayer.X, GPlayer.Y);
+      End;
 
-    If (Next = True) Then Begin
-      GPlayer.Pos := MoveEspiralToPos(GPlayer.X, GPlayer.Y, ActualGame.Clock, ActualGame.Size, 1);
-    End Else Begin
-      GPlayer.Pos := GPlayer.Pos - 1;
-      PosToCoor(GPlayer.Pos, ActualGame.Clock, ActualGame.Size, GPlayer.X, GPlayer.Y);
-    End;
+      RenderPlayers();
+      If (Assigned(FmGame)) Then FmGame.Refresh();
 
-    RenderPlayers();
-    If (Assigned(FmGame)) Then FmGame.Refresh();
+    End
+  Else Begin
+    For I := 1 To Abs(Moves) Do Begin
 
+      If (Abs(Moves) <= 6) Then Delay(20) Else Delay(4);
+
+      If (GPlayer.Pos > 1) Then Begin
+        GPlayer.Pos := GPlayer.Pos - 1;
+        PosToCoor(GPlayer.Pos, ActualGame.Clock, ActualGame.Size, GPlayer.X, GPlayer.Y);
+      End;
+
+      RenderPlayers();
+      If (Assigned(FmGame)) Then FmGame.Refresh();
+
+    End
+      //Logica de movimientos para atras
   End;
 
 End;
@@ -255,7 +279,7 @@ Begin
 End;
 
 Procedure TurnEvents();
-Var OtherPlayer:Byte;
+Var OtherPlayer, I, PorBuenas:Byte;
 Begin
 
   OtherPlayer := 2;
@@ -269,6 +293,11 @@ Begin
   If (GPlayers[ActualGame.PTurn].Pos = ActualGame.Size*ActualGame.Size) Then Begin
     WinPlayer(ActualGame.PTurn);
   End;
+
+  //Sacar con "Difficulty"
+  PorBuenas := 50;
+
+  For I := 1 To 30 Do If (Specials[I].Pos = GPlayers[ActualGame.PTurn].Pos) Then EspecialLogicTo(ActualGame.PTurn, PorBuenas)
 
 End;
 
@@ -284,9 +313,17 @@ Begin
     //ShowMessage(IntToStr(GPlayers[ActualGame.PTurn].Pos));
     RenderPlayers();
     TestDead();
-    If (ActualGame.Winner = 0) Then Begin
-      If (ActualGame.PTurn = 1) Then DarTurno(2) Else DarTurno(1);
-        NuevoTurno();
+
+    If ((Dices[ActualGame.PTurn].Active = False) And (NextTurnLose = 0)) Then
+      If (ActualGame.Winner = 0) Then Begin
+        If (ActualGame.PTurn = 1) Then DarTurno(2) Else DarTurno(1);
+          NuevoTurno();
+      End;
+
+    If (NextTurnLose <> 0) Then Begin
+      DarTurno(NextTurnLose);
+      NextTurnLose := 0;
+      NuevoTurno();
     End;
 
   End Else Begin
@@ -402,30 +439,258 @@ Begin
   RenderPlayers();
   Randomize();
 
+  GenerarSpecials(ActualGame.Size,0.30);
+  RenderSpecials();
   //Si no se pone esta opcion, hay otra manera de determinar el primer turno, podriamos hacer luego un condicional con esto
   //Un checkbox que diga "Elegir turno 1 por maquina"
   FirstTurnLogic();
 
 End;
 
-{procedure GenerarTrampas(TamTablero:integer);
-var
-  i, TotalTrampas: integer;
-begin
+Function NumeroAleatorio(min: integer; max: integer): integer;
+Begin
+     if min > max then
+       NumeroAleatorio:= -1
+     else
+       NumeroAleatorio:= Random(max-min+1) + min;
+End;
 
-   TotalTrampas:= 0;
-   While  TotalTrampas < (trunc(TamTablero * TamTablero * PorcentajeChance)) do
-   begin
-          i:= NumeroAleatorio(2,TamTablero * TamTablero -1);
-          if  not(VectorTablero[i].Trampa) then
-            begin
-               VectorTablero[i].Trampa:= true;
-               inc(TotalTrampas);
-            end;
+Procedure PerderTropasPorcentual(Player: Byte; Porcentaje: Byte);
+Var Perdida:Word;
+    Result:Integer;
+Begin
 
-   end;
+  Perdida := Trunc(ActualGame.Soliders * (Porcentaje/100));
 
-end;}
+  Result := ActualGame.Players[Player].Soliders - Perdida;
+  If (Result < 0) Then Result := 0;
+
+  ActualGame.Players[Player].Soliders := Result;
+
+  EntradaLog('Los soldados de ' + ActualGame.Players[Player].Username + ' se redujeron a ' + IntToStr(ActualGame.Players[Player].Soliders));
+
+End;
+
+Procedure EspecialLogicTo(Player: Byte;PorcentajeBuenas: Byte);
+Var
+  Chance: boolean;
+  Casualidad: 0..16;
+  //Temporal:
+  Ventajas, Desventajas: Array [1..7] Of Byte;
+  I: Byte;
+  OtherPlayer: Byte;
+  Aux: Integer;
+Begin
+
+  For I := 1 To 7 Do
+    Ventajas[I] := I;
+
+  For I := 1 To 7 Do
+    Desventajas[I] := I;
+
+  Chance:= true;
+  Casualidad := 0;
+
+  While (Casualidad = 0) Do Begin
+    If (PorcentajeBuenas <= NumeroAleatorio(1,100)) Then
+     Casualidad:= Ventajas[NumeroAleatorio(1,MaxVentajas)]
+    Else
+     Casualidad:= DesVentajas[NumeroAleatorio(1,MaxDesVentajas)] + 7;
+  End;
+
+  OtherPlayer := 1;
+  If (ActualGame.PTurn = 1) Then OtherPlayer := 2;
+
+  case Casualidad of
+    1: begin
+         //MostrarDialogo('Buena avanza dos espacios',true,true,400,400,5000);
+         MovePlayer(GPlayers[ActualGame.PTurn] , 2);
+         EntradaLog(ActualGame.Players[ActualGame.PTurn].Username + ' cayó en una casilla de chance que le permitio avanzar dos espacios mas.');
+       end;
+    2: begin
+         //MostrarDialogo('Buena avanza ' + label1.caption + ' espacios',true,true,400,400,5000);
+         MovePlayer(GPlayers[ActualGame.PTurn] , Dices[ActualGame.PTurn].Number);
+         EntradaLog(ActualGame.Players[ActualGame.PTurn].Username + ' Cayó en una casilla de chance que le permitio doblar sus dados y avanzo ' + IntToStr(Dices[ActualGame.PTurn].Number) + ' espacios mas.');
+       end;
+    3: begin
+         //MostrarDialogo('Buena colocate una posicion adelante del retador',true,true,400,400,5000);
+         Aux := (GPlayers[OtherPlayer].Pos - GPlayers[ActualGame.PTurn].Pos) + 1;
+
+         If (Aux > 0) Then
+          MovePlayer(GPlayers[ActualGame.PTurn] , Aux);
+
+         EntradaLog(ActualGame.Players[ActualGame.PTurn].Username + ' Cayó en una casilla de chance que le permitio colocarse al frente de ' + ActualGame.Players[OtherPlayer].Username + '.');
+         If (Aux < 0) Then
+          EntradaLog('Pero como ' + ActualGame.Players[OtherPlayer].Username + ' esta detras de ' + ActualGame.Players[ActualGame.PTurn].Username + ' este se queda en el mismo sitio.');
+
+       end;
+    4: Begin
+         //MostrarDialogo('Buena diagonal principal',true,true,400,400,5000);
+
+         //if PosicionPrincipal = MoverEnDiagonal(DimensionTablero, PosicionPrincipal, True, True) then
+        //    chance:= False
+         //else
+        //    PosicionPrincipal:= MoverEnDiagonal(DimensionTablero, PosicionPrincipal, True, True);
+
+        // if chance then
+        //  EscribirLog(TurnoPrincipal, True, 'Cayó en una casilla de chance que le permitio colocarse al frente un paso al frente por la diagonal principal.')
+        // else
+        //  EscribirLog(TurnoPrincipal, True, 'Cayó en una casilla de chance que le permitio colocarse al frente un paso al frente por la diagonal principal pero como el movimiento en esta direccion seria negativo se quedo en el mismo sitio.');
+        ShowMessage('Diagonal Principal');
+       End;
+    5: begin
+         //MostrarDialogo('Buena diagonal secundaria',true,true,400,400,5000);
+        // if PosicionPrincipal = MoverEnDiagonal(DimensionTablero, PosicionPrincipal, True, False) then
+        //      chance:= False
+         //else
+        //      PosicionPrincipal:= MoverEnDiagonal(DimensionTablero, PosicionPrincipal, True, False);
+
+         //if chance then
+          //EscribirLog(TurnoPrincipal, True, 'Cayó en una casilla de chance que le permitio colocarse al frente un paso al frente por la diagonal secundaria.')
+         //else
+        //  EscribirLog(TurnoPrincipal, True, 'Cayó en una casilla de chance que le permitio colocarse al frente un paso al frente por la diagonal secundaria pero como el movimiento en esta direccion seria negativo se quedo en el mismo sitio.');
+
+          ShowMessage('Alguna otra diagonal');
+       end;
+    6: Begin
+
+         //MostrarDialogo('Buena repite turno',true,true,400,400,5000);
+         ActiveDice(ActualGame.PTurn);
+         EntradaLog(ActualGame.Players[ActualGame.PTurn].Username + ' Cayó en una casilla de chance que le permitio volver a jugar.');
+
+       End;
+    7: begin
+
+         Aux := Trunc(ActualGame.Soliders * 0.25);
+         If (ActualGame.Players[ActualGame.PTurn].Soliders >= Aux) Then Begin
+
+           ActualGame.Players[ActualGame.PTurn].Soliders := ActualGame.Soliders;
+           If (ActualGame.Players[ActualGame.PTurn].Lifes < 5) Then
+            EntradaLog(ActualGame.Players[ActualGame.PTurn].Username + ' Cayó en una casilla que restauro al maximo sus soldados y le añadio una vida.')
+           Else
+            EntradaLog(ActualGame.Players[ActualGame.PTurn].Username + ' Cayó en una casilla que restauro al maximo sus soldados.');
+
+         End Else Begin
+
+          EntradaLog(ActualGame.Players[ActualGame.PTurn].Username + ' Cayó en una casilla que añadio ' + IntToStr(Aux) + ' soldados a sus tropas.');
+          ActualGame.Players[ActualGame.PTurn].Soliders := ActualGame.Players[ActualGame.PTurn].Soliders + Aux;
+
+         End;
+
+       End;
+    8: Begin
+
+         //MostrarDialogo('Mala retrocede un espacio',true,true,400,400,5000);
+
+         MovePlayer(GPlayers[ActualGame.PTurn] , -1);
+         EntradaLog(ActualGame.Players[ActualGame.PTurn].Username + ' Cayó en una casilla de chance en donde retrocedio un espacio.');
+         PerderTropasPorcentual(ActualGame.PTurn, 10);
+
+       End;
+    9: begin
+         //MostrarDialogo('Mala volver al punto de partida',true,true,400,400,5000);
+
+         MovePlayer(GPlayers[ActualGame.PTurn] , 1 - GPlayers[ActualGame.PTurn].Pos );
+         EntradaLog(ActualGame.Players[ActualGame.PTurn].Username + ' Cayo en una casilla de chance en donde tuvo que volver al punto de partida.');
+         PerderTropasPorcentual(ActualGame.PTurn, 30);
+
+       end;
+    10: begin
+
+         //MostrarDialogo('Mala colocate una posicion atras del retador',true,true,400,400,5000);
+
+        Aux := (GPlayers[OtherPlayer].Pos - GPlayers[ActualGame.PTurn].Pos) - 1;
+
+        If (Aux < 0) Then
+         MovePlayer(GPlayers[ActualGame.PTurn] , Aux);
+
+        EntradaLog(ActualGame.Players[ActualGame.PTurn].Username + ' Cayó en una casilla de chance que le penitensio a colocarse detras de ' + ActualGame.Players[OtherPlayer].Username + '.');
+        If (Aux > 0) Then
+         EntradaLog('Pero como ' + ActualGame.Players[OtherPlayer].Username + ' esta delante de ' + ActualGame.Players[ActualGame.PTurn].Username + ' este se queda en el mismo sitio.');
+
+        PerderTropasPorcentual(ActualGame.PTurn, 20);
+
+        end;
+    11: begin
+         //MostrarDialogo('Mala diagonal principal',false,true,400,400,5000);
+          PerderTropasPorcentual(ActualGame.PTurn, 15);
+          ShowMessage('Diagonal Principal mala');
+        end;
+    12: begin
+         //MostrarDialogo('Mala diagonal secundaria',false,true,400,400,5000);
+
+          PerderTropasPorcentual(ActualGame.PTurn, 15);
+          ShowMessage('Diagonal secundaria mala');
+        end;
+    13: begin
+         NextTurnLose := ActualGame.PTurn;
+         EntradaLog(ActualGame.Players[ActualGame.PTurn].Username + ' Cayó en una casilla que le hizo perder un turno.');
+         //MostrarDialogo('Perdiste turno',false,true,400,400,5000);
+        end;
+    14: begin
+
+        Aux := Trunc(ActualGame.Soliders * 0.25);
+        ActualGame.Players[ActualGame.PTurn].Soliders := ActualGame.Players[ActualGame.PTurn].Soliders - Aux;
+        EntradaLog(ActualGame.Players[ActualGame.PTurn].Username + ' Cayó en una casilla que resto ' + IntToStr(Aux) + ' soldados a sus tropas.');
+
+      end;
+    End;
+
+End;
+
+Procedure GenerarSpecials(TamTablero: Word;PorcentajeChance: Real{0.30});
+Var
+  I, J, TotalSpecials: Word;
+Begin
+
+   TotalSpecials:= 0;
+   While  TotalSpecials < (trunc(TamTablero * TamTablero * PorcentajeChance)) Do
+   Begin
+
+          //El ultimo 1 que se le suma es para que no haya especial en la casilla 1,1
+          I := Random(TamTablero - 1) + 1 + 1;
+          J := Random(TamTablero - 1) + 1 + 1;
+
+          //Se valida que
+          //-La casilla especial este libre
+          //-La casilla candidata no sea la casilla donde se encuentra el trono de hierro
+
+          If  ((Sections[Pos_IY + J - 1, Pos_IX + I - 1].Special = 0) And (CoorToPos(I,J,ActualGame.Clock,TamTablero) <> TamTablero*TamTablero)) Then
+          Begin
+               Sections[Pos_IY + J - 1, Pos_IX + I - 1].Special := TotalSpecials + 1;
+               Specials[TotalSpecials + 1].X := Pos_IX + I - 1;
+               Specials[TotalSpecials + 1].Y := Pos_IY + J - 1;
+               Specials[TotalSpecials + 1].Pos := CoorToPos(I,J,ActualGame.Clock,TamTablero);
+               //ShowMessage('X '+ IntToSTr(I) + ' Y ' + IntToStr(J) + ' ' + IntToStr(Specials[TotalSpecials + 1].Pos));
+               inc(TotalSpecials);
+          End;
+
+   End;
+End;
+
+Procedure RenderSpecial(var Special:TSpecial);
+Begin
+
+  If ((Special.Y = 0) Or (Special.X = 0) Or (Special.X = 0)) Then Exit;
+
+  If (Sections[Special.Y, Special.X].Special <> 0) Then Begin
+    Special.Image.Visible := True;
+    Special.Image.Left    := Sections[Special.Y, Special.X].Image.Left;
+    Special.Image.Top     := Sections[Special.Y, Special.X].Image.Top;
+  End Else
+    Special.Image.Visible := False;
+
+  Special.Image.Picture.LoadFromFile(aPPPath + '/images/map/signal.png');
+
+End;
+
+Procedure RenderSpecials();
+Var I: Byte;
+Begin
+
+  For I := 1 To 30 Do RenderSpecial(Specials[I]);
+
+End;
 
 Procedure RenderSection(var Section:TSection);
 Begin
@@ -496,8 +761,8 @@ Begin
 
   For I := 1 To 2 Do Begin
 
-    XF := Sections[Pos_IX + GPlayers[I].Y - 1,Pos_IX + GPlayers[I].X - 1].Image.Left;
-    YF := Sections[Pos_IY + GPlayers[I].Y - 1,Pos_IY + GPlayers[I].X - 1].Image.Top;
+    XF := Sections[Pos_IY + GPlayers[I].Y - 1,Pos_IX + GPlayers[I].X - 1].Image.Left;
+    YF := Sections[Pos_IY + GPlayers[I].Y - 1,Pos_IX + GPlayers[I].X - 1].Image.Top;
 
     GoToXY(I,XF,YF);
 

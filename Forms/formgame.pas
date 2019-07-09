@@ -322,6 +322,8 @@ begin
              Sections[I,J].LLabel.Top   := Sections[I,J].LLabel.Top + 4;
              Sections[I,J].LLabel.Left  := Sections[I,J].LLabel.Left + 4;
              //Sections[I,J].LLabel.Font.Color := clWhite;
+             Sections[I,J].Special := 0;
+             Sections[I,J].Pos := 0;
          End;
 
      Dices[1].Image   := Dice1;
@@ -355,9 +357,9 @@ begin
      For I := 1 To 30 Do Begin
       Specials[I].Image := TImage(FindComponent('TSpecial' + IntToStr(I)));
       Specials[I].Image.Visible := False;
-      Specials[I].X       := 1;
-      Specials[I].Y       := 1;
-      Specials[I].Pos     := 1;
+      Specials[I].X       := 0;
+      Specials[I].Y       := 0;
+      Specials[I].Pos     := 0;
      End;
 
      Castle.Image := ImCastle;
