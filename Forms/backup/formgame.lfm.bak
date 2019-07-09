@@ -1,7 +1,7 @@
 object FmGame: TFmGame
-  Left = 633
+  Left = 866
   Height = 675
-  Top = 240
+  Top = 252
   Width = 999
   Caption = 'Juego de Reinos - Juego'
   ClientHeight = 675
@@ -8095,7 +8095,7 @@ object FmGame: TFmGame
       }
     end
     object LbDialogName: TLabel
-      Left = 192
+      Left = 190
       Height = 25
       Top = 240
       Width = 186
@@ -8344,7 +8344,7 @@ object FmGame: TFmGame
       }
     end
     object LbDialogText: TLabel
-      Left = 195
+      Left = 190
       Height = 20
       Top = 270
       Width = 75

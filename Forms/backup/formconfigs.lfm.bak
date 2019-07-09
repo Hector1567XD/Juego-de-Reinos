@@ -1,7 +1,7 @@
 object FmConfigs: TFmConfigs
-  Left = 624
+  Left = 658
   Height = 300
-  Top = 386
+  Top = 260
   Width = 400
   Caption = 'FmConfigs'
   ClientHeight = 300

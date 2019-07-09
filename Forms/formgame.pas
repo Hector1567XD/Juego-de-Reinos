@@ -337,6 +337,7 @@ var
   SoliderBar: Array[1..2] Of TImage;
   Dialog: TDialog;
 
+
 implementation
 uses InitFile;
 {$R *.lfm}

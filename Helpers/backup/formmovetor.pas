@@ -8,8 +8,8 @@ uses
   Classes, SysUtils,
   Forms, FormAuth, FormRegister, FormMenu, FormHouse,
   FormNewHouse, FormNation, FormGameModes, FormNGC1vs1,
-  FormAuth2,
-  InitFile;
+  FormAuth2, FormConfigs, FormGames,
+  InitFile, FormGame;
 
 procedure MRegisterToAuth();
 procedure MAuthToRegister();
@@ -21,6 +21,10 @@ procedure MOpenNation();
 procedure MOpenGameModes();
 procedure MGameModesToNGC1v1();
 procedure MOpenAuth2();
+procedure MOpenConfigs();
+procedure MOpenGames();
+procedure MOpenGame();
+procedure MOpenCartas();
 
 implementation
 
@@ -113,10 +117,46 @@ end;
 procedure MOpenAuth2();
 begin
    if Assigned(FmAuth2) then
-      FmNGC1vs1.Destroy;
+      FmAuth2.Destroy;
 
    Application.CreateForm(TFmAuth2, FmAuth2);
    FmAuth2.Show;
+end;
+
+procedure MOpenConfigs();
+begin
+   if Assigned(FmConfigs) then
+      FmConfigs.Destroy;
+
+   Application.CreateForm(TFmConfigs, FmConfigs);
+   FmConfigs.Show;
+end;
+
+procedure MOpenGames();
+begin
+   if Assigned(FmGames) then
+      FmGames.Destroy;
+
+   Application.CreateForm(TFmGames, FmGames);
+   FmGames.Show;
+end;
+
+procedure MOpenGame();
+begin
+   if Assigned(FmGame) then
+      FmGame.Destroy;
+
+   Application.CreateForm(TFmGame, FmGame);
+   FmGame.Show;
+end;
+
+procedure MOpenCartas();
+begin
+   if Assigned(FmCartas) then
+      FmCartas.Destroy;
+
+   Application.CreateForm(TFmCartas, FmCartas);
+   FmCartas.Show;
 end;
 
 end.

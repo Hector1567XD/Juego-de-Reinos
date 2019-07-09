@@ -24,6 +24,7 @@ type
     LbPorSp1: TLabel;
     LbPorSp2: TLabel;
     LbPlayerName2: TLabel;
+    LbPorSp0: TLabel;
     LbSubTitle1: TLabel;
     LbSubTitle2: TLabel;
     LbPlayerName1: TLabel;
@@ -44,6 +45,7 @@ type
     SelectSize1: TComboBox;
     SelectDificulty: TComboBox;
     SpecialsBar: TTrackBar;
+    procedure btnCardsClick(Sender: TObject);
     procedure btnNewGameClick(Sender: TObject);
     procedure btnPlayer2Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -60,6 +62,8 @@ type
 
 var
   FmNGC1vs1: TFmNGC1vs1;
+  GVentajas: Array[1..7] Of Byte;
+  GDesventajas: Array[1..7] Of Byte;
 
 implementation
 uses HousesModel, GamesModel;
@@ -84,6 +88,7 @@ begin
 end;
 
 procedure TFmNGC1vs1.FormCreate(Sender: TObject);
+Var I: Byte;
 begin
   backgroundImage := FmLoadBackgroundSpecify('back_wood3.bmp');
   FmSetSize(Constraints, 760, 400);
@@ -100,6 +105,13 @@ begin
   ImgTablePlayer1.visible := False;
   LbPlayerName2.Visible   := False;
   SelectSize2.Visible     := False;
+
+  For I := 1 To 7 Do
+      GVentajas[I] := I;
+
+  For I := 1 To 7 Do
+      GDesventajas[I] := I + 7;
+
 end;
 
 procedure TFmNGC1vs1.btnPlayer2Click(Sender: TObject);
@@ -170,11 +182,19 @@ Begin
     'Antihorario':    Clock := False;//
   End;
 
-  CGame.NewGame(AppUser.Id,Player2.Id,House1,House2, Size, Lifes, Hard, Soldados, Clock, Size1, Size2, Trunc((SpecialsBar.position / 10) * 60) );
+  For I := 1 To 7 Do ShowMessage(IntToStr(GVentajas[I]));
+  For I := 1 To 7 Do ShowMessage(IntToStr(GDesventajas[I]));
+
+  CGame.NewGame(AppUser.Id,Player2.Id,House1,House2, Size, Lifes, Hard, Soldados, Clock, Size1, Size2, Trunc((SpecialsBar.position / 10) * 60) , GVentajas, GDesventajas);
   FormOpen('Game');
   If (Assigned(FmNGC1vs1)) Then FmNGC1vs1.Hide;
 
 End;
+
+procedure TFmNGC1vs1.btnCardsClick(Sender: TObject);
+begin
+  FormOpen('Cartas');
+end;
 
 procedure TFmNGC1vs1.FormDestroy(Sender: TObject); begin backgroundImage.Free; end;
 

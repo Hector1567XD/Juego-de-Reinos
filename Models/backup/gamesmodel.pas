@@ -45,6 +45,7 @@ type
   End;
   TGames = array[1..MAXITEMS_MODEL] of TGame;
   TDataFile = file of TGame;
+  TVentajas = Array[1..7] of Bytes;
 
   CGame = class(TModelParent)
     Private
@@ -63,7 +64,7 @@ type
       class procedure List(var ListGame: TListBox);
       class procedure Combo(var ComboGame: TComboBox);
       class procedure SeedTest();
-      class procedure NewGame(P1,P2,H1,H2,Size,Lifes,Difficulty: Byte;Soliders:Word;Clock:Boolean); static;
+      class procedure NewGame(P1,P2,H1,H2,Size,Lifes,Difficulty: Byte;Soliders:Word;Clock:Boolean;Size1,Size2,Porcentaje:Byte;Ventajas,Desventajas:TVentajas); static;
       class function FindCode(Code : String): TGame; static;
 
       //Adicionales
@@ -108,9 +109,9 @@ Class procedure CGame.PushLog(Move: String);
 Var Game: TGame;
     TStr: String;
 Begin
-  //ShowMessage('Begin Push Log');
+  //ShowMessage('Begin Push Log "'+Move+'"');
   Game            := CGame.FindLast();
-  ShowMessage('Game ' + IntToStr(Game.Id));
+  //ShowMessage('Game ' + IntToStr(Game.Id));
   CLog.Store(Move);
 
   //Lo siguiente no sirve para nada pero si lo quitas LITERAL se bugea.
@@ -118,33 +119,35 @@ Begin
   //ShowMessage(TStr);
 
   Game.Logs.Fin   := Game.Logs.Fin + 1;
-  ShowMessage('New End ' + IntToStr(Game.Logs.Fin));
+  //ShowMessage('New End ' + IntToStr(Game.Logs.Fin));
   CGame.Put(Game, Game.Id);
   //ShowMessage('End Push Log');
 End;
 
 class function CGame.FindLast(): TGame;
 var Items : TGames;
-    LastID,I,CountGame: Word;
-    LastCode: String[10];
-    LastWrited:   Boolean;
+    {LastID,}I,CountGame: Word;
+    {LastCode: String[10];
+    LastWrited:   Boolean;}
 begin
 
   I := 1;
   Items := CGame.Get();
   CountGame := CGame.Count();
 
-  Repeat
-    LastID := Items[I].Id;
+  For I := 1 To CountGame Do Begin
+    {LastID := Items[I].Id;
     LastCode := Items[I].Code;
-    LastWrited  := Items[I].Writed;
-    Inc(I);
-  Until ((LastID <= 0) or (LastID > MAXITEMS_MODEL) or (LastWrited = False) or (LastCode = '') or (LastCode = 'JUEGO') or (I >= CountGame));
+    LastWrited  := Items[I].Writed;}
+    //Inc(I);
+  End;
 
-  If (I = 2) Then I := 3;
+  //ShowMessage('Exit in '+InTtoStr(I));
+
+  //If (I = 2) Then I := 3;
 
   //ShowMessage(Items[I - 2].Code + ' - I: ' + IntToStr(I));
-  Exit(Items[I - 2]);
+  Exit(Items[I]);
 
 end;
 
@@ -208,184 +211,41 @@ end;
 
 class procedure CGame.SeedTest();//
 Begin
-   If ((CGame.Count() <= 0) and True) Then Begin
-      CGame.NewGame(1, 2, 1 , 2, 5, 3, 2, 1000, False);
+   If ((CGame.Count() <= 0) and False) Then Begin
+      {CGame.NewGame(1, 2, 1 , 2, 5, 3, 2, 1000, False, 5, 5, 30);
       CGame.PushLog('Movimiento 1');
       CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento R');
       CGame.PushLog('Movimiento FINAL');
-      CGame.NewGame(2, 1, 2 , 1, 7, 3, 2, 1000, False);
+      CGame.NewGame(2, 1, 2 , 1, 7, 3, 2, 1000, False, 5, 5, 30);
       CGame.PushLog('Movimiento J2 1');
       CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
       CGame.PushLog('Movimiento J2 FINAL');
-      CGame.NewGame(2, 1, 3 , 4, 7, 3, 2, 1000, False);
+      CGame.NewGame(2, 1, 3 , 4, 7, 3, 2, 1000, False, 5, 5, 30);
       CGame.PushLog('Movimiento J3 1');
       CGame.PushLog('Movimiento X');
       CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
       CGame.PushLog('Movimiento J3 FINAL');
-      CGame.NewGame(2, 1, 4 , 5, 7, 3, 2, 1000, False);
+      CGame.NewGame(2, 1, 4 , 5, 7, 3, 2, 1000, False, 5, 5, 30);
       CGame.PushLog('Movimiento J4 1');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
       CGame.PushLog('Movimiento J4 2');
       CGame.PushLog('Movimiento J4 FINAL');
-      CGame.NewGame(2, 1, 4 , 5, 7, 3, 2, 1000, False);
+      CGame.NewGame(2, 1, 4 , 5, 7, 3, 2, 1000, False, 5, 5, 30);
       CGame.PushLog('Movimiento J5 1');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
       CGame.PushLog('Movimiento J5 2');
       CGame.PushLog('Movimiento J5 FINAL');
-      CGame.NewGame(2, 1, 4 , 5, 7, 3, 2, 1000, False);
+      CGame.NewGame(2, 1, 4 , 5, 7, 3, 2, 1000, False, 5, 5, 30);
       CGame.PushLog('Movimiento J6 1');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
       CGame.PushLog('Movimiento J6 2');
       CGame.PushLog('Movimiento J6 FINAL');
-      CGame.NewGame(2, 1, 4 , 5, 7, 3, 2, 1000, False);
+      CGame.NewGame(2, 1, 4 , 5, 7, 3, 2, 1000, False, 5, 5, 30);
       CGame.PushLog('Movimiento J7 1');
       CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
-      CGame.PushLog('Movimiento X');
       CGame.PushLog('Movimiento J7 2');
-      CGame.PushLog('Movimiento J7 FINAL');
+      CGame.PushLog('Movimiento J7 FINAL');}
    End;
 end;
 
-class procedure CGame.NewGame(P1,P2,H1,H2,Size,Lifes,Difficulty: Byte;Soliders:Word;Clock:Boolean);
+class procedure CGame.NewGame(P1,P2,H1,H2,Size,Lifes,Difficulty: Byte;Soliders:Word;Clock:Boolean;Size1,Size2,Porcentaje:Byte;Ventajas,Desventajas:TVentajas);
 var
    Game:  TGame;
 Begin
@@ -410,6 +270,8 @@ Begin
    CGame.Store(Game);
    CGame.PushLog('Ha comenzado una nueva partida!');
 
+   ActualGame.Size1 := Size1;
+   ActualGame.Size2 := Size2;
    ActualGame.Size  := Size;
    ActualGame.Turn  := 0;
    ActualGame.PTurn := 0;
@@ -435,6 +297,10 @@ Begin
    ActualGame.Players[2].HouseName  := CHouse.Find(H2).Name;
    ActualGame.Players[2].Soliders   := Soliders;
    ActualGame.Players[2].Lifes      := Lifes;
+
+   ActualGame.Specials    := Porcentaje;
+   ActualGame.Ventajas    := Ventajas;
+   ActualGame.Desventajas := Desventajas;
 
 end;
 

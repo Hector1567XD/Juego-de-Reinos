@@ -75,6 +75,7 @@ begin
      'Configs'  : MOpenConfigs();
      'Games'    : MOpenGames();
      'Game'     : MOpenGame();
+     'Cartas'   : MOpenCartas();
   end;
 end;
 

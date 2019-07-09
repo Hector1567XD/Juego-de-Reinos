@@ -1,7 +1,7 @@
 object FmNGC1vs1: TFmNGC1vs1
-  Left = 613
+  Left = 619
   Height = 404
-  Top = 24
+  Top = 50
   Width = 760
   Caption = 'Juego de Reinos - Nuevo Juego, Clasico 1 vs 1'
   ClientHeight = 404
@@ -1794,7 +1794,7 @@ object FmNGC1vs1: TFmNGC1vs1
     ParentColor = False
     ParentFont = False
     TabOrder = 10
-    OnClick = btnPlayer2Click
+    OnClick = btnCardsClick
     OnMouseEnter = btnMouseEnter
     OnMouseLeave = btnMouseLeave
   end
@@ -1838,7 +1838,7 @@ object FmNGC1vs1: TFmNGC1vs1
     ParentFont = False
   end
   object LbPorSp1: TLabel
-    Left = 544
+    Left = 560
     Height = 13
     Top = 285
     Width = 15
@@ -1858,6 +1858,21 @@ object FmNGC1vs1: TFmNGC1vs1
     Top = 288
     Width = 21
     Caption = '30%'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWhite
+    Font.Height = -11
+    Font.Name = 'Droid Sans'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object LbPorSp0: TLabel
+    Left = 544
+    Height = 13
+    Top = 285
+    Width = 15
+    Caption = '0%'
     Font.CharSet = ANSI_CHARSET
     Font.Color = clWhite
     Font.Height = -11

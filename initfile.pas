@@ -48,6 +48,7 @@ type
             Id:         Word;
             Winner:     Byte;
             Specials:   Byte;
+            Ventajas, Desventajas: Array [1..7] Of Byte;
     End;
 
 procedure IniciarAplicacion();

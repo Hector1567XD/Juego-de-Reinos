@@ -310,7 +310,7 @@ Begin
   PorBuenas := 50;
   If (ActualGame.Difficulty = 1) Then PorBuenas := 70;
   If (ActualGame.Difficulty = 3) Then PorBuenas := 30;
-
+  //ShowMessage(IntToStr(PorBuenas));
   //OJO, en casillas con efectos cuales no impliquen moverte de tu lugar hara que se haga un efecto doble... correjir mas tarde (Creo que el AuxBackPos da solucion a esto)
   If (AuxBackPos <> GPlayers[ActualGame.PTurn].Pos) Then Begin
     For I := 1 To ActualGame.Specials Do If (Specials[I].Pos = GPlayers[ActualGame.PTurn].Pos) Then Begin
@@ -398,7 +398,7 @@ Begin
       Else If (Dices[1].Number < Dices[2].Number) Then
         DarTurno(2)
       Else Begin
-        //Aun no esta programado el empate
+        //Empate (?)
         DarTurno(1);
       End;
 
@@ -642,27 +642,30 @@ Procedure EspecialLogicTo(Player: Byte;PorcentajeBuenas: Byte);
 Var
   Chance: boolean;
   Casualidad: 0..16;
-  //Temporal:
-  Ventajas, Desventajas: Array [1..7] Of Byte;
   I: Byte;
   OtherPlayer: Byte;
   Aux: Integer;
 Begin
 
-  For I := 1 To 7 Do
-    Ventajas[I] := I;
+  {For I := 1 To 7 Do
+    ActualGame.Ventajas[I] := I;
 
   For I := 1 To 7 Do
-    Desventajas[I] := I;
+    ActualGame.Desventajas[I] := I;}
+
+  //For I := 1 To 7 Do ShowMessage(IntToStr(ActualGame.Ventajas[I]));
+  //For I := 1 To 7 Do ShowMessage(IntToStr(ActualGame.Desventajas[I]));
 
   Chance:= true;
   Casualidad := 0;
 
   While (Casualidad = 0) Do Begin
     If (PorcentajeBuenas <= NumeroAleatorio(1,100)) Then
-     Casualidad:= Ventajas[NumeroAleatorio(1,MaxVentajas)]
-    Else
-     Casualidad:= DesVentajas[NumeroAleatorio(1,MaxDesVentajas)] + 7;
+     Casualidad:= ActualGame.Ventajas[NumeroAleatorio(1,MaxVentajas)]
+    Else Begin
+     Casualidad:= ActualGame.DesVentajas[NumeroAleatorio(1,MaxDesVentajas)];
+     If (Casualidad <> 0) Then Casualidad := Casualidad + 7;
+    End;
   End;
 
   {
