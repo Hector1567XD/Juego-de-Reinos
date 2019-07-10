@@ -32,6 +32,7 @@ var
   FmConfigs: TFmConfigs;
 
 implementation
+uses UserModel;
 
 uses KeyModel, UserModel;
 

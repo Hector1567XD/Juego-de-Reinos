@@ -186,7 +186,7 @@ Begin
   {For I := 1 To 7 Do ShowMessage(IntToStr(GVentajas[I]));
   For I := 1 To 7 Do ShowMessage(IntToStr(GDesventajas[I]));}
 
-  CGame.NewGame(AppUser.Id,Player2.Id,House1,House2, Size, Lifes, Hard, Soldados, Clock, Size1, Size2, Trunc((SpecialsBar.position / 10) * 60) , GVentajas, GDesventajas);
+  CGame.NewGame(AppUser.Id,Player2.Id,House1,House2, Size, Lifes, Hard, Soldados*Lifes, Clock, Size1, Size2, Trunc((SpecialsBar.position / 10) * 60) , GVentajas, GDesventajas);
   FormOpen('Game');
   If (Assigned(FmNGC1vs1)) Then FmNGC1vs1.Hide;
 

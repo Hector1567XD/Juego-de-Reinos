@@ -1,7 +1,7 @@
 object FmNGC1vs1: TFmNGC1vs1
-  Left = 929
+  Left = 609
   Height = 404
-  Top = 70
+  Top = 557
   Width = 760
   Caption = 'Juego de Reinos - Nuevo Juego, Clasico 1 vs 1'
   ClientHeight = 404
@@ -977,22 +977,18 @@ object FmNGC1vs1: TFmNGC1vs1
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
     ItemHeight = 19
-    ItemIndex = 1
+    ItemIndex = 2
     Items.Strings = (
-      '10'
-      '20'
-      '30'
-      '50'
-      '100'
-      '200'
-      '500'
       '1000'
+      '5000'
+      '10000'
+      '20000'
     )
     MaxLength = 20
     OnChange = ComboOnlySelect
     ParentFont = False
     TabOrder = 5
-    Text = '20'
+    Text = '10000'
   end
   object btnNewGame: TPanel
     Cursor = crHandPoint

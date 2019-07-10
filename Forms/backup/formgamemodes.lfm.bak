@@ -1,7 +1,7 @@
 object FmGameModes: TFmGameModes
-  Left = 1014
+  Left = 1504
   Height = 225
-  Top = 673
+  Top = 777
   Width = 400
   Caption = 'Juego de Reinos - Modos de Juego'
   ClientHeight = 225

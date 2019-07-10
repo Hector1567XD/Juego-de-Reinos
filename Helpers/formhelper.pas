@@ -76,6 +76,7 @@ begin
      'Games'    : MOpenGames();
      'Game'     : MOpenGame();
      'Cartas'   : MOpenCartas();
+     'Stats'    : MOpenStats();
   end;
 end;
 

@@ -5,7 +5,7 @@ unit UserModel;
 interface
 
 uses
-  Classes, SysUtils, DateHelper, InitFile, ModelParent;
+  Classes, SysUtils, StdCtrls, InitFile, ModelParent, DateHelper;
 
 type
   TUser = record
@@ -28,10 +28,12 @@ type
 
       //Meta
           //Aqui recien estarian las funciones que pueden diferir segun el Modelo.
+      class procedure Combo(var ComboUsers: TComboBox);
 
       //Adicionales
       class function Count(): Word; static;
       class function Find(Id: Word): TUser; static;
+      class function FindName(Name: String): TUser; static;
 
       //Fundamentales
       class function Get(): TUsers; static;
@@ -54,6 +56,36 @@ type
 
 
 implementation
+
+class function CUser.FindName(Name : String): TUser;
+var
+   I: Word;
+   Users: TUsers;
+   User:  TUser;
+Begin
+   Users := CUser.Get();
+   for I := 1 to CUser.Count() do
+   begin
+        User := Users[i];
+        if (User.Username = Name) then
+          Exit(User); //Retorno el usuario
+   end;
+   User := CUser.New();
+   Exit(User);
+end;
+
+class procedure CUser.Combo(var ComboUsers: TComboBox);
+var I: Word;
+    Users: TUsers;
+Begin
+   Users := CUser.Get();
+   ComboUsers.Clear;
+   //Solo la agregara al ComboBox si la casa no se encuentra eliminada (trash = true)
+   For I := 1 To CUser.Count() Do Begin
+    {If (Users[I].Trash <> True) Then}
+      ComboUsers.Items.Add(Users[I].Username);
+   End;
+end;
 
 class function CUser.Find(Id: Word): TUser;
 var Items : TUsers;

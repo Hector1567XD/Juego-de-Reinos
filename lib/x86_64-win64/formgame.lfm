@@ -1,7 +1,7 @@
 object FmGame: TFmGame
-  Left = 905
+  Left = 791
   Height = 675
-  Top = 327
+  Top = 218
   Width = 999
   Caption = 'Juego de Reinos - Juego'
   ClientHeight = 675

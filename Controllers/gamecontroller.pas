@@ -347,10 +347,10 @@ Begin
   If (GPlayers[ActualGame.PTurn].Pos = ActualGame.Size*ActualGame.Size) Then Begin
 
     Case (NumeroAleatorio(1,4)) Of
-     1: Anuncio(1,'Señor, hemos logrado llegar a nuestro destino.' + #13#10+ 'lo asesinaremos aqui y ahora!.');
-     2: Anuncio(2,'Señor!, digo rey!, las tropas han tomado el castillo' + #13#10 + 'nosotros ganamos!.');
-     3: Anuncio(3,'Mi Señor, ya hemos tomado el castillo, salve al' + #13#10+ 'nuevo rey ' + ActualGame.Players[OtherPlayer].Username + '.');
-     4: Anuncio(4,'Bueno, aqui estamos, al parecer lo hemos logrado.');
+     1: Anuncio(1,'Señor, hemos logrado llegar a nuestro destino.' + #13#10 + 'lo asesinaremos aqui y ahora!.' + #13#10 + 'debemos plantar arboles en el nuevo reino!.');
+     2: Anuncio(2,'Señor!, digo rey!, las tropas han tomado el castillo' + #13#10 + 'nosotros ganamos!.' + #13#10 + 'debemos plantar arboles en el nuevo reino!. ');
+     3: Anuncio(3,'Mi Señor, ya hemos tomado el castillo, salve al' + #13#10 + 'nuevo rey ' + ActualGame.Players[OtherPlayer].Username + '.' + #13#10 + 'debemos plantar arboles en el nuevo reino!.');
+     4: Anuncio(4,'Bueno, aqui estamos, al parecer lo hemos logrado.' + #13#10 + 'debemos plantar arboles en el nuevo reino!.');
     End;
     PausedController := True; while PausedController do begin sleep(1); Application.ProcessMessages; end;
 

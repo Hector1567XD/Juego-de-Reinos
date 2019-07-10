@@ -9,7 +9,7 @@ uses
   Forms, FormAuth, FormRegister, FormMenu, FormHouse,
   FormNewHouse, FormNation, FormGameModes, FormNGC1vs1,
   FormAuth2, FormConfigs, FormGames,
-  InitFile, FormGame;
+  InitFile, FormGame, FormCartas, FormStats;
 
 procedure MRegisterToAuth();
 procedure MAuthToRegister();
@@ -157,6 +157,15 @@ begin
 
    Application.CreateForm(TFmCartas, FmCartas);
    FmCartas.Show;
+end;
+
+procedure MOpenStats();
+begin
+   if Assigned(FmStats) then
+      FmStats.Destroy;
+
+   Application.CreateForm(TFmStats, FmStats);
+   FmStats.Show;
 end;
 
 end.

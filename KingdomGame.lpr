@@ -21,7 +21,7 @@ uses
   //Helpers
   FormHelper, FormMovetor, MessagesHelper, ModelParent, KeyModel, FormRegister,
   HousesModel, FormGameModes, FormNGC1vs1, FormAuth2, FormConfigs, GamesModel,
-  LogModel, FormGame, GameController, EspiralMove, FormCartas
+  LogModel, FormGame, GameController, EspiralMove, FormCartas, FormStats
   {</Importacion de unidades>};
 
 {$R *.res}
@@ -37,6 +37,7 @@ begin
   Application.CreateForm(TFmAuth, FmAuth);
   Application.CreateForm(TFmGame, FmGame);
   Application.CreateForm(TFmCartas, FmCartas);
+  Application.CreateForm(TFmStats, FmStats);
   //Application.CreateForm(TFmHouses, FmHouses);
   //Application.CreateForm(TFmNewHouse, FmNewHouse);
   //Application.CreateForm(TFmNation, FmNation);

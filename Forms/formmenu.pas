@@ -32,6 +32,7 @@ type
     procedure btnLogoutClick(Sender: TObject);
     procedure btnNationsClick(Sender: TObject);
     procedure btnNewGameClick(Sender: TObject);
+    procedure btnStatsClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormPaint(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
@@ -98,6 +99,11 @@ end;
 procedure TFmMenu.btnNewGameClick(Sender: TObject);
 begin
   FormOpen('GameModes');
+end;
+
+procedure TFmMenu.btnStatsClick(Sender: TObject);
+begin
+  FormOpen('Stats');
 end;
 
 {FORM 1 - EVENTO DE DIBUJO}

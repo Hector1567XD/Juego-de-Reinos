@@ -6,7 +6,7 @@ unit GamesModel;
 interface
 
 uses
-  Classes, SysUtils, StdCtrls, InitFile, ModelParent;
+  Classes, SysUtils, StdCtrls, InitFile, ModelParent, DateHelper;
 
 type
 
@@ -41,6 +41,8 @@ type
     Clock:          Boolean;
 
     Writed:         Boolean;
+
+    Fecha:          TFecha;
 
   End;
   TGames = array[1..MAXITEMS_MODEL] of TGame;
@@ -248,6 +250,7 @@ end;
 class procedure CGame.NewGame(P1,P2,H1,H2,Size,Lifes,Difficulty: Byte;Soliders:Word;Clock:Boolean;Size1,Size2,Porcentaje:Byte;Ventajas,Desventajas:TVentajas);
 var
    Game:  TGame;
+   DD, MM, YY: Word;
 Begin
 
    Game                 := CGame.New();
@@ -266,6 +269,12 @@ Begin
    Game.Soliders        := Soliders;
    Game.Clock           := Clock;
    Game.Writed          := True;
+
+   DeCodeDate (Date,YY,MM,DD);
+
+   //ShowMessage('Fecha hoy ' + IntToStr(DD) + ' / ' + IntToStr(MM) + '/' + IntToStr(YY));
+
+   Game.Fecha           := newFecha(DD,MM,YY);
 
    CGame.Store(Game);
    CGame.PushLog('Ha comenzado una nueva partida!');

@@ -310,7 +310,7 @@ Begin
   PorBuenas := 50;
   If (ActualGame.Difficulty = 1) Then PorBuenas := 70;
   If (ActualGame.Difficulty = 3) Then PorBuenas := 30;
-
+  //ShowMessage(IntToStr(PorBuenas));
   //OJO, en casillas con efectos cuales no impliquen moverte de tu lugar hara que se haga un efecto doble... correjir mas tarde (Creo que el AuxBackPos da solucion a esto)
   If (AuxBackPos <> GPlayers[ActualGame.PTurn].Pos) Then Begin
     For I := 1 To ActualGame.Specials Do If (Specials[I].Pos = GPlayers[ActualGame.PTurn].Pos) Then Begin
@@ -337,7 +337,7 @@ Begin
 
   If (GPlayers[ActualGame.PTurn].Pos = GPlayers[OtherPlayer].Pos) Then Begin
 
-    Anuncio(3,'Mi señor, hemos tomado por sorpresa a un peloton del enemigo' + #13#10+ 'lo asesinaremos aqui y ahora!.');
+    Anuncio(3,'Mi señor, hemos tomado por sorpresa a un' + #13#10 + 'peloton del enemigo lo asesinaremos aqui' + #13#10 + 'y ahora!.');
     PausedController := True; while PausedController do begin sleep(1); Application.ProcessMessages; end;
 
     EntradaLog(ActualGame.Players[ActualGame.PTurn].Username + ' ha tomado por sorpresa a ' + ActualGame.Players[OtherPlayer].Username + '!');
@@ -347,10 +347,10 @@ Begin
   If (GPlayers[ActualGame.PTurn].Pos = ActualGame.Size*ActualGame.Size) Then Begin
 
     Case (NumeroAleatorio(1,4)) Of
-     1: Anuncio(1,'Señor, hemos logrado llegar a nuestro destino.' + #13#10+ 'lo asesinaremos aqui y ahora!.');
-     2: Anuncio(2,'Señor!, digo rey!, las tropas han tomado el castillo' + #13#10 + 'nosotros ganamos!.');
-     3: Anuncio(3,'Mi Señor, ya hemos tomado el castillo, salve al' + #13#10+ 'nuevo rey ' + ActualGame.Players[OtherPlayer].Username + '.');
-     4: Anuncio(4,'Bueno, aqui estamos, al parecer lo hemos logrado.');
+     1: Anuncio(1,'Señor, hemos logrado llegar a nuestro destino.' + #13#10 + 'lo asesinaremos aqui y ahora!.' + #13#10 + 'debemos plantar arboles en el nuevo reino!.');
+     2: Anuncio(2,'Señor!, digo rey!, las tropas han tomado el castillo' + #13#10 + 'nosotros ganamos!.' + #13#10 + 'debemos plantar arboles en el nuevo reino!. ');
+     3: Anuncio(3,'Mi Señor, ya hemos tomado el castillo, salve al' + #13#10 + 'nuevo rey ' + ActualGame.Players[OtherPlayer].Username + '.' + #13#10 + 'debemos plantar arboles en el nuevo reino!.');
+     4: Anuncio(4,'Bueno, aqui estamos, al parecer lo hemos logrado.' + #13#10 + ' ');
     End;
     PausedController := True; while PausedController do begin sleep(1); Application.ProcessMessages; end;
 
@@ -398,7 +398,7 @@ Begin
       Else If (Dices[1].Number < Dices[2].Number) Then
         DarTurno(2)
       Else Begin
-        //Aun no esta programado el empate
+        //Empate (?)
         DarTurno(1);
       End;
 
@@ -642,27 +642,30 @@ Procedure EspecialLogicTo(Player: Byte;PorcentajeBuenas: Byte);
 Var
   Chance: boolean;
   Casualidad: 0..16;
-  //Temporal:
-  Ventajas, Desventajas: Array [1..7] Of Byte;
   I: Byte;
   OtherPlayer: Byte;
   Aux: Integer;
 Begin
 
-  For I := 1 To 7 Do
-    Ventajas[I] := I;
+  {For I := 1 To 7 Do
+    ActualGame.Ventajas[I] := I;
 
   For I := 1 To 7 Do
-    Desventajas[I] := I;
+    ActualGame.Desventajas[I] := I;}
+
+  //For I := 1 To 7 Do ShowMessage(IntToStr(ActualGame.Ventajas[I]));
+  //For I := 1 To 7 Do ShowMessage(IntToStr(ActualGame.Desventajas[I]));
 
   Chance:= true;
   Casualidad := 0;
 
   While (Casualidad = 0) Do Begin
     If (PorcentajeBuenas <= NumeroAleatorio(1,100)) Then
-     Casualidad:= Ventajas[NumeroAleatorio(1,MaxVentajas)]
-    Else
-     Casualidad:= DesVentajas[NumeroAleatorio(1,MaxDesVentajas)] + 7;
+     Casualidad:= ActualGame.Ventajas[NumeroAleatorio(1,MaxVentajas)]
+    Else Begin
+     Casualidad:= ActualGame.DesVentajas[NumeroAleatorio(1,MaxDesVentajas)];
+     If (Casualidad <> 0) Then Casualidad := Casualidad + 7;
+    End;
   End;
 
   {
@@ -852,26 +855,26 @@ Begin
   If (ActualGame.PTurn = 1) Then OtherPlayer := 2;
 
   case Casualidad of
-    1: Anuncio(1,'Señor, es terreno llano, vamos a movernos dos pasos mas.');//#13#10
+    1: Anuncio(1,'Señor, es terreno llano, vamos a movernos dos' + #13#10 + 'pasos mas.');//#13#10
     2: Anuncio(1,'Señor, vamos a movernos el doble de lo planeado.');//#13#10
-    3: Anuncio(1,'Señor, tenemos la opcion de tomar un atajo secreto' + #13#10 + 'para llegar justo alfrente de nuestros enemigos!,' + #13#10 + 'lo haremos en caso de convenir.');//#13#10
-    4: Anuncio(4,'He descubierto un atajo secreto que permitira movernos ' + #13#10 + 'en direccion a la diagonal principal, vamos a tomarlo.');
-    5: Anuncio(4,'He descubierto un atajo secreto que permitira movernos ' + #13#10 + 'en direccion a la diagonal secundaria, vamos a tomarlo.');
-    6: Anuncio(2,'Señor, las condiciones son favorables para seguir nuestro' + #13#10 + 'camino, vuelva a tirar los dados.');
+    3: Anuncio(1,'Señor, tenemos la opcion de tomar un atajo' + #13#10 + 'secreto para llegar justo alfrente de nuestros' + #13#10 + 'enemigos!, lo haremos en caso de convenir.');//#13#10
+    4: Anuncio(4,'He descubierto un atajo secreto que permitira' + #13#10 + 'movernos en direccion a la diagonal principal, vamos a tomarlo.');
+    5: Anuncio(4,'He descubierto un atajo secreto que permitira' + #13#10 + 'movernos en direccion a la diagonal secundaria, vamos a tomarlo.');
+    6: Anuncio(2,'Señor, las condiciones son favorables para' + #13#10 + 'seguir nuestro camino, vuelva a tirar los'+ #13#10 + 'dados.');
     7: Anuncio(3,'Mi señor, '+IntToStr(Trunc(ActualGame.Soliders * 0.25))+' soldados soldados quieren unirse a nuestra' + #13#10 + 'causa, vamos a permitirselo, sin embargo solo podemos' + #13#10 + 'llevar ' + IntToStr(ActualGame.Soliders) + ' en total.');
-    8: Anuncio(3,'Mi señor, barbaros de salvajes nos han emboscado tenemos' + #13#10 + 'que retroceder un paso.');
-    9: Anuncio(2,'Tengo reportes sobre el asesinado de los guardias de' + #13#10+ 'vuestra familia!, tenemos que volver a casa rapido.');
+    8: Anuncio(3,'Mi señor, barbaros de salvajes nos han emboscado' + #13#10 + 'tenemos que retroceder un paso.');
+    9: Anuncio(4,'Tengo reportes sobre el asesinado de los guardias' + #13#10+ 'de vuestra familia!, tenemos que volver a casa rapido.');
     10: Begin
         Aux := (GPlayers[OtherPlayer].Pos - GPlayers[ActualGame.PTurn].Pos) - 1;
         If (Aux < 0) Then
-          Anuncio(2,'Señor, nos han amenazado!, tenemos que volver justo'+ #13#10 +'un paso atras de nuestros enemigos.')
+          Anuncio(2,'Señor, nos han amenazado!, tenemos que volver'+ #13#10 +'justo un paso atras de nuestros enemigos.')
         Else
-          Anuncio(2,'Los enemigos nos han intentado amenzar para ir justo'+ #13#10 +'un paso atras de ellos, pero fuimos mas' + #13#10 + 'inteligentes y nos quedamos aqui.');
+          Anuncio(2,'Los enemigos nos han intentado amenzar para'+ #13#10 +'ir justo un paso atras de ellos, pero fuimos mas' + #13#10 + 'inteligentes y nos quedamos aqui.');
         End;
-    11: Anuncio(3,'Mi señor, nos han emboscado!, tenemos que regresar' + #13#10 + 'por el atajo de la diagonal principal!.');
-    12: Anuncio(3,'Mi señor, nos han emboscado!, tenemos que regresar' + #13#10 + 'por el atajo de la diagonal secundaria!.');
-    13: Anuncio(2,'Señor, han envenenado nuestra comida, los soldados' + #13#10 + 'se encuetran muy cansados y sin animos de continuar' + #13#10 'por el dia de hoy.');
-    14: Anuncio(3,'Mi señor, hemos perdido '+IntToStr(Trunc(ActualGame.Soliders * 0.25))+' soldados en una batalla con' + #13#10 + 'mercenarios contratados por el enemigo.');
+    11: Anuncio(3,'Mi señor, nos han emboscado!, tenemos que' + #13#10 + 'regresar por el atajo de la diagonal principal!.');
+    12: Anuncio(3,'Mi señor, nos han emboscado!, tenemos que' + #13#10 + 'regresar por el atajo de la diagonal secundaria!.');
+    13: Anuncio(2,'Señor, han envenenado nuestra comida, los' + #13#10 + 'soldados se encuetran muy cansados y sin animos' + #13#10 + 'de continuar por el dia de hoy.');
+    14: Anuncio(3,'Mi señor, hemos perdido '+IntToStr(Trunc(ActualGame.Soliders * 0.25))+' soldados en una batalla' + #13#10 + 'con mercenarios contratados por el enemigo.');
   End;
 
 End;

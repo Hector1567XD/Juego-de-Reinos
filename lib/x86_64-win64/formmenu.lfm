@@ -1,7 +1,7 @@
 object FmMenu: TFmMenu
-  Left = 621
+  Left = 445
   Height = 579
-  Top = 423
+  Top = 195
   Width = 1061
   Caption = 'Juego de Reinos - Menu'
   ClientHeight = 579
@@ -609,6 +609,7 @@ object FmMenu: TFmMenu
       ParentColor = False
       ParentFont = False
       TabOrder = 5
+      OnClick = btnStatsClick
       OnMouseEnter = btnMouseEnter
       OnMouseLeave = btnMouseLeave
     end
