@@ -1,7 +1,7 @@
 object FmCartas: TFmCartas
-  Left = 371
+  Left = 557
   Height = 306
-  Top = 438
+  Top = 616
   Width = 390
   Caption = 'Juego de Reinos - Seleccionar cartas'
   ClientHeight = 306

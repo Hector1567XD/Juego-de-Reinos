@@ -31,6 +31,7 @@ object FmCartas: TFmCartas
     Height = 19
     Top = 48
     Width = 20
+    Enabled = False
     Font.CharSet = GREEK_CHARSET
     Font.Color = clWhite
     Font.Height = -16
@@ -241,6 +242,7 @@ object FmCartas: TFmCartas
     Height = 19
     Top = 48
     Width = 20
+    Enabled = False
     Font.CharSet = GREEK_CHARSET
     Font.Color = clWhite
     Font.Height = -16
