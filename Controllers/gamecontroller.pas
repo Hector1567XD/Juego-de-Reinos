@@ -290,12 +290,12 @@ End;
 Procedure WinPlayer(Player:Byte);
 Var Game: TGame;
 Begin
-  MessageSuccess('Enahorabuena! ' + ActualGame.Players[ActualGame.PTurn].Username + ' ha ganado.');
+  MessageSuccess('Enahorabuena! ' + ActualGame.Players[Player].Username + ' ha ganado.');
   Game        := CGame.Find(ActualGame.Id);
-  Game.Winner := ActualGame.PTurn;
+  Game.Winner := Player;
   CGame.Put(Game, Game.Id);
-  EntradaLog('Ha ganado ' + ActualGame.Players[ActualGame.PTurn].Username + '.');
-  ActualGame.Winner := ActualGame.PTurn;
+  EntradaLog('Ha ganado ' + ActualGame.Players[Player].Username + '.');
+  ActualGame.Winner := Player;
   If (Assigned(FmGame)) Then FmGame.Hide;
 End;
 
@@ -335,7 +335,7 @@ Begin
     End;
   End Else AuxBackPos := 0;
 
-  If (GPlayers[ActualGame.PTurn].Pos = GPlayers[OtherPlayer].Pos) Then Begin
+  If (GPlayers[ActualGame.PTurn].Pos = GPlayers[OtherPlayer].Pos) And (GPlayers[ActualGame.PTurn].Pos <> 1) Then Begin
 
     Anuncio(3,'Mi señor, hemos tomado por sorpresa a un' + #13#10 + 'peloton del enemigo lo asesinaremos aqui' + #13#10 + 'y ahora!.');
     PausedController := True; while PausedController do begin sleep(1); Application.ProcessMessages; end;

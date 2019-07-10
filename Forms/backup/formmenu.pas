@@ -103,7 +103,7 @@ end;
 
 procedure TFmMenu.btnStatsClick(Sender: TObject);
 begin
-  FormOpen('GameModes');
+  FormOpen('Stats');
 end;
 
 {FORM 1 - EVENTO DE DIBUJO}
