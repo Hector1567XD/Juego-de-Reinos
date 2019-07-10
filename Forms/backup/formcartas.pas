@@ -81,8 +81,8 @@ begin
 
   If (not Assigned(FmNGC1vs1)) Then Begin FmCartas.Hide; Exit; End;
 
-  backgroundImage := FmLoadBackgroundSpecify('back_wood3.bmp');
-  FmSetSize(Constraints, 760, 400);
+  backgroundImage := FmLoadBackgroundSpecify('back_wood.bmp');
+  FmSetSize(Constraints, 400, 300);
 
   For I := 1 To 7 Do
       If (GVentajas[I] > 0) Then TCheckbox(FindComponent('CbBoxVentaja' + IntToStr(I))).Checked := True;

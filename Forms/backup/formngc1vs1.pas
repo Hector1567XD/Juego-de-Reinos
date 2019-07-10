@@ -110,7 +110,7 @@ begin
       GVentajas[I] := I;
 
   For I := 1 To 7 Do
-      GDesventajas[I] := I + 7;
+      GDesventajas[I] := I;
 
 end;
 
@@ -124,6 +124,7 @@ Var Soldados: Word;
     Lifes, Size1, Size2, Size, House1, House2, Hard:    Byte;
     HouseName1, HouseName2, Difficulty, Sentido, SizeStr: String;
     Clock: Boolean;
+    I: Byte;
 Begin
 
   Soldados := StrToInt(SelectSoliders.Items[SelectSoliders.ItemIndex]);
@@ -182,8 +183,8 @@ Begin
     'Antihorario':    Clock := False;//
   End;
 
-  For I := 1 To 7 Do ShowMessage(IntToStr(GVentajas[I]));
-  For I := 1 To 7 Do ShowMessage(IntToStr(GDesventajas[I]));
+  {For I := 1 To 7 Do ShowMessage(IntToStr(GVentajas[I]));
+  For I := 1 To 7 Do ShowMessage(IntToStr(GDesventajas[I]));}
 
   CGame.NewGame(AppUser.Id,Player2.Id,House1,House2, Size, Lifes, Hard, Soldados, Clock, Size1, Size2, Trunc((SpecialsBar.position / 10) * 60) , GVentajas, GDesventajas);
   FormOpen('Game');

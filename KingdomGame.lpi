@@ -217,6 +217,7 @@
         <Filename Value="Forms\formcartas.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="FmCartas"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormCartas"/>
       </Unit30>

@@ -27,7 +27,7 @@
         <PackageName Value="LCL"/>
       </Item1>
     </RequiredPackages>
-    <Units Count="30">
+    <Units Count="31">
       <Unit0>
         <Filename Value="KingdomGame.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -213,6 +213,14 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="EspiralMove"/>
       </Unit29>
+      <Unit30>
+        <Filename Value="Forms\formcartas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FmCartas"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="FormCartas"/>
+      </Unit30>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

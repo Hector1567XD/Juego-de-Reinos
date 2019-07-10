@@ -336,8 +336,7 @@ var
   LogList:  TListBox;
   SoliderBar: Array[1..2] Of TImage;
   Dialog: TDialog;
-  GVentajas: Array[1..7] Of Integer;
-  GDesventajas: Array[1..7] Of Integer;
+
 
 implementation
 uses InitFile;

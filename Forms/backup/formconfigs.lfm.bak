@@ -1,5 +1,5 @@
 object FmConfigs: TFmConfigs
-  Left = 658
+  Left = 617
   Height = 300
   Top = 260
   Width = 400

@@ -44,7 +44,7 @@ end;
 
 procedure TFmGameModes.btnNewGameClick(Sender: TObject);
 begin
-
+  FormGoto('GameModesToNGC1vs1');
 end;
 
 procedure TFmGameModes.FormDestroy(Sender: TObject); begin backgroundImage.Free; end;

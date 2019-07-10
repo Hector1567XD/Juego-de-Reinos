@@ -1,7 +1,7 @@
 object FmNGC1vs1: TFmNGC1vs1
-  Left = 619
+  Left = 929
   Height = 404
-  Top = 50
+  Top = 70
   Width = 760
   Caption = 'Juego de Reinos - Nuevo Juego, Clasico 1 vs 1'
   ClientHeight = 404
